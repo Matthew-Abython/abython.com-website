@@ -1,6 +1,6 @@
 # Abython.com — Codebase Handoff
 
-**Last updated:** 2026-05-13 after Prompts 1–7 (rebrand in progress)
+**Last updated:** 2026-05-13 after Prompts 1–8 (rebrand in progress)
 **Repository:** `Matthew-Abython/abython.com-website` on GitHub — branch `main`, commit `06b8f0d`
 
 This document gives a complete picture of the current codebase state. It is updated every time changes are pushed to GitHub — if it conflicts with what you see in the files, trust the files.
@@ -11,7 +11,7 @@ This document gives a complete picture of the current codebase state. It is upda
 
 > **Maintenance rule:** Every time any of these files changes, this section must be regenerated in the same commit. If you edit `index.html`, `script.js`, `chat.js`, `styles.css`, `vercel.json`, or any policy page, you also update the corresponding embedded block above. The structural notes elsewhere in this handoff describe intent; these embedded files are the literal source of truth. When the embedded contents and the actual files conflict, the actual files win and this section is out of date — regenerate it immediately.
 
-### index.html (298 lines)
+### index.html (225 lines)
 
 ```html
 <!DOCTYPE html>
@@ -148,79 +148,6 @@ This document gives a complete picture of the current codebase state. It is upda
         SEO updates, AIO optimization, content refreshes, and Google Business Profile management
         all happen continuously, every month.
       </p>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       DEMO — Try It Free — Hear It Live
-       Form HTML preserved verbatim from prior version so the demo
-       form IIFE in script.js continues to work without changes.
-       Container/wrapper restyled in Prompt 32.
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="demo-section" id="demo" aria-label="Try the AI receptionist live">
-    <div class="container container--narrow">
-      <header class="section-head animate-ready">
-        <p class="eyebrow">Try it free — hear it live</p>
-        <h2 class="section-title">Get a call from our AI receptionist in under 60 seconds.</h2>
-        <p class="lead">
-          Fill out the form below and our AI receptionist will call your phone within a minute —
-          experience exactly what your callers will hear.
-        </p>
-      </header>
-
-      <div class="demo-form-wrap animate-ready">
-        <form id="demo-form" class="demo-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="demo-first-name">First Name</label>
-              <input type="text" id="demo-first-name" name="firstName" placeholder="Jane" autocomplete="given-name">
-              <span class="field-error" id="error-firstName"></span>
-            </div>
-            <div class="form-group">
-              <label for="demo-last-name">Last Name</label>
-              <input type="text" id="demo-last-name" name="lastName" placeholder="Smith" autocomplete="family-name">
-              <span class="field-error" id="error-lastName"></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="demo-email">Email</label>
-            <input type="email" id="demo-email" name="email" placeholder="jane@company.com" autocomplete="email">
-            <span class="field-error" id="error-email"></span>
-          </div>
-          <div class="form-group">
-            <label for="demo-phone">Phone Number</label>
-            <input type="tel" id="demo-phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
-            <span class="field-error" id="error-phone"></span>
-          </div>
-
-          <p class="demo-form-disclosure">
-            By providing your phone number, you agree to receive SMS messages from Abython regarding class information,
-            appointment reminders, trial scheduling, and promotional offers. Message frequency varies. Msg &amp; Data Rates
-            May Apply. Mobile opt-in data and consent will never be shared with third parties or affiliates for marketing
-            or promotional purposes. Reply STOP to unsubscribe or HELP for assistance. View our
-            <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms-and-conditions/">Terms</a>.
-          </p>
-
-          <label class="demo-form-consent" for="sms-consent">
-            <input type="checkbox" id="sms-consent" name="smsConsent">
-            <span>Yes, I'd like to receive SMS updates from Abython (optional)</span>
-          </label>
-
-          <button type="submit" class="cta-button-primary demo-submit-btn" id="demo-submit">
-            Request My Demo Call
-          </button>
-
-          <p class="demo-form-footer">
-            You may also opt in to SMS updates by texting JOIN, START, INFO, or YES to (847) 636-9074.
-          </p>
-        </form>
-
-        <div class="demo-success" id="demo-success" hidden>
-          <div class="demo-success-icon">📞</div>
-          <h3>You're all set.</h3>
-          <p>You'll receive a call shortly from our AI receptionist. Have your phone nearby.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -2562,6 +2489,181 @@ ul {
 </html>
 ```
 
+### ai-receptionist/index.html (170 lines)
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try the AI Receptionist Live | Abython</title>
+    <meta name="description" content="Get a call from Abython's AI receptionist in under 60 seconds. Experience exactly what your callers will hear before you commit.">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       NAVIGATION
+       ════════════════════════════════════════════════════════════════ -->
+  <nav class="nav" id="primary-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Abython</a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="/#work">Work</a>
+        <a href="/#services">Services</a>
+        <a href="/ai-receptionist" aria-current="page">AI Receptionist</a>
+        <a href="/google-business-profile">GBP</a>
+        <a href="/seo-and-aio">SEO + AIO</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       DEMO — Try It Free — Hear It Live
+       Form HTML preserved verbatim from homepage so the demo form IIFE
+       in script.js continues to work without changes.
+       ════════════════════════════════════════════════════════════════ -->
+  <main style="padding-top: var(--nav-height);">
+    <section class="demo-section" id="demo" aria-label="Try the AI receptionist live">
+      <div class="container container--narrow">
+        <header class="section-head animate-ready">
+          <p class="eyebrow">Try it free — hear it live</p>
+          <h2 class="section-title">Get a call from our AI receptionist in under 60 seconds.</h2>
+          <p class="lead">
+            Fill out the form below and our AI receptionist will call your phone within a minute —
+            experience exactly what your callers will hear.
+          </p>
+        </header>
+
+        <div class="demo-form-wrap animate-ready">
+          <form id="demo-form" class="demo-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="demo-first-name">First Name</label>
+                <input type="text" id="demo-first-name" name="firstName" placeholder="Jane" autocomplete="given-name">
+                <span class="field-error" id="error-firstName"></span>
+              </div>
+              <div class="form-group">
+                <label for="demo-last-name">Last Name</label>
+                <input type="text" id="demo-last-name" name="lastName" placeholder="Smith" autocomplete="family-name">
+                <span class="field-error" id="error-lastName"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="demo-email">Email</label>
+              <input type="email" id="demo-email" name="email" placeholder="jane@company.com" autocomplete="email">
+              <span class="field-error" id="error-email"></span>
+            </div>
+            <div class="form-group">
+              <label for="demo-phone">Phone Number</label>
+              <input type="tel" id="demo-phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
+              <span class="field-error" id="error-phone"></span>
+            </div>
+
+            <p class="demo-form-disclosure">
+              By providing your phone number, you agree to receive SMS messages from Abython regarding class information,
+              appointment reminders, trial scheduling, and promotional offers. Message frequency varies. Msg &amp; Data Rates
+              May Apply. Mobile opt-in data and consent will never be shared with third parties or affiliates for marketing
+              or promotional purposes. Reply STOP to unsubscribe or HELP for assistance. View our
+              <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms-and-conditions/">Terms</a>.
+            </p>
+
+            <label class="demo-form-consent" for="sms-consent">
+              <input type="checkbox" id="sms-consent" name="smsConsent">
+              <span>Yes, I'd like to receive SMS updates from Abython (optional)</span>
+            </label>
+
+            <button type="submit" class="cta-button-primary demo-submit-btn" id="demo-submit">
+              Request My Demo Call
+            </button>
+
+            <p class="demo-form-footer">
+              You may also opt in to SMS updates by texting JOIN, START, INFO, or YES to (847) 636-9074.
+            </p>
+          </form>
+
+          <div class="demo-success" id="demo-success" hidden>
+            <div class="demo-success-icon">📞</div>
+            <h3>You're all set.</h3>
+            <p>You'll receive a call shortly from our AI receptionist. Have your phone nearby.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">Abython</span>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
+          <a href="mailto:owner@abython.com">Contact</a>
+        </nav>
+      </div>
+      <p class="footer-copy">&copy; 2026 Abython — Websites that book appointments.</p>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       CHAT WIDGET
+       ════════════════════════════════════════════════════════════════ -->
+  <style>
+  #chat-widget{position:fixed;bottom:20px;right:20px;z-index:9999}
+  #chat-btn{width:56px;height:56px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;color:#fff;font-size:26px;box-shadow:0 4px 16px var(--accent-glow);transition:transform 0.3s,background 0.2s}
+  #chat-btn:hover{transform:scale(1.1);background:var(--accent-hover)}
+  #chat-box{position:fixed;bottom:88px;right:20px;width:380px;height:540px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-lg);display:none;flex-direction:column;overflow:hidden}
+  #chat-header{background:var(--accent-soft);border-bottom:1px solid var(--border);color:var(--ink);padding:18px 20px;font-weight:600;font-family:var(--font-body);font-size:0.95rem}
+  #chat-msgs{flex:1;overflow-y:auto;padding:16px;background:var(--bg);display:flex;flex-direction:column;gap:10px}
+  .msg{padding:10px 14px;border-radius:16px;max-width:82%;word-wrap:break-word;font-size:0.9rem;line-height:1.5}
+  .user-msg{background:var(--accent);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
+  .bot-msg{background:var(--bg-elevated);color:var(--ink);border:1px solid var(--border);border-bottom-left-radius:4px}
+  .error-msg{background:#fef2f2;color:#dc2626;border:1px solid rgba(220,38,38,0.2)}
+  #chat-input-area{padding:12px;display:flex;gap:8px;border-top:1px solid var(--border);background:var(--bg-elevated)}
+  #chat-inp{flex:1;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:24px;outline:none;color:var(--ink);font-size:0.875rem;font-family:inherit}
+  #chat-inp::placeholder{color:var(--ink-subtle)}
+  #chat-inp:focus{border-color:var(--accent-ring)}
+  #chat-send{padding:10px 16px;background:var(--accent);color:#fff;border:none;border-radius:24px;cursor:pointer;font-weight:600;font-size:0.875rem;transition:background 0.2s}
+  #chat-send:hover{background:var(--accent-hover)}
+  @media(max-width:768px){#chat-box{width:calc(100vw - 40px);right:20px}}
+  </style>
+  <div id="chat-widget">
+    <button id="chat-btn">💬</button>
+    <div id="chat-box">
+      <div id="chat-header">Chat with Abython</div>
+      <div id="chat-msgs"></div>
+      <div id="chat-input-area">
+        <input id="chat-inp" type="text" placeholder="Type your message...">
+        <button id="chat-send">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       SCRIPTS
+       ════════════════════════════════════════════════════════════════ -->
+  <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="/chat.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>
+```
+
 ## Project Status
 
 The Abython.com website is mid-rebrand (~7 of ~37 prompts complete). The structural foundation is in place — design tokens, animation libraries, homepage skeleton, and portfolio grid hero. Individual sections and the 16 fake portfolio sites will be built in subsequent prompts.
@@ -2584,7 +2686,8 @@ Abython.com/
 ├── styles.css                    ← All styles (1,703 lines, design tokens live here)
 ├── script.js                     ← Nav + scroll animations + demo form IIFE (212 lines)
 ├── chat.js                       ← Chat widget IIFE
-├── ai-receptionist/              ← PLANNED (Prompt 8) — not yet created
+├── ai-receptionist/
+│   └── index.html                ← Demo form lives here (moved from homepage, Prompt 8)
 ├── google-business-profile/      ← PLANNED — not yet created
 ├── seo-and-aio/                  ← PLANNED — not yet created
 ├── web-design/                   ← PLANNED — not yet created
@@ -2595,7 +2698,7 @@ Abython.com/
     └── index.html                ← Existing, will be restyled
 ```
 
-**What doesn't exist yet:** All service subpages (`/ai-receptionist/`, `/google-business-profile/`, `/seo-and-aio/`, `/web-design/`), the `/work/` portfolio index, and all 16 fake portfolio sites are planned but not yet created. Clicking any portfolio tile on the homepage currently 404s — that's expected.
+**What doesn't exist yet:** Service subpages (`/google-business-profile/`, `/seo-and-aio/`, `/web-design/`), the `/work/` portfolio index, and all 16 fake portfolio sites are planned but not yet created. (`/ai-receptionist/` is now live.) Clicking any portfolio tile on the homepage currently 404s — that's expected.
 
 ---
 
@@ -2676,10 +2779,6 @@ The homepage skeleton is in place. Sections have HTML and class names but most s
 - "We don't ship a website and disappear." differentiator
 - Placeholder copy, real content in Prompt 31
 
-### Demo Section (`.demo-section` / `#demo`)
-- Contains the live VAPI demo form — **this is a locked integration**
-- Full container restyling in Prompt 32; form HTML/JS must not change
-
 ### Final CTA (`.final-cta` / `#contact`)
 - Calendly booking button → `https://calendly.com/owner-abython/new-meeting`
 - Phone + email contact links
@@ -2699,6 +2798,20 @@ The homepage skeleton is in place. Sections have HTML and class names but most s
 3. `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js`
 4. `chat.js`
 5. `script.js`
+
+---
+
+## ai-receptionist/index.html — Current Structure
+
+The page lives at `/ai-receptionist/` and contains the VAPI demo form, moved from the homepage in Prompt 8. It is a fully self-contained standalone page:
+
+- Loads `/styles.css` (root-absolute — no `../` paths)
+- Nav identical to homepage, but in-page anchor links point back: `/#work`, `/#services`, `/#contact`
+- `<main style="padding-top: var(--nav-height);">` prevents the fixed nav from overlapping content
+- Contains the demo form verbatim: `#demo-form`, `#demo-success`, all field IDs, same webhook
+- `script.js`'s demo IIFE auto-detects the form with `if (!form) return;` — it no-ops on the homepage and fires on this page
+- Loads `/chat.js` and `/script.js` (root-absolute)
+- Chat widget, footer, and script load order identical to homepage
 
 ---
 
@@ -2831,7 +2944,7 @@ Replaces the deleted `netlify.toml`. Applied to all routes (`"source": "/(.*)"` 
 
 ## What's Next (Prompts 8–12)
 
-- **Prompt 8** — Create `/ai-receptionist/index.html` (demo form safety net page)
+- **Prompt 8 — DONE** — Created `/ai-receptionist/index.html`, moved demo form off homepage
 - **Prompt 9** — Create `/work/index.html` (portfolio index grid)
 - **Prompt 10** — Create `/google-business-profile/index.html` (placeholder)
 - **Prompt 11** — Create `/seo-and-aio/index.html` (placeholder)
