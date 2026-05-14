@@ -289,6 +289,22 @@ Per-section animations go into named functions called after DOMContentLoaded. Ev
   - `chore: replace netlify.toml with vercel.json`
 - **Push:** Only at the end of major milestones, never mid-prompt unless explicitly instructed
 
+### 🔁 REQUIRED before every GitHub push
+
+**Before committing and pushing to GitHub, you MUST update `HANDOFF.md` to reflect the current state of the codebase.** This is non-optional — `HANDOFF.md` must always match reality at the time of each push.
+
+Update the following fields at minimum:
+1. **Last updated** date and prompt range at the top
+2. **Commit hash** (update after the commit is created)
+3. **File structure** — add any new files/directories created in this session
+4. **Section descriptions** — update any sections whose HTML or behavior changed
+5. **script.js block map** — update line ranges if the file changed
+6. **styles.css block map** — update line count and add any new blocks
+7. **Known issues** — add new ones, remove resolved ones
+8. **What's Next** — advance the prompt numbers to reflect remaining work
+
+The HANDOFF.md update should be staged as part of the same commit as the code changes — not a separate commit.
+
 ---
 
 ## 9. Known Issues (Pre-Rebrand)
