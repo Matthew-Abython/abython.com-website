@@ -9,387 +9,290 @@
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="container">
-            <div class="nav-content">
-                <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div class="nav-links" id="nav-links">
-                    <a href="#services">Services</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#how-it-works">How It Works</a>
-                    <a href="#contact">Contact</a>
-                </div>
+  <!-- ════════════════════════════════════════════════════════════════
+       NAVIGATION
+       ════════════════════════════════════════════════════════════════ -->
+  <nav class="nav" id="primary-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Abython</a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="nav-links">
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="/ai-receptionist">AI Receptionist</a>
+        <a href="/google-business-profile">GBP</a>
+        <a href="/seo-and-aio">SEO + AIO</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       HERO — 4×4 PORTFOLIO GRID
+       Content fills in during Prompt 7
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="work-grid-hero" id="work" aria-label="Selected work">
+    <div class="work-grid" id="work-grid">
+      <!-- 16 placeholder tiles. Real content in Prompt 7. -->
+      <a href="/work/azure-cosmetic-dentistry" target="_blank" rel="noopener" class="work-tile" data-tile="1"><span class="work-tile-label">01 · Cosmetic Dentistry</span></a>
+      <a href="/work/little-tooth-pediatric" target="_blank" rel="noopener" class="work-tile" data-tile="2"><span class="work-tile-label">02 · Pediatric Dental</span></a>
+      <a href="/work/lumen-medspa" target="_blank" rel="noopener" class="work-tile" data-tile="3"><span class="work-tile-label">03 · Medspa</span></a>
+      <a href="/work/shape-aesthetics" target="_blank" rel="noopener" class="work-tile" data-tile="4"><span class="work-tile-label">04 · Injectables</span></a>
+      <a href="/work/arcline-orthodontics" target="_blank" rel="noopener" class="work-tile" data-tile="5"><span class="work-tile-label">05 · Orthodontics</span></a>
+      <a href="/work/hearthfield-family-dental" target="_blank" rel="noopener" class="work-tile" data-tile="6"><span class="work-tile-label">06 · Family Dental</span></a>
+      <a href="/work/meridian-implants" target="_blank" rel="noopener" class="work-tile" data-tile="7"><span class="work-tile-label">07 · Implants</span></a>
+      <a href="/work/glow-laser-clinic" target="_blank" rel="noopener" class="work-tile" data-tile="8"><span class="work-tile-label">08 · Laser Clinic</span></a>
+      <a href="/work/halcyon-plastic-surgery" target="_blank" rel="noopener" class="work-tile" data-tile="9"><span class="work-tile-label">09 · Plastic Surgery</span></a>
+      <a href="/work/verdant-iv-lounge" target="_blank" rel="noopener" class="work-tile" data-tile="10"><span class="work-tile-label">10 · IV Lounge</span></a>
+      <a href="/work/rootwell-holistic-dental" target="_blank" rel="noopener" class="work-tile" data-tile="11"><span class="work-tile-label">11 · Holistic Dental</span></a>
+      <a href="/work/stratum-dermatology" target="_blank" rel="noopener" class="work-tile" data-tile="12"><span class="work-tile-label">12 · Dermatology</span></a>
+      <a href="/work/kinetics-pilates" target="_blank" rel="noopener" class="work-tile" data-tile="13"><span class="work-tile-label">13 · Pilates Studio</span></a>
+      <a href="/work/north-barber-co" target="_blank" rel="noopener" class="work-tile" data-tile="14"><span class="work-tile-label">14 · Barber Co.</span></a>
+      <a href="/work/ironwood-law" target="_blank" rel="noopener" class="work-tile" data-tile="15"><span class="work-tile-label">15 · Law Firm</span></a>
+      <a href="/work/savor-private-chef" target="_blank" rel="noopener" class="work-tile" data-tile="16"><span class="work-tile-label">16 · Private Chef</span></a>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       STATEMENT — Big-type "who we are / who we serve"
+       Real copy & polish in Prompt 29
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="statement" id="statement">
+    <div class="container container--narrow">
+      <p class="eyebrow animate-ready">Abython · For dentists &amp; med spas</p>
+      <p class="statement-line animate-ready">
+        We build, manage, and grow websites
+        <span class="gradient-text">that actually book appointments.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       SERVICES — 4 pillars
+       Real content & SEO vs AIO explainer in Prompt 30
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="services" id="services" aria-label="Services">
+    <div class="container">
+      <header class="section-head animate-ready">
+        <p class="eyebrow">What we do</p>
+        <h2 class="section-title">Four services. One growth system.</h2>
+      </header>
+
+      <div class="services-grid">
+        <article class="service-card animate-ready" data-pillar="web-design">
+          <p class="service-card-num">01</p>
+          <h3>Custom Web Design</h3>
+          <p class="service-card-body">Built specifically for dental practices and med spas — designed to convert visitors into booked appointments, not just look pretty.</p>
+          <a href="/web-design" class="service-card-link">Learn more →</a>
+        </article>
+
+        <article class="service-card animate-ready" data-pillar="seo-aio">
+          <p class="service-card-num">02</p>
+          <h3>SEO + AIO</h3>
+          <p class="service-card-body">Traditional SEO gets you found on Google. AIO gets you cited by ChatGPT, Perplexity, and Google's AI Overviews. You need both now.</p>
+          <a href="/seo-and-aio" class="service-card-link">Learn more →</a>
+        </article>
+
+        <article class="service-card animate-ready" data-pillar="gbp">
+          <p class="service-card-num">03</p>
+          <h3>Google Business Profile</h3>
+          <p class="service-card-body">Your map listing is where local patients find you first. We manage reviews, photos, posts, and Q&amp;A to keep you ranking.</p>
+          <a href="/google-business-profile" class="service-card-link">Learn more →</a>
+        </article>
+
+        <article class="service-card animate-ready" data-pillar="receptionist">
+          <p class="service-card-num">04</p>
+          <h3>AI Receptionist</h3>
+          <p class="service-card-body">An AI phone agent that answers every call 24/7, qualifies leads, and books appointments straight to your calendar.</p>
+          <a href="/ai-receptionist" class="service-card-link">Learn more →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       MANAGED — "We don't ship and ghost" differentiator
+       Real content & visual treatment in Prompt 31
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="managed" id="managed" aria-label="Actively managed">
+    <div class="container container--narrow">
+      <header class="section-head animate-ready">
+        <p class="eyebrow">The Abython difference</p>
+        <h2 class="section-title">We don't ship a website and disappear.</h2>
+      </header>
+
+      <p class="managed-lead animate-ready lead">
+        Most agencies hand you a site and leave. We actively manage every site we build —
+        SEO updates, AIO optimization, content refreshes, and Google Business Profile management
+        all happen continuously, every month.
+      </p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       DEMO — Try It Free — Hear It Live
+       Form HTML preserved verbatim from prior version so the demo
+       form IIFE in script.js continues to work without changes.
+       Container/wrapper restyled in Prompt 32.
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="demo-section" id="demo" aria-label="Try the AI receptionist live">
+    <div class="container container--narrow">
+      <header class="section-head animate-ready">
+        <p class="eyebrow">Try it free — hear it live</p>
+        <h2 class="section-title">Get a call from our AI receptionist in under 60 seconds.</h2>
+        <p class="lead">
+          Fill out the form below and our AI receptionist will call your phone within a minute —
+          experience exactly what your callers will hear.
+        </p>
+      </header>
+
+      <div class="demo-form-wrap animate-ready">
+        <form id="demo-form" class="demo-form" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="demo-first-name">First Name</label>
+              <input type="text" id="demo-first-name" name="firstName" placeholder="Jane" autocomplete="given-name">
+              <span class="field-error" id="error-firstName"></span>
             </div>
-        </div>
-    </nav>
-
-    <!-- Hero + Demo -->
-    <section class="hero-demo">
-        <div class="container">
-            <div class="hero-demo-inner">
-                <div class="hero-demo-heading">
-                    <p class="hero-eyebrow">AI Receptionist &amp; Custom Websites</p>
-                    <h1 class="hero-title">
-                        AI that answers.<br>
-                        <span class="gradient-text">Websites that convert.</span>
-                    </h1>
-                    <p class="hero-demo-sub">
-                        Fill out the form and our AI receptionist will call you within minutes —
-                        experience exactly what your customers will hear.
-                    </p>
-                </div>
-                <div class="hero-demo-form-wrap">
-                    <p class="hero-demo-label">Try It Free — Hear It Live</p>
-                    <form id="demo-form" class="demo-form" novalidate>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="demo-first-name">First Name</label>
-                                <input type="text" id="demo-first-name" name="firstName" placeholder="Jane" autocomplete="given-name">
-                                <span class="field-error" id="error-firstName"></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="demo-last-name">Last Name</label>
-                                <input type="text" id="demo-last-name" name="lastName" placeholder="Smith" autocomplete="family-name">
-                                <span class="field-error" id="error-lastName"></span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="demo-email">Email</label>
-                            <input type="email" id="demo-email" name="email" placeholder="jane@company.com" autocomplete="email">
-                            <span class="field-error" id="error-email"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="demo-phone">Phone Number</label>
-                            <input type="tel" id="demo-phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
-                            <span class="field-error" id="error-phone"></span>
-                        </div>
-                        <p style="font-size: 12px; color: #888; margin-bottom: 12px;">By providing your phone number, you agree to receive SMS messages from Abython regarding class information, appointment reminders, trial scheduling, and promotional offers. Message frequency varies. Msg &amp; Data Rates May Apply. Mobile opt-in data and consent will never be shared with third parties or affiliates for marketing or promotional purposes. Reply STOP to unsubscribe or HELP for assistance. View our <a href="/privacy-policy/" style="color: #888;">Privacy Policy</a> at abython.com/privacy-policy and <a href="/terms-and-conditions/" style="color: #888;">Terms</a> at abython.com/terms-and-conditions.</p>
-                        <div style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px;">
-                            <input type="checkbox" id="sms-consent" name="smsConsent" style="margin-top: 3px; flex-shrink: 0; width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer;">
-                            <label for="sms-consent" style="font-size: 13px; color: #ccc; cursor: pointer; line-height: 1.4;">Yes, I'd like to receive SMS updates from Abython (optional)</label>
-                        </div>
-                        <button type="submit" class="cta-button-primary demo-submit-btn" id="demo-submit">
-                            Request My Demo Call
-                        </button>
-                    </form>
-                    <p style="font-size: 12px; color: #888; margin-top: 10px;">You may also opt in to SMS updates by texting JOIN, START, INFO, or YES to (847) 636-9074.</p>
-                    <div class="demo-success" id="demo-success" hidden>
-                        <div class="demo-success-icon">📞</div>
-                        <h3>You're all set!</h3>
-                        <p>Thanks! You'll receive a call shortly from our AI receptionist. Have your phone nearby!</p>
-                    </div>
-                </div>
+            <div class="form-group">
+              <label for="demo-last-name">Last Name</label>
+              <input type="text" id="demo-last-name" name="lastName" placeholder="Smith" autocomplete="family-name">
+              <span class="field-error" id="error-lastName"></span>
             </div>
-        </div>
-    </section>
+          </div>
+          <div class="form-group">
+            <label for="demo-email">Email</label>
+            <input type="email" id="demo-email" name="email" placeholder="jane@company.com" autocomplete="email">
+            <span class="field-error" id="error-email"></span>
+          </div>
+          <div class="form-group">
+            <label for="demo-phone">Phone Number</label>
+            <input type="tel" id="demo-phone" name="phone" placeholder="(555) 000-0000" autocomplete="tel">
+            <span class="field-error" id="error-phone"></span>
+          </div>
 
-    <!-- Services -->
-    <section id="services" class="services">
-        <div class="container">
-            <div class="services-header animate-ready">
-                <p class="section-label">What We Offer</p>
-                <h2 class="section-title">One system. Every lead. Zero leaks.</h2>
-                <p class="section-description">
-                    Your AI phone receptionist and AI website work as one unified system — every caller and every website visitor is captured, followed up, and saved to the same database automatically.
-                </p>
-            </div>
-            <div class="services-grid">
+          <p class="demo-form-disclosure">
+            By providing your phone number, you agree to receive SMS messages from Abython regarding class information,
+            appointment reminders, trial scheduling, and promotional offers. Message frequency varies. Msg &amp; Data Rates
+            May Apply. Mobile opt-in data and consent will never be shared with third parties or affiliates for marketing
+            or promotional purposes. Reply STOP to unsubscribe or HELP for assistance. View our
+            <a href="/privacy-policy/">Privacy Policy</a> and <a href="/terms-and-conditions/">Terms</a>.
+          </p>
 
-                <!-- Card 1: AI Receptionist -->
-                <div class="service-card animate-ready">
-                    <div class="service-icon">📞</div>
-                    <span class="service-badge">AI Receptionist</span>
-                    <h3>Never miss a call. Never lose a lead.</h3>
-                    <p class="service-tagline">24/7, trained on your business.</p>
-                    <p>Our AI phone agent answers every inbound call around the clock — handling questions, qualifying leads, and sending an automated SMS follow-up. It knows your pricing, services, hours, and FAQs cold.</p>
-                    <ul class="service-features">
-                        <li>Answers every call 24/7 — nights, weekends, holidays</li>
-                        <li>Qualifies leads in real-time conversation</li>
-                        <li>Sends personalized post-call SMS follow-up automatically</li>
-                        <li>All caller data saved to your lead database</li>
-                    </ul>
-                </div>
+          <label class="demo-form-consent" for="sms-consent">
+            <input type="checkbox" id="sms-consent" name="smsConsent">
+            <span>Yes, I'd like to receive SMS updates from Abython (optional)</span>
+          </label>
 
-                <!-- Card 2: Custom Website — FEATURED -->
-                <div class="service-card featured animate-ready">
-                    <div class="service-icon">🌐</div>
-                    <span class="service-badge">AI Website System</span>
-                    <h3>Your website closes leads while you sleep.</h3>
-                    <p class="service-tagline">Same AI brain. Every channel covered.</p>
-                    <p>An AI chatbot and lead capture form sit on your website — both powered by the same AI as your phone receptionist. When someone submits a form, the system texts them within 60 seconds. Every web visitor feeds into the same database as your callers.</p>
-                    <ul class="service-features">
-                        <li>AI chatbot with same knowledge as your phone agent</li>
-                        <li>Lead capture form with 60-second automated SMS follow-up</li>
-                        <li>Calendar integration where booking software API allows</li>
-                        <li>All web leads saved alongside phone leads in one database</li>
-                    </ul>
-                </div>
+          <button type="submit" class="cta-button-primary demo-submit-btn" id="demo-submit">
+            Request My Demo Call
+          </button>
 
-                <!-- Card 3: Lead Reactivation -->
-                <div class="service-card animate-ready">
-                    <div class="service-icon">🔁</div>
-                    <span class="service-badge">Lead Reactivation</span>
-                    <h3>Turn your cold list into booked appointments.</h3>
-                    <p class="service-tagline">Money already in your database — uncollected.</p>
-                    <p>Every business has hundreds of leads that inquired but never booked. We run automated SMS and email campaigns to that list and bring them back. Performance-based — you only pay 10% of revenue generated. Zero upfront cost. Included free in the Full System plan.</p>
-                    <ul class="service-features">
-                        <li>Automated SMS + email campaigns to cold lead lists</li>
-                        <li>AI manages responses and books the appointment</li>
-                        <li>10% of revenue generated — zero upfront cost</li>
-                        <li>Included at no extra cost in the Full System plan</li>
-                    </ul>
-                </div>
+          <p class="demo-form-footer">
+            You may also opt in to SMS updates by texting JOIN, START, INFO, or YES to (847) 636-9074.
+          </p>
+        </form>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <div class="services-header animate-ready">
-                <p class="section-label">Simple Pricing</p>
-                <h2 class="section-title">Pick the plan that fits your business</h2>
-                <p class="section-description">
-                    All plans are month-to-month. No contracts. Cancel anytime with 30 days notice.
-                </p>
-            </div>
-            <div class="services-grid pricing-grid">
-
-                <!-- Starter -->
-                <div class="service-card animate-ready">
-                    <div class="service-icon">📞</div>
-                    <span class="service-badge">Starter</span>
-                    <div class="pricing-price">$225<span class="pricing-period">/month</span></div>
-                    <h3>AI phone receptionist</h3>
-                    <p class="service-tagline">For businesses losing leads to voicemail.</p>
-                    <ul class="service-features">
-                        <li>24/7 AI phone receptionist</li>
-                        <li>Trained on your business</li>
-                        <li>Lead qualification on every call</li>
-                        <li>Post-call SMS follow-up</li>
-                        <li>Caller lead database</li>
-                    </ul>
-                    <p class="pricing-not-included">Website chatbot &amp; web lead capture not included</p>
-                    <a href="#contact" class="cta-button-ghost pricing-cta">Get Started</a>
-                </div>
-
-                <!-- Growth — Featured -->
-                <div class="service-card featured animate-ready">
-                    <div class="service-icon">🌐</div>
-                    <span class="service-badge">Growth</span>
-                    <div class="pricing-popular-tag">Most Popular</div>
-                    <div class="pricing-price">$397<span class="pricing-period">/month</span></div>
-                    <h3>Receptionist + AI website</h3>
-                    <p class="service-tagline">Phone and website working as one system.</p>
-                    <ul class="service-features">
-                        <li>Everything in Starter</li>
-                        <li>AI chatbot on your existing website</li>
-                        <li>Web lead capture + 60-second SMS follow-up</li>
-                        <li>Calendar integration (where API allows)</li>
-                        <li>Unified phone + web lead database</li>
-                    </ul>
-                    <p class="pricing-not-included">New website build &amp; reactivation campaigns not included</p>
-                    <a href="#contact" class="cta-button-primary pricing-cta">Get Started</a>
-                </div>
-
-                <!-- Full System -->
-                <div class="service-card animate-ready">
-                    <div class="service-icon">⚡</div>
-                    <span class="service-badge">Full System</span>
-                    <div class="pricing-popular-tag pricing-best-value">Best Value</div>
-                    <div class="pricing-price">$697<span class="pricing-period">/month</span></div>
-                    <h3>The complete growth machine</h3>
-                    <p class="service-tagline">Every channel covered. Zero leaks.</p>
-                    <ul class="service-features">
-                        <li>Everything in Growth</li>
-                        <li>New conversion-optimized website built for you</li>
-                        <li>Unlimited reactivation campaigns (no % fee)</li>
-                        <li>Full phone + chatbot + web + SMS + email funnel</li>
-                        <li>Priority support + quarterly strategy review</li>
-                    </ul>
-                    <a href="#contact" class="cta-button-ghost pricing-cta">Get Started</a>
-                </div>
-
-            </div>
-
-            <!-- Reactivation add-on callout -->
-            <div class="pricing-addon animate-ready">
-                <p class="pricing-addon-title">Lead Reactivation Add-On — Starter &amp; Growth clients</p>
-                <p class="pricing-addon-desc">We run SMS + email campaigns to your cold lead list. You pay <strong>10% of revenue generated</strong> — nothing upfront. Included free in Full System.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <div class="how-it-works-inner">
-
-                <!-- Block 1: AI Receptionist -->
-                <div class="how-block animate-ready">
-                    <div class="how-block-text">
-                        <p class="how-block-label">AI Receptionist</p>
-                        <h2 class="how-block-title">From missed call to booked appointment — automatically</h2>
-                        <p class="how-block-desc">
-                            Our AI agents are configured with your business details, services, and FAQs.
-                            From there, they handle every call intelligently — no scripts that sound robotic,
-                            no missed opportunities.
-                        </p>
-                        <ol class="steps-list">
-                            <li class="step-item">
-                                <div class="step-num">1</div>
-                                <div class="step-item-text">
-                                    <h4>We configure your AI agent</h4>
-                                    <p>We set up your agent with your services, FAQs, pricing, and booking process — tailored to your business.</p>
-                                </div>
-                            </li>
-                            <li class="step-item">
-                                <div class="step-num">2</div>
-                                <div class="step-item-text">
-                                    <h4>AI handles every inbound call</h4>
-                                    <p>Your agent answers, qualifies, and books — 24/7, with no hold times and no missed calls.</p>
-                                </div>
-                            </li>
-                            <li class="step-item">
-                                <div class="step-num">3</div>
-                                <div class="step-item-text">
-                                    <h4>You close the deals</h4>
-                                    <p>Appointments land in your calendar. You show up, do the work, and get paid — the pipeline fills itself.</p>
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="how-block-visual">
-                        <p class="visual-headline">What your AI agent does</p>
-                        <ul class="visual-features">
-                            <li><span class="check">✓</span> Answers every call in under 2 rings</li>
-                            <li><span class="check">✓</span> Understands natural language questions</li>
-                            <li><span class="check">✓</span> Collects caller info &amp; qualifies intent</li>
-                            <li><span class="check">✓</span> Schedules directly to your calendar</li>
-                            <li><span class="check">✓</span> Handles after-hours and overflow calls</li>
-                            <li><span class="check">✓</span> Never calls in sick or takes a day off</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Block 2: Custom Website -->
-                <div class="how-block reverse animate-ready">
-                    <div class="how-block-text">
-                        <p class="how-block-label">Custom Website</p>
-                        <h2 class="how-block-title">A website built around one goal: getting you clients</h2>
-                        <p class="how-block-desc">
-                            Most websites look nice but don't convert. We build yours from the ground up
-                            around your specific offer, audience, and conversion goals — so traffic actually turns
-                            into revenue.
-                        </p>
-                        <ol class="steps-list">
-                            <li class="step-item">
-                                <div class="step-num">1</div>
-                                <div class="step-item-text">
-                                    <h4>Strategy call</h4>
-                                    <p>We learn your business, your ideal client, and what makes you the obvious choice. This informs everything.</p>
-                                </div>
-                            </li>
-                            <li class="step-item">
-                                <div class="step-num">2</div>
-                                <div class="step-item-text">
-                                    <h4>We design &amp; build</h4>
-                                    <p>Custom design, persuasive copy, and conversion-optimized structure — delivered fast, built to last.</p>
-                                </div>
-                            </li>
-                            <li class="step-item">
-                                <div class="step-num">3</div>
-                                <div class="step-item-text">
-                                    <h4>Traffic converts</h4>
-                                    <p>Visitors land on a page that speaks directly to them — and they take action. Your site earns its keep.</p>
-                                </div>
-                            </li>
-                        </ol>
-                    </div>
-                    <div class="how-block-visual">
-                        <p class="visual-headline">What you get</p>
-                        <ul class="visual-features">
-                            <li><span class="check">✓</span> Custom design — no templates</li>
-                            <li><span class="check">✓</span> Conversion copywriting included</li>
-                            <li><span class="check">✓</span> Fully mobile-optimized</li>
-                            <li><span class="check">✓</span> Fast load speeds built-in</li>
-                            <li><span class="check">✓</span> Clear calls-to-action throughout</li>
-                            <li><span class="check">✓</span> AI agent integration ready</li>
-                        </ul>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section id="contact" class="final-cta">
-        <div class="container">
-            <h2 class="final-cta-title">Ready to grow on autopilot?</h2>
-            <p class="final-cta-desc">Book a free strategy call. No pressure, no commitment — just a conversation about what's possible.</p>
-            <a href="https://calendly.com/owner-abython/new-meeting" target="_blank" rel="noopener noreferrer" class="cta-button-primary">Book a Free Demo</a>
-            <div class="contact-info">
-                <a href="tel:+18476369074">📞 (847) 636-9074</a>
-                <a href="mailto:owner@abython.com">✉ owner@abython.com</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <span class="footer-logo">Abython</span>
-                <nav class="footer-links">
-                    <a href="/privacy-policy/">Privacy Policy</a>
-                    <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
-                    <a href="mailto:owner@abython.com">Contact</a>
-                </nav>
-            </div>
-            <p class="footer-copy">&copy; 2026 Abython &mdash; AI Receptionist &amp; Custom Websites</p>
-        </div>
-    </footer>
-
-    <!-- Chat Widget -->
-    <style>
-    #chat-widget{position:fixed;bottom:20px;right:20px;z-index:9999}
-    #chat-btn{width:56px;height:56px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;color:#fff;font-size:26px;box-shadow:0 4px 16px rgba(122,63,241,0.4);transition:transform 0.3s,background 0.2s}
-    #chat-btn:hover{transform:scale(1.1);background:var(--accent-hover)}
-    #chat-box{position:fixed;bottom:88px;right:20px;width:380px;height:540px;background:#1a1726;border:1px solid rgba(122,63,241,0.3);border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.5);display:none;flex-direction:column;overflow:hidden}
-    #chat-header{background:rgba(122,63,241,0.15);border-bottom:1px solid rgba(122,63,241,0.2);color:#fff;padding:18px 20px;font-weight:600;font-family:'Inter Tight',sans-serif;font-size:0.95rem}
-    #chat-msgs{flex:1;overflow-y:auto;padding:16px;background:#13111c;display:flex;flex-direction:column;gap:10px}
-    .msg{padding:10px 14px;border-radius:16px;max-width:82%;word-wrap:break-word;font-size:0.9rem;line-height:1.5}
-    .user-msg{background:var(--accent);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
-    .bot-msg{background:#1e1b2e;color:#d4d0e0;border:1px solid rgba(255,255,255,0.08);border-bottom-left-radius:4px}
-    .error-msg{background:#2d1b1b;color:#f87171;border:1px solid rgba(248,113,113,0.2)}
-    #chat-input-area{padding:12px;display:flex;gap:8px;border-top:1px solid rgba(255,255,255,0.07);background:#1a1726}
-    #chat-inp{flex:1;padding:10px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:24px;outline:none;color:#fff;font-size:0.875rem;font-family:inherit}
-    #chat-inp::placeholder{color:rgba(255,255,255,0.3)}
-    #chat-inp:focus{border-color:rgba(122,63,241,0.5)}
-    #chat-send{padding:10px 16px;background:var(--accent);color:#fff;border:none;border-radius:24px;cursor:pointer;font-weight:600;font-size:0.875rem;transition:background 0.2s}
-    #chat-send:hover{background:var(--accent-hover)}
-    @media(max-width:768px){#chat-box{width:calc(100vw - 40px);right:20px}}
-    </style>
-    <div id="chat-widget">
-      <button id="chat-btn">💬</button>
-      <div id="chat-box">
-        <div id="chat-header">Chat with Abython</div>
-        <div id="chat-msgs"></div>
-        <div id="chat-input-area">
-          <input id="chat-inp" type="text" placeholder="Type your message...">
-          <button id="chat-send">Send</button>
+        <div class="demo-success" id="demo-success" hidden>
+          <div class="demo-success-icon">📞</div>
+          <h3>You're all set.</h3>
+          <p>You'll receive a call shortly from our AI receptionist. Have your phone nearby.</p>
         </div>
       </div>
     </div>
-    <script src="chat.js"></script>
-    <script src="script.js"></script>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       FINAL CTA
+       Polished in Prompt 33
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="final-cta" id="contact" aria-label="Book a call">
+    <div class="container container--narrow">
+      <h2 class="final-cta-title animate-ready">
+        <span class="gradient-text">Let's build something</span><br>
+        that actually grows your practice.
+      </h2>
+      <p class="final-cta-desc animate-ready lead">
+        Book a free strategy call. We'll look at your current setup, identify what's leaking leads,
+        and outline what a complete Abython growth system would do for you. No pressure, no commitment.
+      </p>
+      <div class="final-cta-actions animate-ready">
+        <a href="https://calendly.com/owner-abython/new-meeting" target="_blank" rel="noopener noreferrer" class="cta-button-primary cta-button-primary--inverse">
+          Book a Free Demo
+        </a>
+      </div>
+      <div class="contact-info animate-ready">
+        <a href="tel:+18476369074">📞 (847) 636-9074</a>
+        <a href="mailto:owner@abython.com">✉ owner@abython.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       FOOTER
+       ════════════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-logo">Abython</span>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
+          <a href="mailto:owner@abython.com">Contact</a>
+        </nav>
+      </div>
+      <p class="footer-copy">&copy; 2026 Abython — Websites that book appointments.</p>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       CHAT WIDGET — preserved from prior version, inline styles kept
+       Restyled in Prompt 34
+       ════════════════════════════════════════════════════════════════ -->
+  <style>
+  #chat-widget{position:fixed;bottom:20px;right:20px;z-index:9999}
+  #chat-btn{width:56px;height:56px;border-radius:50%;background:var(--accent);border:none;cursor:pointer;color:#fff;font-size:26px;box-shadow:0 4px 16px var(--accent-glow);transition:transform 0.3s,background 0.2s}
+  #chat-btn:hover{transform:scale(1.1);background:var(--accent-hover)}
+  #chat-box{position:fixed;bottom:88px;right:20px;width:380px;height:540px;background:var(--bg-elevated);border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow-lg);display:none;flex-direction:column;overflow:hidden}
+  #chat-header{background:var(--accent-soft);border-bottom:1px solid var(--border);color:var(--ink);padding:18px 20px;font-weight:600;font-family:var(--font-body);font-size:0.95rem}
+  #chat-msgs{flex:1;overflow-y:auto;padding:16px;background:var(--bg);display:flex;flex-direction:column;gap:10px}
+  .msg{padding:10px 14px;border-radius:16px;max-width:82%;word-wrap:break-word;font-size:0.9rem;line-height:1.5}
+  .user-msg{background:var(--accent);color:#fff;margin-left:auto;border-bottom-right-radius:4px}
+  .bot-msg{background:var(--bg-elevated);color:var(--ink);border:1px solid var(--border);border-bottom-left-radius:4px}
+  .error-msg{background:#fef2f2;color:#dc2626;border:1px solid rgba(220,38,38,0.2)}
+  #chat-input-area{padding:12px;display:flex;gap:8px;border-top:1px solid var(--border);background:var(--bg-elevated)}
+  #chat-inp{flex:1;padding:10px 14px;background:var(--bg);border:1px solid var(--border);border-radius:24px;outline:none;color:var(--ink);font-size:0.875rem;font-family:inherit}
+  #chat-inp::placeholder{color:var(--ink-subtle)}
+  #chat-inp:focus{border-color:var(--accent-ring)}
+  #chat-send{padding:10px 16px;background:var(--accent);color:#fff;border:none;border-radius:24px;cursor:pointer;font-weight:600;font-size:0.875rem;transition:background 0.2s}
+  #chat-send:hover{background:var(--accent-hover)}
+  @media(max-width:768px){#chat-box{width:calc(100vw - 40px);right:20px}}
+  </style>
+  <div id="chat-widget">
+    <button id="chat-btn">💬</button>
+    <div id="chat-box">
+      <div id="chat-header">Chat with Abython</div>
+      <div id="chat-msgs"></div>
+      <div id="chat-input-area">
+        <input id="chat-inp" type="text" placeholder="Type your message...">
+        <button id="chat-send">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       SCRIPTS — load order preserved from Prompt 5
+       ════════════════════════════════════════════════════════════════ -->
+  <script src="https://unpkg.com/lenis@1.3.8/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="chat.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
