@@ -1696,6 +1696,61 @@ ul {
 }
 
 /* ────────────────────────────────────────────────────────────────
+   Iframe Work Card — tile 1 live preview
+   ──────────────────────────────────────────────────────────────── */
+.work-card-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+  text-decoration: none;
+  color: inherit;
+}
+
+.work-card-iframe-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.work-card-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  border: 0;
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.work-card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: transparent;
+  cursor: pointer;
+}
+
+.work-card-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 3;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Suppress the white gradient scrim on hover — video handles its own darkness */
+.work-tile[data-tile="1"]::before {
+  display: none;
+}
+
+/* ────────────────────────────────────────────────────────────────
    Container variant — narrow for editorial sections
    ──────────────────────────────────────────────────────────────── */
 .container--narrow {

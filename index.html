@@ -40,7 +40,22 @@
   <section class="work-grid-hero" id="work" aria-label="Selected work">
     <div class="work-grid" id="work-grid">
       <!-- 16 placeholder tiles. Real content in Prompt 7. -->
-      <a href="/work/azure-cosmetic-dentistry" target="_blank" rel="noopener" class="work-tile" data-tile="1"><span class="work-tile-label">01 · Cosmetic Dentistry</span></a>
+      <div class="work-tile" data-tile="1">
+        <a href="/work/azure-cosmetic-dentistry/" target="_blank" rel="noopener" class="work-card-link">
+          <div class="work-card-iframe-wrap">
+            <iframe
+              src="/work/azure-cosmetic-dentistry/"
+              class="work-card-iframe"
+              loading="lazy"
+              title="Azure Cosmetic Dentistry preview"
+              tabindex="-1"
+              aria-hidden="true"
+            ></iframe>
+            <div class="work-card-overlay"></div>
+            <span class="work-card-label">01 · Azure Cosmetic Dentistry</span>
+          </div>
+        </a>
+      </div>
       <a href="/work/little-tooth-pediatric" target="_blank" rel="noopener" class="work-tile" data-tile="2"><span class="work-tile-label">02 · Pediatric Dental</span></a>
       <a href="/work/lumen-medspa" target="_blank" rel="noopener" class="work-tile" data-tile="3"><span class="work-tile-label">03 · Medspa</span></a>
       <a href="/work/shape-aesthetics" target="_blank" rel="noopener" class="work-tile" data-tile="4"><span class="work-tile-label">04 · Injectables</span></a>
@@ -220,5 +235,22 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="chat.js"></script>
   <script src="script.js"></script>
+  <script>
+    (function () {
+      var wrap = document.querySelector('.work-card-iframe-wrap');
+      if (!wrap) return;
+      var iframe = wrap.querySelector('.work-card-iframe');
+      var ro = new ResizeObserver(function (entries) {
+        for (var i = 0; i < entries.length; i++) {
+          var w = entries[i].contentRect.width;
+          var h = entries[i].contentRect.height;
+          var scale = w / 1440;
+          iframe.style.transform = 'scale(' + scale + ')';
+          iframe.style.height = (h / scale) + 'px';
+        }
+      });
+      ro.observe(wrap);
+    }());
+  </script>
 </body>
 </html>
