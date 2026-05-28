@@ -94,7 +94,7 @@ Single-page landings. Self-contained HTML/CSS. No nav back to Abython. Open in n
 | # | Slug | Business | Industry | Style |
 |---|---|---|---|---|
 | 1 | `azure-cosmetic-dentistry` | Azure Cosmetic Dentistry | Cosmetic dentist | Gold + cream, luxury serif, cinematic |
-| 2 | `little-tooth-pediatric` | Little Tooth Pediatric Dental | Pediatric dentist | Playful premium, soft pastels |
+| 2 | `little-grins-pediatric` | Little Grins Pediatric Dentistry | Pediatric dentist | Playful premium, soft pastels |
 | 3 | `lumen-medspa` | Lumen Medspa | Medspa | Editorial pinks, magazine layout |
 | 4 | `shape-aesthetics` | Shape Aesthetics | Botox/injectables | Dark, sculptural, fashion moody |
 | 5 | `arcline-orthodontics` | Arcline Orthodontics | Orthodontist | Geometric, electric color, sans-only |
