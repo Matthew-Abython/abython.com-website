@@ -95,7 +95,7 @@ Single-page landings. Self-contained HTML/CSS. No nav back to Abython. Open in n
 |---|---|---|---|---|
 | 1 | `azure-cosmetic-dentistry` | Azure Cosmetic Dentistry | Cosmetic dentist | Gold + cream, luxury serif, cinematic |
 | 2 | `little-grins-pediatric` | Little Grins Pediatric Dentistry | Pediatric dentist | Playful premium, soft pastels |
-| 3 | `lumen-medspa` | Lumen Medspa | Medspa | Editorial pinks, magazine layout |
+| 3 | `modern-derma-spa` | Modern Derma and Spa | Medical Spa | Glassmorphism, rounded card, navy + cream |
 | 4 | `shape-aesthetics` | Shape Aesthetics | Botox/injectables | Dark, sculptural, fashion moody |
 | 5 | `arcline-orthodontics` | Arcline Orthodontics | Orthodontist | Geometric, electric color, sans-only |
 | 6 | `hearthfield-family-dental` | Hearthfield Family Dental | Family dentist | Warm, sage green + cream |
@@ -182,6 +182,7 @@ This section is the source of truth for building portfolio demo tiles 2–16.
 **Documented exceptions (§11.5 hero composition does not apply):**
 - **W1 — Azure Cosmetic Dentistry**: one-off custom design, built before this pattern existed
 - **W12 — Stratum Dermatology**: 3-row full-screen layout (nav / stats row / bottom content with clip-reveal heading) per external design spec. §11.3 CSP rules and §11.6 variable-layer protocol still apply.
+- **W3 — Modern Derma and Spa**: glassmorphism rounded-card layout. §11.5 hero composition does not apply (page-wrapper padding + border-radius card, no full-bleed stretch). §11.5 nav pattern also does not apply (no hamburger, no mobile sheet — mobile shows brand wordmark + CTA only). §11.3 CSP rules and §11.6 variable-layer protocol still apply.
 
 Do not retrofit exceptions into §11.5, and do not copy from them when building new tiles.
 

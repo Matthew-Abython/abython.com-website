@@ -6,9 +6,9 @@
 
 ## Current State
 
-- **Last completed:** Prompt 11 — W12 Stratum Dermatology built; §11 exception list created; prefers-reduced-motion codified in §11.5 and backported to W2
-- **Branch:** `main` | Last push commit: `a5f7f96`
-- **Next up:** Prompt 12 — TBD
+- **Last completed:** Prompt 12 — W3 Modern Derma and Spa built (slug: modern-derma-spa); F1 tile 3 upgraded to iframe; F6 + CLAUDE.md §5/§11 updated; lumen-medspa purged
+- **Branch:** `main` | Last push commit: TBD (P12)
+- **Next up:** Prompt 13 — TBD
 
 ---
 
@@ -61,3 +61,4 @@ W1–W16 = work/{slug}/index.html  (see portfolio table in CLAUDE.md §5)
 | P9 | Built W2 (Little Grins Pediatric Dentistry); tile 2 swap on F1; F6 portfolio grid created with all 16 rows; tile-iframe-scaler.js generalized to multi-tile via querySelectorAll |
 | P10 | Appended CLAUDE.md §11 — Portfolio Tile Build Pattern (full playbook for W2+ tiles) |
 | P11 | Built W12 (Stratum Dermatology) as documented §11 layout exception; codified prefers-reduced-motion in §11.5; F1 tile 12 upgraded to iframe pattern; prefers-reduced-motion backported to W2 |
+| P12 | Built W3 (Modern Derma and Spa, slug: modern-derma-spa); glassmorphism rounded-card layout, §11 exception; slug renamed from lumen-medspa; F1 tile 3 upgraded to iframe; F6 + CLAUDE.md §5/§11 updated |
