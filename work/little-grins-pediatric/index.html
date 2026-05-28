@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Little Grins Pediatric Dentistry</title>
+  <meta name="description" content="Kid-friendly checkups, calm visits, and a team that makes every appointment feel easy. Little Grins Pediatric Dentistry — from first tooth to teen years.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/work/little-grins-pediatric/styles.css">
+</head>
+<body>
+
+  <!-- ── Background video ─────────────────────────────────────────────── -->
+  <div class="video-wrapper">
+    <video
+      id="bg-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    >
+      <source src="/work/little-grins-pediatric/background.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- ── Navigation ───────────────────────────────────────────────────── -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+
+      <!-- Logo mark + wordmark -->
+      <a href="#" class="nav-logo" aria-label="Little Grins Pediatric Dentistry home">
+        <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Tooth crown (rounded rect) -->
+          <rect x="4" y="2" width="16" height="12" rx="4"/>
+          <!-- Left root -->
+          <rect x="5" y="12" width="5" height="12" rx="2"/>
+          <!-- Right root -->
+          <rect x="14" y="12" width="5" height="12" rx="2"/>
+          <!-- Sparkle star top-right -->
+          <path d="M26 2L27 5L30 6L27 7L26 10L25 7L22 6L25 5Z"/>
+        </svg>
+        <span class="nav-wordmark">Little Grins</span>
+      </a>
+
+      <!-- Desktop nav links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#">Care</a></li>
+        <li><a href="#">Visits</a></li>
+        <li><a href="#">Parents</a></li>
+        <li><a href="#">Tips</a></li>
+        <li><a href="#">Book</a></li>
+      </ul>
+
+      <!-- Desktop action buttons -->
+      <div class="nav-actions">
+        <a href="#" class="btn btn-primary">Book a Visit</a>
+        <a href="#" class="btn btn-secondary">Parent Login</a>
+      </div>
+
+      <!-- Mobile hamburger -->
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-sheet"
+      >
+        <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M3 7H21M3 12H21M3 17H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+    </div>
+  </nav>
+
+  <!-- ── Mobile backdrop ──────────────────────────────────────────────── -->
+  <div class="sheet-backdrop" id="sheet-backdrop" aria-hidden="true"></div>
+
+  <!-- ── Mobile sheet ─────────────────────────────────────────────────── -->
+  <div
+    class="mobile-sheet"
+    id="mobile-sheet"
+    aria-hidden="true"
+    role="dialog"
+    aria-label="Navigation menu"
+    aria-modal="true"
+  >
+    <button class="sheet-close" id="sheet-close" aria-label="Close navigation menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <nav class="sheet-nav" aria-label="Mobile navigation">
+      <a href="#" class="sheet-link">Care</a>
+      <a href="#" class="sheet-link">Visits</a>
+      <a href="#" class="sheet-link">Parents</a>
+      <a href="#" class="sheet-link">Tips</a>
+      <a href="#" class="sheet-link">Book</a>
+    </nav>
+
+    <div class="sheet-actions">
+      <a href="#" class="btn btn-primary btn-full">Book a Visit</a>
+      <a href="#" class="btn btn-secondary btn-full">Parent Login</a>
+    </div>
+  </div>
+
+  <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+  <main class="hero" role="main">
+    <div class="hero-content">
+
+      <h1 class="hero-heading">
+        <!-- Sparkle star before "Gentle" -->
+        <svg class="inline-icon sparkle-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5Z"/>
+          <path d="M20 3L20.8 5.2L23 6L20.8 6.8L20 9L19.2 6.8L17 6L19.2 5.2Z"/>
+        </svg>Gentle Care for Bright
+        <!-- Tooth between "Bright" and "Little" -->
+        <svg class="inline-icon tooth-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="3" y="1" width="18" height="12" rx="5"/>
+          <rect x="4" y="11" width="6" height="9" rx="3"/>
+          <rect x="14" y="11" width="6" height="9" rx="3"/>
+        </svg>Little Smiles
+        <!-- Heart after "Smiles" -->
+        <svg class="inline-icon heart-icon" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 20.5L3.5 12.5C1.7 10.7 1.7 7.8 3.5 6C5.3 4.2 8.2 4.2 10 6L12 8L14 6C15.8 4.2 18.7 4.2 20.5 6C22.3 7.8 22.3 10.7 20.5 12.5Z"/>
+        </svg>
+      </h1>
+
+      <p class="hero-subtext">Kid-friendly checkups, calm visits, and a team that makes every appointment feel easy. From first tooth to teen years, we're here to keep their smiles healthy and happy.</p>
+
+      <a href="#" class="cta-btn">
+        Book a Visit
+        <svg class="cta-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="10" cy="10" r="8.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M7.5 10H12.5M10.5 8L12.5 10L10.5 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
+    </div>
+  </main>
+
+  <script src="/work/little-grins-pediatric/script.js"></script>
+</body>
+</html>
