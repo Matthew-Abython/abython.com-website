@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stratum Dermatology</title>
+  <meta name="description" content="Medical-grade dermatology built around restoring your skin's natural health and confidence. Expert treatments, clinical results.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/work/stratum-dermatology/styles.css">
+</head>
+<body>
+
+  <!-- ── Background video ─────────────────────────────────────────── -->
+  <div class="video-wrapper" aria-hidden="true">
+    <video autoplay muted loop playsinline>
+      <source src="/work/stratum-dermatology/background.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- ── Sheet backdrop ───────────────────────────────────────────── -->
+  <div class="sheet-backdrop" id="sheet-backdrop" aria-hidden="true"></div>
+
+  <!-- ── Mobile sheet ─────────────────────────────────────────────── -->
+  <div
+    class="mobile-sheet"
+    id="mobile-sheet"
+    role="dialog"
+    aria-label="Navigation menu"
+    aria-modal="true"
+    aria-hidden="true"
+  >
+    <div class="sheet-header">
+      <div class="logo-ring" aria-hidden="true"><div class="logo-dot"></div></div>
+      <button class="sheet-close-btn" id="sheet-close" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="sheet-nav" aria-label="Mobile navigation">
+      <a href="#" class="sheet-link">Services</a>
+      <a href="#" class="sheet-link">Treatments</a>
+      <a href="#" class="sheet-link">About</a>
+      <a href="#" class="sheet-link">Results</a>
+    </nav>
+    <div class="sheet-footer">
+      <a href="#" class="sheet-cta-link">
+        Book a Consult
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── Page root: flex column ───────────────────────────────────── -->
+  <div class="page-root">
+
+    <!-- ── Navigation ─────────────────────────────────────────────── -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav-left anim-fade-down anim-d0">
+        <a href="#" class="nav-logo" aria-label="Stratum Dermatology home">
+          <div class="logo-ring"><div class="logo-dot"></div></div>
+          <span class="nav-wordmark">Stratum</span>
+        </a>
+      </div>
+
+      <ul class="nav-links" role="list">
+        <li class="anim-fade-down anim-d1"><a href="#">Services</a></li>
+        <li class="anim-fade-down anim-d2"><a href="#">Treatments</a></li>
+        <li class="anim-fade-down anim-d3"><a href="#">About</a></li>
+        <li class="anim-fade-down anim-d4"><a href="#">Results</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button
+          class="hamburger anim-fade-down anim-d5"
+          id="hamburger"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-sheet"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ── Stats row (flex: 1) ────────────────────────────────────── -->
+    <div class="stats-row">
+      <div class="stats-inner">
+        <div class="stat anim-fade-up anim-u1">
+          <div class="stat-number"><span class="stat-plus">+</span>5,000</div>
+          <div class="stat-label">PATIENTS<br>TREATED</div>
+        </div>
+        <div class="stat anim-fade-up anim-u2">
+          <div class="stat-number"><span class="stat-plus">+</span>15</div>
+          <div class="stat-label">YEARS OF<br>EXPERTISE</div>
+        </div>
+        <div class="stat anim-fade-up anim-u3">
+          <div class="stat-number"><span class="stat-plus">+</span>30</div>
+          <div class="stat-label">SKIN<br>TREATMENTS</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Bottom section ─────────────────────────────────────────── -->
+    <div class="bottom-section">
+
+      <!-- Row A: tagline left + CTA right -->
+      <div class="row-a">
+        <p class="tagline anim-fade-up anim-u4">Clear Results<br>Backed by<br>Clinical Science</p>
+        <a href="#" class="work-cta anim-fade-up anim-u5" aria-label="Book a consultation">
+          Book a Consult
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4.5 13.5L13.5 4.5M13.5 4.5H6.75M13.5 4.5V11.25" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Row B: description left + clip-reveal heading right -->
+      <div class="row-b">
+        <p class="description anim-fade-up anim-u6">Medical-grade dermatology built around restoring your skin's natural health and confidence</p>
+        <div class="heading-block">
+          <div class="heading-overflow"><span class="heading-word word-0">PRECISE.</span></div>
+          <div class="heading-overflow"><span class="heading-word word-1">CLEAR.</span></div>
+          <div class="heading-overflow"><span class="heading-word word-2">CONFIDENT.</span></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="/work/stratum-dermatology/script.js"></script>
+</body>
+</html>
