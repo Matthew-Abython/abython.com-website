@@ -6,9 +6,9 @@
 
 ## Current State
 
-- **Last completed:** Prompt 12 — W3 Modern Derma and Spa built (slug: modern-derma-spa); §11 exception list expanded with W3 (rounded-card glassmorphism layout + no mobile sheet)
-- **Branch:** `main` | Last push commit: `12280f6`
-- **Next up:** Prompt 13 — TBD
+- **Last completed:** Prompt 13 — W4 Botox Chicago built (slug: botox-chicago); full-bleed two-pill nav design; shape-aesthetics purged; §11 W4 exception documented
+- **Branch:** `main` | Last push commit: TBD (P13)
+- **Next up:** Prompt 14 — TBD
 
 ---
 
@@ -62,3 +62,4 @@ W1–W16 = work/{slug}/index.html  (see portfolio table in CLAUDE.md §5)
 | P10 | Appended CLAUDE.md §11 — Portfolio Tile Build Pattern (full playbook for W2+ tiles) |
 | P11 | Built W12 (Stratum Dermatology) as documented §11 layout exception; codified prefers-reduced-motion in §11.5; F1 tile 12 upgraded to iframe pattern; prefers-reduced-motion backported to W2 |
 | P12 | Built W3 (Modern Derma and Spa); slug renamed lumen-medspa → modern-derma-spa pre-build; tile 3 upgraded to iframe pattern; F6 + §5 updated; §11 W3 exception documented |
+| P13 | Built W4 (Botox Chicago); slug renamed shape-aesthetics → botox-chicago; full-bleed two-pill nav §11 exception; tile 4 upgraded to iframe; F6 + §5 updated; shape-aesthetics purged |
