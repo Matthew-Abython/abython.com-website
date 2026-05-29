@@ -6,9 +6,9 @@
 
 ## Current State
 
-- **Last completed:** Prompt 14 — Rebranded botox-chicago tile from Botox Chicago → Texas Prosthetics; copy overhaul + hero-detail line added
-- **Branch:** `main` | Last push commit: `b541724`
-- **Next up:** Prompt 15 — TBD
+- **Last completed:** Prompt 15 — Renamed slug botox-chicago → texas-prosthetics; F1/F6/§5/§11 updated; all live references cleaned
+- **Branch:** `main` | Last push commit: TBD (P15)
+- **Next up:** Prompt 16 — TBD
 
 ---
 
@@ -64,3 +64,4 @@ W1–W16 = work/{slug}/index.html  (see portfolio table in CLAUDE.md §5)
 | P12 | Built W3 (Modern Derma and Spa); slug renamed lumen-medspa → modern-derma-spa pre-build; tile 3 upgraded to iframe pattern; F6 + §5 updated; §11 W3 exception documented |
 | P13 | Built W4 (Botox Chicago); slug renamed shape-aesthetics → botox-chicago pre-build; tile 4 upgraded to iframe pattern; F6 + §5 updated; §11 W4 exception documented (full-bleed video, two-pill nav, bottom-left hero, system font, custom anim timing) |
 | P14 | Rebranded botox-chicago tile: Botox Chicago → Texas Prosthetics; all copy updated (nav, badge, heading, subtext, CTA); hero-detail line added (veteran-owned · 3 TX locations · same-week fittings) |
+| P15 | Renamed slug botox-chicago → texas-prosthetics (git mv); updated F1 tile 4, F6 row 4, CLAUDE.md §5 row 4 + §11 W4 entry; all internal asset paths updated |

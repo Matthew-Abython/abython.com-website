@@ -96,7 +96,7 @@ Single-page landings. Self-contained HTML/CSS. No nav back to Abython. Open in n
 | 1 | `azure-cosmetic-dentistry` | Azure Cosmetic Dentistry | Cosmetic dentist | Gold + cream, luxury serif, cinematic |
 | 2 | `little-grins-pediatric` | Little Grins Pediatric Dentistry | Pediatric dentist | Playful premium, soft pastels |
 | 3 | `modern-derma-spa` | Modern Derma and Spa | Medical Spa | Glassmorphism, rounded card, navy + cream |
-| 4 | `botox-chicago` | Botox Chicago | Botox & Injectables | Full-bleed video, two-pill nav, bottom-left hero, system font |
+| 4 | `texas-prosthetics` | Texas Prosthetics | Prosthetics | Full-bleed video, two-pill nav, bottom-left hero, system font |
 | 5 | `arcline-orthodontics` | Arcline Orthodontics | Orthodontist | Geometric, electric color, sans-only |
 | 6 | `hearthfield-family-dental` | Hearthfield Family Dental | Family dentist | Warm, sage green + cream |
 | 7 | `meridian-implants` | Meridian Implant Center | Implants | Clinical-luxury, navy + silver |
