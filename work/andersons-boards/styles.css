@@ -1,0 +1,311 @@
+/* ============================================================
+   ANDERSON'S BOARDS — Hero Site
+   Standalone styles. No dependency on parent /styles.css.
+   Font: Readex Pro (Google Fonts, 300–700).
+   First dark-theme tile in portfolio (bg #000, white text).
+   ============================================================ */
+
+/* ── Reset ──────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Design tokens ──────────────────────────────────────────── */
+:root {
+  --color-bg:         #000000;
+  --color-text:       #ffffff;
+  --color-pill:       rgba(23, 23, 23, 0.90);
+  --color-text-muted: rgba(212, 212, 212, 1);
+  --color-text-dim:   rgba(255, 255, 255, 0.70);
+  --color-divider:    rgba(255, 255, 255, 0.40);
+  --font-body:        'Readex Pro', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+/* ── Hero section (full-bleed) ───────────────────────────────── */
+.hero {
+  position: relative;
+  height: 100dvh;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-bg);
+}
+
+/* ── Background video ───────────────────────────────────────── */
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* ── Bottom gradient overlay ─────────────────────────────────── */
+.bottom-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 192px;
+  background: linear-gradient(to bottom, transparent, #000000);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Navbar (absolute, top, 3-part pill layout) ──────────────── */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: clamp(20px, 2vw, 24px) clamp(24px, 2.5vw, 40px);
+}
+
+/* Left pill: logo + brand name */
+.nav-left-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-pill);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  padding: 12px 24px 12px 16px;
+  flex-shrink: 0;
+}
+
+.nav-brand {
+  color: var(--color-text);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+/* Center pill: nav links (hidden on mobile) */
+.nav-center-pill {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  background: var(--color-pill);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  padding: 8px 12px;
+}
+
+@media (min-width: 768px) {
+  .nav-center-pill {
+    display: flex;
+  }
+}
+
+.nav-center-pill a {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text-muted);
+  font-size: 14px;
+  font-weight: 400;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-center-pill a:hover {
+  color: var(--color-text);
+}
+
+/* Right button */
+.nav-btn {
+  display: inline-flex;
+  align-items: center;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: var(--font-body);
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: #e5e5e5;
+}
+
+/* ── Hero content layer ──────────────────────────────────────── */
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+/* ── Giant staggered headline words ──────────────────────────── */
+.hero-word {
+  position: absolute;
+  color: var(--color-text);
+  font-size: 14vw;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  text-transform: lowercase;
+  white-space: nowrap;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .hero-word {
+    font-size: 13vw;
+  }
+}
+
+.word-1 {
+  left: clamp(16px, 2.5vw, 40px);
+  top: 18%;
+}
+
+.word-2 {
+  right: clamp(16px, 2.5vw, 40px);
+  top: 38%;
+}
+
+.word-3 {
+  left: 18%;
+  top: 58%;
+}
+
+@media (min-width: 768px) {
+  .word-3 {
+    left: 28%;
+  }
+}
+
+/* ── Description paragraph ───────────────────────────────────── */
+.hero-desc {
+  position: absolute;
+  left: clamp(24px, 2.5vw, 40px);
+  top: 46%;
+  max-width: 240px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.90);
+  text-transform: lowercase;
+}
+
+/* ── Stat blocks ─────────────────────────────────────────────── */
+.stat {
+  position: absolute;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-row--end {
+  justify-content: flex-end;
+}
+
+.stat-num {
+  font-size: clamp(2.25rem, 4.5vw, 3rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: clamp(12px, 1vw, 14px);
+  font-weight: 400;
+  color: var(--color-text-dim);
+  margin-top: 4px;
+  text-transform: lowercase;
+}
+
+.stat-label--right {
+  text-align: right;
+}
+
+.stat-divider {
+  display: none;
+  height: 1px;
+  width: 96px;
+  background: var(--color-divider);
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .stat-divider {
+    display: block;
+  }
+}
+
+.stat-divider--pos { transform: rotate(20deg);  }
+.stat-divider--neg { transform: rotate(-20deg); }
+
+/* Top-right stat */
+.stat-tr {
+  right: clamp(24px, 6vw, 96px);
+  top: 14%;
+}
+
+/* Bottom-left stat */
+.stat-bl {
+  left: clamp(24px, 5vw, 80px);
+  bottom: clamp(80px, 6vw, 96px);
+}
+
+/* Bottom-right stat */
+.stat-br {
+  right: clamp(24px, 5vw, 80px);
+  bottom: clamp(64px, 5vw, 80px);
+}
+
+/* ── Entry animation helpers ─────────────────────────────────── */
+.anim-d0 { animation-delay: 0s;   }
+.anim-d1 { animation-delay: 0.1s; }
+.anim-d2 { animation-delay: 0.2s; }
+.anim-d3 { animation-delay: 0.3s; }
+.anim-d4 { animation-delay: 0.4s; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0);    }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .anim-fade-up  { animation: fadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+  .anim-fade-in  { animation: fadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both; }
+}

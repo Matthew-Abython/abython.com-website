@@ -6,9 +6,9 @@
 
 ## Current State
 
-- **Last completed:** Prompt 15 — Renamed slug botox-chicago → texas-prosthetics; F1/F6/§5/§11 updated; all live references cleaned
-- **Branch:** `main` | Last push commit: TBD (P15)
-- **Next up:** Prompt 16 — TBD
+- **Last completed:** Prompt 16 — W5 Anderson's Boards built (slug: andersons-boards); dark-theme §11 exception; arcline-orthodontics purged
+- **Branch:** `main` | Last push commit: TBD (P16)
+- **Next up:** Prompt 17 — TBD
 
 ---
 
@@ -65,3 +65,4 @@ W1–W16 = work/{slug}/index.html  (see portfolio table in CLAUDE.md §5)
 | P13 | Built W4 (Botox Chicago); slug renamed shape-aesthetics → botox-chicago pre-build; tile 4 upgraded to iframe pattern; F6 + §5 updated; §11 W4 exception documented (full-bleed video, two-pill nav, bottom-left hero, system font, custom anim timing) |
 | P14 | Rebranded botox-chicago tile: Botox Chicago → Texas Prosthetics; all copy updated (nav, badge, heading, subtext, CTA); hero-detail line added (veteran-owned · 3 TX locations · same-week fittings) |
 | P15 | Renamed slug botox-chicago → texas-prosthetics (git mv); updated F1 tile 4, F6 row 4, CLAUDE.md §5 row 4 + §11 W4 entry; all internal asset paths updated |
+| P16 | Built W5 (Anderson's Boards); slug renamed arcline-orthodontics → andersons-boards; dark-theme §11 exception (bg #000, white text, 3-part pill nav, staggered giant type, floating stats); tile 5 upgraded to iframe; hover scrim KEPT (white typography competes with tile label) |

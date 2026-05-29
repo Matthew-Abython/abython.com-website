@@ -97,7 +97,7 @@ Single-page landings. Self-contained HTML/CSS. No nav back to Abython. Open in n
 | 2 | `little-grins-pediatric` | Little Grins Pediatric Dentistry | Pediatric dentist | Playful premium, soft pastels |
 | 3 | `modern-derma-spa` | Modern Derma and Spa | Medical Spa | Glassmorphism, rounded card, navy + cream |
 | 4 | `texas-prosthetics` | Texas Prosthetics | Prosthetics | Full-bleed video, two-pill nav, bottom-left hero, system font |
-| 5 | `arcline-orthodontics` | Arcline Orthodontics | Orthodontist | Geometric, electric color, sans-only |
+| 5 | `andersons-boards` | Anderson's Boards | Snowboard Shop | Dark full-bleed, 3-part pill nav, staggered giant type, floating stats |
 | 6 | `hearthfield-family-dental` | Hearthfield Family Dental | Family dentist | Warm, sage green + cream |
 | 7 | `meridian-implants` | Meridian Implant Center | Implants | Clinical-luxury, navy + silver |
 | 8 | `glow-laser-clinic` | Glow Laser Clinic | Laser hair removal | Bright, gradient-forward |
@@ -184,6 +184,7 @@ This section is the source of truth for building portfolio demo tiles 2–16.
 - **W12 — Stratum Dermatology**: 3-row full-screen layout (nav / stats row / bottom content with clip-reveal heading) per external design spec. §11.3 CSP rules and §11.6 variable-layer protocol still apply.
 - **W3 — Modern Derma and Spa**: glassmorphism rounded-card layout. §11.5 hero composition does not apply (page-wrapper padding + border-radius card, no full-bleed stretch). §11.5 nav pattern also does not apply (no hamburger, no mobile sheet — mobile shows brand wordmark + CTA only). §11.3 CSP rules and §11.6 variable-layer protocol still apply.
 - **W4 — Botox Chicago**: full-bleed video (no rounded card), two-pill centered nav (logo circle + links pill), bottom-left hero content, no hamburger/sheet, system font stack (no Google Fonts link), custom animation timing (0.5s duration, 0.1s stagger). §11.3 CSP rules and §11.6 variable-layer protocol still apply.
+- **W5 — Anderson's Boards**: dark theme (body bg #000, white text — first dark tile in portfolio), full-bleed video, 3-part pill navbar (logo pill + center links pill + right button), giant staggered absolute-positioned typography, floating stat blocks, bottom gradient overlay, all-lowercase text, Readex Pro font, custom animation timing (0.5s/0.1s, matches W4). No hamburger/sheet.
 
 Do not retrofit exceptions into §11.5, and do not copy from them when building new tiles.
 

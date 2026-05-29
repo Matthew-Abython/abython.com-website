@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anderson's Boards</title>
+  <meta name="description" content="Premium snowboard gear for every level rider. From your first run to your best season yet.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/work/andersons-boards/styles.css">
+</head>
+<body>
+
+  <section class="hero">
+
+    <!-- ── Background video (self-hosted) ───────────────────── -->
+    <video class="bg-video" autoplay loop muted playsinline aria-hidden="true">
+      <source src="/work/andersons-boards/background.mp4" type="video/mp4">
+    </video>
+
+    <!-- ── Navbar: 3-part pill ───────────────────────────────── -->
+    <nav class="navbar anim-fade-up anim-d0" role="navigation" aria-label="Main navigation">
+
+      <!-- Left pill: logo + brand -->
+      <div class="nav-left-pill">
+        <svg width="20" height="20" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M 28 240 L 128 16 L 228 240 Z" fill="#ffffff"/>
+        </svg>
+        <span class="nav-brand">anderson's boards</span>
+      </div>
+
+      <!-- Center pill: nav links (hidden on mobile) -->
+      <div class="nav-center-pill">
+        <a href="#">boards</a>
+        <a href="#">gear</a>
+        <a href="#">about</a>
+        <a href="#">contact</a>
+      </div>
+
+      <!-- Right: CTA button -->
+      <a href="#" class="nav-btn">shop now</a>
+
+    </nav>
+
+    <!-- ── Hero content: staggered words + desc + stats ─────── -->
+    <div class="hero-content">
+
+      <h1 class="hero-word word-1 anim-fade-up anim-d1">shred</h1>
+      <h1 class="hero-word word-2 anim-fade-up anim-d2">the</h1>
+      <h1 class="hero-word word-3 anim-fade-up anim-d3">mountain</h1>
+
+      <p class="hero-desc anim-fade-in anim-d3">
+        premium snowboard gear for every level rider, from your first run to your best season yet
+      </p>
+
+      <!-- Stat: top-right -->
+      <div class="stat stat-tr anim-fade-in anim-d3" aria-label="500 plus boards in stock">
+        <div class="stat-row stat-row--end">
+          <span class="stat-divider stat-divider--pos" aria-hidden="true"></span>
+          <span class="stat-num">500+</span>
+        </div>
+        <p class="stat-label stat-label--right">boards in stock</p>
+      </div>
+
+      <!-- Stat: bottom-left -->
+      <div class="stat stat-bl anim-fade-in anim-d4" aria-label="12k plus riders outfitted">
+        <div class="stat-row">
+          <span class="stat-num">12k+</span>
+          <span class="stat-divider stat-divider--neg" aria-hidden="true"></span>
+        </div>
+        <p class="stat-label">riders outfitted</p>
+      </div>
+
+      <!-- Stat: bottom-right -->
+      <div class="stat stat-br anim-fade-in anim-d4" aria-label="20 plus top brands">
+        <div class="stat-row">
+          <span class="stat-divider stat-divider--neg" aria-hidden="true"></span>
+          <span class="stat-num">20+</span>
+        </div>
+        <p class="stat-label stat-label--right">top brands</p>
+      </div>
+
+    </div>
+
+    <!-- ── Bottom gradient overlay ───────────────────────────── -->
+    <div class="bottom-gradient" aria-hidden="true"></div>
+
+  </section>
+
+  <script src="/work/andersons-boards/script.js"></script>
+</body>
+</html>
