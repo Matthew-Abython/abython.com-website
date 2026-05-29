@@ -375,6 +375,7 @@ few seconds and report:
 Then decide hover scrim behavior on the F1 tile:
 - **DARK video** → suppress hover scrim on this tile (scrim would compound darkness and hurt legibility). Tile 1 (Azure) used this path.
 - **LIGHT video** → keep standard hover scrim enabled (scrim is needed for the tile label to read against the bright background). Tile 2 (Little Grins) used this path.
+- **OVERRIDE** → If the rendered tile-as-iframe-thumbnail produces a visual hierarchy conflict with the white F1 tile label — e.g., prominent white typography inside the iframe competing with the label, or a non-video surround (rounded card, cream background) dominating over the video tone — the standard dark/light rule does not apply. Make the scrim decision based on which state produces clearer label legibility and layer separation at F1 tile-scale. Documented precedents: W3 Modern Derma (cream surround dominated over video → kept scrim), W5 Anderson's Boards (white iframe typography competed with white label → kept scrim despite dark video).
 
 Report the decision and reasoning in the final report.
 

@@ -6,9 +6,9 @@
 
 ## Current State
 
-- **Last completed:** Prompt 16 — W5 Anderson's Boards built (slug: andersons-boards); dark-theme §11 exception; arcline-orthodontics purged
-- **Branch:** `main` | Last push commit: TBD (P16)
-- **Next up:** Prompt 17 — TBD
+- **Last completed:** Prompt 14 — W5 Anderson's Boards built (first dark tile); §11.8 override documented for high-contrast typography conflicts
+- **Branch:** `main` | Last push commit: `ca4eaf4`
+- **Next up:** Prompt 15 — TBD
 
 ---
 
@@ -66,3 +66,4 @@ W1–W16 = work/{slug}/index.html  (see portfolio table in CLAUDE.md §5)
 | P14 | Rebranded botox-chicago tile: Botox Chicago → Texas Prosthetics; all copy updated (nav, badge, heading, subtext, CTA); hero-detail line added (veteran-owned · 3 TX locations · same-week fittings) |
 | P15 | Renamed slug botox-chicago → texas-prosthetics (git mv); updated F1 tile 4, F6 row 4, CLAUDE.md §5 row 4 + §11 W4 entry; all internal asset paths updated |
 | P16 | Built W5 (Anderson's Boards); slug renamed arcline-orthodontics → andersons-boards; dark-theme §11 exception (bg #000, white text, 3-part pill nav, staggered giant type, floating stats); tile 5 upgraded to iframe; hover scrim KEPT (white typography competes with tile label) |
+| P14 | Built W5 (Anderson's Boards); industry shift orthodontics → snowboard shop; slug renamed arcline-orthodontics → andersons-boards pre-build; first dark-theme tile; §11.8 hover scrim override for high-contrast iframe content; §11 W5 exception documented |
