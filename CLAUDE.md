@@ -10,7 +10,7 @@
 **Project:** Abython.com — full rebrand
 **Owner:** Matthew Bernhardt — Abython Consulting
 **Repo:** `Matthew-Abython/abython.com-website` | **Branch:** `main`
-**Hosting:** Vercel (not Netlify — replace any Netlify references)
+**Hosting:** Vercel
 **Live URL:** https://abython.com
 **Stack:** Pure HTML / CSS / JS. No framework. No build step. No npm.
 
@@ -112,26 +112,7 @@ Single-page landings. Self-contained HTML/CSS. No nav back to Abython. Open in n
 
 ---
 
-## 6. Page Structure
-
-### `/` (Homepage)
-Nav → 4×4 grid hero (16 tiles, hover enlarges, click → new tab) → Statement → Services (4 cards) → Actively Managed differentiator → Final CTA (Calendly) → Footer → Chat widget
-
-### `/ai-receptionist/`
-Demo form (same POST endpoint as old homepage form) + AI receptionist product copy. This page is the permanent home for the live demo.
-
-### `/google-business-profile/`, `/seo-and-aio/`, `/web-design/`
-Styled placeholders. Hero + title + single CTA. Content comes later.
-
-### `/work/`
-Grid of all 16 portfolio sites with name, industry, View CTA.
-
-### `/work/{slug}/`
-Fake portfolio site. No nav back. Self-contained.
-
----
-
-## 7. Animation Conventions
+## 6. Animation Conventions
 
 GSAP + Lenis on every page that uses animation. Init pattern (bottom of `script.js`):
 ```js
@@ -144,7 +125,7 @@ Per-section animations go in named functions called after DOMContentLoaded. Alwa
 
 ---
 
-## 8. Git Workflow
+## 7. Git Workflow
 
 **Before every push:** Update `SESSION.md` (current state, file map if changed, active issues, prompt history row). Stage `SESSION.md` in the same commit as code changes.
 
@@ -154,16 +135,7 @@ Push only at end of major milestones, never mid-prompt unless explicitly instruc
 
 ---
 
-## 9. What This Site Is NOT
-
-- Not CMS-driven. All content is hand-coded HTML.
-- Not React/Vue/Next/Astro. No build step. No npm.
-- Not behind auth. Everything is public.
-- Not a place for analytics/tracking scripts without explicit approval (CSP blocks them anyway).
-
----
-
-## 10. Efficiency Rules (Read-First Gates)
+## 8. Efficiency Rules (Read-First Gates)
 
 - **Read files from disk** before asking about structure. Never ask what a file contains — read it.
 - **Targeted reads only.** When editing a specific section, read the relevant line range, not the whole file.
@@ -171,24 +143,24 @@ Push only at end of major milestones, never mid-prompt unless explicitly instruc
 - **No mid-session SESSION.md updates.** Only update SESSION.md when explicitly committing and pushing.
 - **Single-pass edits.** Make all changes to a file in one Edit call, not multiple sequential reads/edits.
 - **No re-reads after edits.** Edit/Write confirm success — do not re-read to verify.
-- **Small session = skip §3–7.** If this session is a single-file style edit with no new pages or locked-constraint changes, you may read only §1, §2, and `SESSION.md`. Skip §3–7.
+- **Small session = skip §3–6.** If this session is a single-file style edit with no new pages or locked-constraint changes, you may read only §1, §2, and `SESSION.md`. Skip §3–7.
 
 ---
 
-## 11. Portfolio Tile Build Pattern (W2 onward)
+## 9. Portfolio Tile Build Pattern (W2 onward)
 
 This section is the source of truth for building portfolio demo tiles 2–16.
 
-**Documented exceptions (§11.5 hero composition does not apply):**
+**Documented exceptions (§9.5 hero composition does not apply):**
 - **W1 — Azure Cosmetic Dentistry**: one-off custom design, built before this pattern existed
-- **W12 — Stratum Dermatology**: 3-row full-screen layout (nav / stats row / bottom content with clip-reveal heading) per external design spec. §11.3 CSP rules and §11.6 variable-layer protocol still apply.
-- **W3 — Modern Derma and Spa**: glassmorphism rounded-card layout. §11.5 hero composition does not apply (page-wrapper padding + border-radius card, no full-bleed stretch). §11.5 nav pattern also does not apply (no hamburger, no mobile sheet — mobile shows brand wordmark + CTA only). §11.3 CSP rules and §11.6 variable-layer protocol still apply.
-- **W4 — Botox Chicago**: full-bleed video (no rounded card), two-pill centered nav (logo circle + links pill), bottom-left hero content, no hamburger/sheet, system font stack (no Google Fonts link), custom animation timing (0.5s duration, 0.1s stagger). §11.3 CSP rules and §11.6 variable-layer protocol still apply.
+- **W12 — Stratum Dermatology**: 3-row full-screen layout (nav / stats row / bottom content with clip-reveal heading) per external design spec. §9.3 CSP rules and §9.6 variable-layer protocol still apply.
+- **W3 — Modern Derma and Spa**: glassmorphism rounded-card layout. §9.5 hero composition does not apply (page-wrapper padding + border-radius card, no full-bleed stretch). §9.5 nav pattern also does not apply (no hamburger, no mobile sheet — mobile shows brand wordmark + CTA only). §9.3 CSP rules and §9.6 variable-layer protocol still apply.
+- **W4 — Texas Prosthetics**: full-bleed video (no rounded card), two-pill centered nav (logo circle + links pill), bottom-left hero content, no hamburger/sheet, system font stack (no Google Fonts link), custom animation timing (0.5s duration, 0.1s stagger). §9.3 CSP rules and §9.6 variable-layer protocol still apply.
 - **W5 — Anderson's Boards**: dark theme (body bg #000, white text — first dark tile in portfolio), full-bleed video, 3-part pill navbar (logo pill + center links pill + right button), giant staggered absolute-positioned typography, floating stat blocks, bottom gradient overlay, all-lowercase text, Readex Pro font, custom animation timing (0.5s/0.1s, matches W4). No hamburger/sheet.
 
-Do not retrofit exceptions into §11.5, and do not copy from them when building new tiles.
+Do not retrofit exceptions into §9.5, and do not copy from them when building new tiles.
 
-### 11.1 — Pattern overview
+### 9.1 — Pattern overview
 
 Every tile from W2 onward is built around the same reusable hero
 composition:
@@ -209,7 +181,7 @@ heading copy, subtext copy, CTA copy, the three inline SVG icons in the
 heading, and the logo mark. Layout, animation timing, font roles, and
 component structure stay constant.
 
-### 11.2 — File layout per tile
+### 9.2 — File layout per tile
 
 Every new tile creates this exact structure:
 
@@ -225,7 +197,7 @@ Vanilla HTML/CSS/JS only. No React, no Tailwind, no Framer Motion, no build
 step — even when the design spec is written for that stack. Translate to
 vanilla.
 
-### 11.3 — CSP rules (non-negotiable)
+### 9.3 — CSP rules (non-negotiable)
 
 The deployed `vercel.json` CSP enforces:
 - Scripts only from `'self'`, `unpkg.com`, `cdnjs.cloudflare.com`
@@ -240,7 +212,7 @@ Therefore, in every tile:
 - Only external resource allowed: Google Fonts `<link>`
 - No nav, link, analytics, or chat widget pointing back to abython.com
 
-### 11.4 — Asset self-hosting and font-source vetting
+### 9.4 — Asset self-hosting and font-source vetting
 
 All third-party media (video, images, audio) must be downloaded once and
 committed to the repo under `/work/<slug>/`. Never reference a third-party
@@ -261,7 +233,7 @@ Font sources: **Google Fonts only.** Specifically:
   - Editorial New / serif → Fraunces / DM Serif Display
 - If unsure, ask before substituting.
 
-### 11.5 — Reusable hero composition (the constant layer)
+### 9.5 — Reusable hero composition (the constant layer)
 
 **NAVBAR:**
 - max-width 1280px, centered, z-index 10
@@ -328,9 +300,9 @@ Font sources: **Google Fonts only.** Specifically:
 - Subtext: `animation-delay: 0.15s`
 - CTA: `animation-delay: 0.30s`
 
-### 11.6 — The variable layer (what changes per tile)
+### 9.6 — The variable layer (what changes per tile)
 
-For each new tile build, the desktop Claude prompt will specify:
+For each new tile build, the prompt will specify:
 - Slug for the URL (`/work/<slug>/`)
 - Business name and brand direction
 - Tile number on F1 to replace
@@ -343,9 +315,9 @@ For each new tile build, the desktop Claude prompt will specify:
 - Hero subtext copy
 - Primary CTA label
 
-Anything not specified defaults to the constants in §11.5.
+Anything not specified defaults to the constants in §9.5.
 
-### 11.7 — Homepage tile integration
+### 9.7 — Homepage tile integration
 
 After building `/work/<slug>/`, replace the existing placeholder tile on F1
 that corresponds to this slot. Tile structure:
@@ -365,7 +337,7 @@ The iframe scaler at `/tile-iframe-scaler.js` already handles multiple tiles
 via `querySelectorAll` + `forEach` (refactored during W2 build). Do NOT revert
 it to single-tile `querySelector`. Do NOT duplicate the scaler script.
 
-### 11.8 — Hover scrim decision (mandatory)
+### 9.8 — Hover scrim decision (mandatory)
 
 After downloading the background video for the new tile, watch the first
 few seconds and report:
@@ -379,7 +351,7 @@ Then decide hover scrim behavior on the F1 tile:
 
 Report the decision and reasoning in the final report.
 
-### 11.9 — Mandatory Part 0 pre-flight check
+### 9.9 — Mandatory Part 0 pre-flight check
 
 Before writing any new files for a tile build, check and report:
 1. Does `/work/<slug>/` already exist? If yes, list its contents and pause for instructions before overwriting.
@@ -389,7 +361,7 @@ Before writing any new files for a tile build, check and report:
 
 Pause and report findings before continuing to file creation.
 
-### 11.10 — F6 portfolio grid
+### 9.10 — F6 portfolio grid
 
 Every new tile gets a corresponding row in F6 (`work/index.html`):
 - Display name (full business name)
@@ -400,7 +372,7 @@ If a placeholder row exists for this slot, update it. Otherwise insert in
 the correct slot position. Match the existing row format already used by
 other entries in F6.
 
-### 11.11 — Locked zones (never modify during tile builds)
+### 9.11 — Locked zones (never modify during tile builds)
 
 - F7 `vercel.json` and its CSP/header config
 - F3 `script.js` form POST logic and auth header
@@ -409,7 +381,7 @@ other entries in F6.
 - Calendly URL anywhere it appears: `https://calendly.com/owner-abython/new-meeting`
 - `/tile-iframe-scaler.js` multi-tile pattern — do not revert to single-tile
 
-### 11.12 — Mandatory final report
+### 9.12 — Mandatory final report
 
 At the end of every tile build, report:
 1. Part 0 findings (existing folder state, current tile NN, F6 row status, other references to old slug if any)
