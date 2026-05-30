@@ -6,9 +6,10 @@
 
 ## Current State
 
-- **Last completed:** Prompt 15 — Codebase purge: removed PROMPT-GUIDE.md, stale prompt-ref comments in index.html, §6/§9 from CLAUDE.md, renumbered §11→§9, fixed W4 name, cleaned SESSION.md history
+- **Last completed:** Prompt 16 — Built W10 (Midwestern IV); multi-section IV lounge site (~10 sections); liquid-glass design, dual FadingVideo (rAF), BlurText; tile 10 upgraded to iframe in F1; slug renamed verdant-iv-lounge → midwestern-iv
 - **Branch:** `main` | Last push commit: `ee92ab3`
-- **Next up:** Prompt 16 — TBD
+- **Next up:** Prompt 17 — TBD
+- **Note:** Portfolio Tile Build Pattern lives at §9 (not §11) in CLAUDE.md. §11 references in any old prompts or notes are stale.
 
 ---
 
@@ -64,3 +65,4 @@ W1–W16 = work/{slug}/index.html  (see portfolio table in CLAUDE.md §5)
 | P13 | Built W4 (Texas Prosthetics); slug renamed shape-aesthetics → botox-chicago → texas-prosthetics; content rebranded from Botox Chicago → Texas Prosthetics; tile 4 upgraded to iframe; F6 + §5 updated; §9 W4 exception documented |
 | P14 | Built W5 (Anderson's Boards); slug renamed arcline-orthodontics → andersons-boards; first dark-theme tile (bg #000, white text); 3-part pill navbar, staggered giant type, floating stats; §9.8 hover scrim KEPT (white iframe typography competes with tile label); §9 W5 exception documented |
 | P15 | Codebase purge: deleted PROMPT-GUIDE.md; removed stale prompt-ref comments from index.html; cut §6 (Page Structure) + §9 (What This Site Is NOT) from CLAUDE.md; renumbered §11→§9 throughout; fixed W4 name (Botox Chicago→Texas Prosthetics) in §9 exceptions; cleaned SESSION.md prompt history |
+| P16 | Built W10 (Midwestern IV) — first multi-section tile; dark liquid-glass, dual FadingVideo (rAF crossfade, no CSS transitions), BlurText word-by-word, 10 sections (hero→services→menu→how-it-works→why-iv→membership→testimonials→faq→book→footer); slug renamed verdant-iv-lounge→midwestern-iv; tile 10 upgraded to iframe in F1; F6 + §5 + §9 exception list updated; §9 NOTE: CLAUDE.md uses §9 for Portfolio Tile Build Pattern (old prompts may reference §11) |

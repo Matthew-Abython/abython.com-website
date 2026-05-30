@@ -102,7 +102,7 @@ Single-page landings. Self-contained HTML/CSS. No nav back to Abython. Open in n
 | 7 | `meridian-implants` | Meridian Implant Center | Implants | Clinical-luxury, navy + silver |
 | 8 | `glow-laser-clinic` | Glow Laser Clinic | Laser hair removal | Bright, gradient-forward |
 | 9 | `halcyon-plastic-surgery` | Halcyon Plastic Surgery | Plastic surgeon | Cinematic, dark mode, full-bleed |
-| 10 | `verdant-iv-lounge` | Verdant IV Lounge | IV lounge | Boutique, terracotta + sage |
+| 10 | `midwestern-iv` | Midwestern IV | IV therapy lounge | Dark cosmic + liquid-glass; multi-section single-page; Instrument Serif italic + Barlow |
 | 11 | `rootwell-holistic-dental` | Rootwell Holistic Dental | Holistic dentist | Organic, sage + cream, texture |
 | 12 | `stratum-dermatology` | Stratum Dermatology | Dermatologist | Clean, scientific, blue + white |
 | 13 | `kinetics-pilates` | Kinetics Pilates Studio | Pilates | Movement-forward, bold type |
@@ -157,6 +157,7 @@ This section is the source of truth for building portfolio demo tiles 2–16.
 - **W3 — Modern Derma and Spa**: glassmorphism rounded-card layout. §9.5 hero composition does not apply (page-wrapper padding + border-radius card, no full-bleed stretch). §9.5 nav pattern also does not apply (no hamburger, no mobile sheet — mobile shows brand wordmark + CTA only). §9.3 CSP rules and §9.6 variable-layer protocol still apply.
 - **W4 — Texas Prosthetics**: full-bleed video (no rounded card), two-pill centered nav (logo circle + links pill), bottom-left hero content, no hamburger/sheet, system font stack (no Google Fonts link), custom animation timing (0.5s duration, 0.1s stagger). §9.3 CSP rules and §9.6 variable-layer protocol still apply.
 - **W5 — Anderson's Boards**: dark theme (body bg #000, white text — first dark tile in portfolio), full-bleed video, 3-part pill navbar (logo pill + center links pill + right button), giant staggered absolute-positioned typography, floating stat blocks, bottom gradient overlay, all-lowercase text, Readex Pro font, custom animation timing (0.5s/0.1s, matches W4). No hamburger/sheet.
+- **W10 — Midwestern IV**: FIRST multi-section tile in portfolio (~10 sections including drip menu, membership tiers, FAQ, footer). Dark theme (second dark tile after W5). Custom liquid-glass design system, two FadingVideo backgrounds with rAF crossfade (no CSS transitions on videos), BlurText word-by-word animation on hero headline. 3-part liquid-glass navbar with mobile sheet (unlike W4/W5 which omit the sheet). Instrument Serif italic + Barlow fonts. Iframe preview shows full long-scroll page squished — per user decision, no height clamp applied. All React/Babel/Framer Motion translated to vanilla per §9.3.
 
 Do not retrofit exceptions into §9.5, and do not copy from them when building new tiles.
 

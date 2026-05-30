@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Midwestern IV — Boutique IV Therapy in Naperville, IL</title>
+  <meta name="description" content="Premium IV therapy delivered by licensed medical professionals. Replenish, recover, and reset — in 30 minutes or less, in our boutique lounge or at your door.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/work/midwestern-iv/styles.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#hero">Skip to content</a>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+
+    <div class="nav-logo-pill liquid-glass" aria-label="Midwestern IV">
+      <span class="nav-logo-text">m</span>
+    </div>
+
+    <div class="nav-center-pill liquid-glass" role="list">
+      <a href="#hero" role="listitem">Drips</a>
+      <a href="#membership" role="listitem">Membership</a>
+      <a href="#how-it-works" role="listitem">How It Works</a>
+      <a href="#why-iv" role="listitem">About</a>
+      <a href="#faq" role="listitem">FAQ</a>
+    </div>
+
+    <button
+      class="nav-hamburger liquid-glass"
+      id="nav-hamburger"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-sheet"
+    >
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M3 5H17M3 10H17M3 15H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <a href="#book" class="nav-cta-pill liquid-glass-strong">
+      Book a Drip
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M3 11L11 3M11 3H4.5M11 3V9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+  </nav>
+
+  <!-- ── MOBILE SHEET ── -->
+  <div class="sheet-backdrop" id="sheet-backdrop" aria-hidden="true"></div>
+
+  <div
+    class="mobile-sheet"
+    id="mobile-sheet"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Navigation menu"
+    tabindex="-1"
+  >
+    <div class="sheet-header">
+      <span class="sheet-logo">midwestern iv</span>
+      <button class="sheet-close" id="sheet-close" aria-label="Close navigation menu">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M2 2L16 16M16 2L2 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="sheet-links" aria-label="Mobile navigation">
+      <a class="sheet-link" href="#hero" style="--i:0">Drips</a>
+      <a class="sheet-link" href="#membership" style="--i:1">Membership</a>
+      <a class="sheet-link" href="#how-it-works" style="--i:2">How It Works</a>
+      <a class="sheet-link" href="#why-iv" style="--i:3">About</a>
+      <a class="sheet-link" href="#faq" style="--i:4">FAQ</a>
+    </nav>
+    <div class="sheet-cta-wrap">
+      <a href="#book" class="sheet-cta-primary">Book a Drip</a>
+      <a href="tel:6305550142" class="sheet-cta-secondary">(630) 555-0142</a>
+    </div>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="full-section" id="hero" aria-label="Hero">
+    <video
+      class="video-bg"
+      data-fading-video
+      autoplay
+      muted
+      playsinline
+      preload="auto"
+      style="opacity:0"
+      aria-hidden="true"
+    >
+      <source src="/work/midwestern-iv/hero-bg.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-content">
+
+      <div class="hero-badge liquid-glass">
+        <span class="hero-badge-chip">New</span>
+        Now Open in Naperville, IL
+      </div>
+
+      <h1 class="hero-heading" data-blur-text>
+        Elevate Wellness Beyond the Ordinary
+      </h1>
+
+      <p class="hero-subheading">
+        Premium IV therapy delivered by licensed medical professionals. Replenish, recover, and reset — in 30 minutes or less, in our boutique lounge or at your door.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#book" class="hero-cta-primary liquid-glass-strong">
+          Book a Drip
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="8.25" stroke="currentColor" stroke-width="1.25"/>
+            <path d="M7 13L13 7M13 7H7.5M13 7V12.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="#menu" class="hero-cta-secondary">
+          View Drip Menu
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M9 2.5C9 2.5 5.5 6.5 5.5 11C5.5 13.485 7.07 15.5 9 15.5C10.93 15.5 12.5 13.485 12.5 11C12.5 8.5 11 6.5 11 6.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-card liquid-glass">
+          <span class="stat-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <circle cx="11" cy="11" r="8.25" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M11 6.5V11L14 14" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div>
+            <span class="stat-value">30 Min</span>
+            <span class="stat-label">Average Drip Time</span>
+          </div>
+        </div>
+        <div class="stat-card liquid-glass">
+          <span class="stat-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M11 3C11 3 7.5 7.5 7.5 12C7.5 14.485 9.07 16.5 11 16.5C12.93 16.5 14.5 14.485 14.5 12C14.5 9.5 13 7.5 13 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <div>
+            <span class="stat-value">10,000+</span>
+            <span class="stat-label">Drips Delivered</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-trust">
+        <span class="trust-chip">Trusted by athletes, executives, and recovery enthusiasts</span>
+        <div class="trust-partners">
+          <span class="trust-partner">Northwestern</span>
+          <span class="trust-partner">Kane</span>
+          <span class="trust-partner">Iron Performance</span>
+          <span class="trust-partner">Riverwalk Recovery</span>
+          <span class="trust-partner">Prairie Wellness</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section class="full-section" id="services" aria-label="Our services">
+    <video
+      class="video-bg"
+      data-fading-video
+      autoplay
+      muted
+      playsinline
+      preload="auto"
+      style="opacity:0"
+      aria-hidden="true"
+    >
+      <source src="/work/midwestern-iv/services-bg.mp4" type="video/mp4">
+    </video>
+
+    <div class="services-content">
+      <p class="services-kicker">// Our Services</p>
+      <h2 class="services-heading">Wellness<br>Elevated</h2>
+
+      <div class="services-grid">
+
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path d="M16 3L6 15H14L12 25L22 13H14L16 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="service-tags" aria-label="Ingredients">
+            <span class="service-tag">B12</span>
+            <span class="service-tag">B-Complex</span>
+            <span class="service-tag">Amino Acids</span>
+            <span class="service-tag">Hydration</span>
+          </div>
+          <h3 class="service-card-title">Energy + Performance</h3>
+          <p class="service-card-body">Power through demanding weeks with our signature energy blend. B-vitamins and amino acids delivered straight to your bloodstream for sustained focus and stamina.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path d="M14 4L5 8.5V14C5 19.25 8.85 24.12 14 25.5C19.15 24.12 23 19.25 23 14V8.5L14 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10 14L13 17L18 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="service-tags" aria-label="Ingredients">
+            <span class="service-tag">Vitamin C</span>
+            <span class="service-tag">Zinc</span>
+            <span class="service-tag">Glutathione</span>
+            <span class="service-tag">Selenium</span>
+          </div>
+          <h3 class="service-card-title">Immunity + Defense</h3>
+          <p class="service-card-body">Stay ahead of cold and flu season. High-dose vitamin C with zinc and glutathione to strengthen your immune response and protect against oxidative stress.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path d="M14 5C14 5 10 10 10 15C10 17.761 11.791 20 14 20C16.209 20 18 17.761 18 15C18 12 16.5 10 16.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M10 23H18M14 20V23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-tags" aria-label="Ingredients">
+            <span class="service-tag">NAD+</span>
+            <span class="service-tag">Magnesium</span>
+            <span class="service-tag">Electrolytes</span>
+            <span class="service-tag">Taurine</span>
+          </div>
+          <h3 class="service-card-title">Recovery + Reset</h3>
+          <p class="service-card-body">Bounce back faster — from training, travel, or a long night. NAD+ and electrolytes for cellular repair, hydration, and deep recovery.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DRIP MENU ── -->
+  <section id="menu" aria-label="Full drip menu">
+    <div class="menu-inner">
+      <h2 class="section-heading">The Full Menu</h2>
+      <p class="section-subheading">Eight signature drips. Every one customizable.</p>
+
+      <div class="menu-grid">
+
+        <div class="drip-card">
+          <h3 class="drip-name">Signature Hydrate</h3>
+          <p class="drip-desc">Pure hydration baseline — the foundation of feeling human again.</p>
+          <p class="drip-ingredients">Saline · Electrolytes · B-Complex</p>
+          <div class="drip-meta">
+            <span class="drip-duration-price">30 min · $129</span>
+            <span class="drip-customize">Customize
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                <path d="M2 9L9 2M9 2H3.5M9 2V7.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="drip-card">
+          <h3 class="drip-name">Energy Surge</h3>
+          <p class="drip-desc">Fuel for the long week ahead. No caffeine crash.</p>
+          <p class="drip-ingredients">B12 · Amino Acids · Taurine</p>
+          <div class="drip-meta">
+            <span class="drip-duration-price">45 min · $159</span>
+            <span class="drip-customize">Customize
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                <path d="M2 9L9 2M9 2H3.5M9 2V7.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="drip-card">
+          <h3 class="drip-name">Immunity Shield</h3>
+          <p class="drip-desc">Get ahead of sick season before it starts.</p>
+          <p class="drip-ingredients">Vit C · Zinc · Glutathione</p>
+          <div class="drip-meta">
+            <span class="drip-duration-price">45 min · $179</span>
+            <span class="drip-customize">Customize
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                <path d="M2 9L9 2M9 2H3.5M9 2V7.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="drip-card">
+          <h3 class="drip-name">Recovery Reset</h3>
+          <p class="drip-desc">Cellular repair and deep recovery on demand.</p>
+          <p class="drip-ingredients">NAD+ precursor · Magnesium · Glutamine</p>
+          <div class="drip-meta">
+            <span class="drip-duration-price">45 min · $189</span>
+            <span class="drip-customize">Customize
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                <path d="M2 9L9 2M9 2H3.5M9 2V7.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="drip-card">
+          <h3 class="drip-name">Beauty Glow</h3>
+          <p class="drip-desc">Skin, nails, and luminosity from the inside out.</p>
+          <p class="drip-ingredients">Biotin · Vit C · Glutathione · B-Complex</p>
+          <div class="drip-meta">
+            <span class="drip-duration-price">45 min · $199</span>
+            <span class="drip-customize">Customize
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                <path d="M2 9L9 2M9 2H3.5M9 2V7.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="drip-card">
+          <h3 class="drip-name">Hangover Rescue</h3>
+          <p class="drip-desc">Back to baseline in 30 minutes. No judgment.</p>
+          <p class="drip-ingredients">Saline · B-Complex · Anti-Nausea</p>
+          <div class="drip-meta">
+            <span class="drip-duration-price">30 min · $169</span>
+            <span class="drip-customize">Customize
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                <path d="M2 9L9 2M9 2H3.5M9 2V7.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="drip-card">
+          <h3 class="drip-name">Athletic Edge</h3>
+          <p class="drip-desc">Built for the athlete who trains like it matters.</p>
+          <p class="drip-ingredients">Amino Acids · BCAAs · Magnesium · Taurine</p>
+          <div class="drip-meta">
+            <span class="drip-duration-price">60 min · $219</span>
+            <span class="drip-customize">Customize
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                <path d="M2 9L9 2M9 2H3.5M9 2V7.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+        <div class="drip-card">
+          <h3 class="drip-name">Executive Reset</h3>
+          <p class="drip-desc">Full cellular reboot for the week's most demanding recovery.</p>
+          <p class="drip-ingredients">NAD+ · B-Complex · Magnesium · Glutathione</p>
+          <div class="drip-meta">
+            <span class="drip-duration-price">60 min · $249</span>
+            <span class="drip-customize">Customize
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none" aria-hidden="true">
+                <path d="M2 9L9 2M9 2H3.5M9 2V7.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HOW IT WORKS ── -->
+  <section id="how-it-works" aria-label="How it works">
+    <div class="how-inner">
+      <h2 class="section-heading">How It Works</h2>
+      <p class="section-subheading">From booking to walking out — most sessions under an hour.</p>
+
+      <div class="how-grid">
+
+        <div class="how-step">
+          <span class="how-step-number" aria-hidden="true">01</span>
+          <svg class="how-step-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.25"/>
+            <path d="M3 9H21" stroke="currentColor" stroke-width="1.25"/>
+            <path d="M8 2V6M16 2V6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+          </svg>
+          <h3 class="how-step-title">Book your slot</h3>
+          <p class="how-step-body">Book online in under 60 seconds or call us at (630) 555-0142. Same-day slots are usually available.</p>
+        </div>
+
+        <div class="how-step">
+          <span class="how-step-number" aria-hidden="true">02</span>
+          <svg class="how-step-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.25"/>
+            <path d="M4 20C4 17.239 7.582 15 12 15C16.418 15 20 17.239 20 20" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+          </svg>
+          <h3 class="how-step-title">Quick consult</h3>
+          <p class="how-step-body">A 5-minute conversation with our medical staff ensures your drip is tailored to your needs and health history.</p>
+        </div>
+
+        <div class="how-step">
+          <span class="how-step-number" aria-hidden="true">03</span>
+          <svg class="how-step-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 18C4 15.791 5.791 14 8 14H16C18.209 14 20 15.791 20 18V19H4V18Z" stroke="currentColor" stroke-width="1.25"/>
+            <path d="M8 8C8 5.791 9.791 4 12 4C14.209 4 16 5.791 16 8V10H8V8Z" stroke="currentColor" stroke-width="1.25"/>
+          </svg>
+          <h3 class="how-step-title">Relax and drip</h3>
+          <p class="how-step-body">Settle into our lounge chair — or your couch. 30 to 60 minutes of doing nothing except feeling better.</p>
+        </div>
+
+        <div class="how-step">
+          <span class="how-step-number" aria-hidden="true">04</span>
+          <svg class="how-step-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 13L9 17L19 7" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="how-step-title">Walk out replenished</h3>
+          <p class="how-step-body">Feel the difference within 1 to 2 hours — and often for days. Most clients leave more energized than when they arrived.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHY IV ── -->
+  <section id="why-iv" aria-label="Why IV therapy">
+    <div class="why-inner">
+      <h2 class="section-heading">Why It Works</h2>
+      <p class="section-subheading">Direct delivery. Real results.</p>
+
+      <div class="benefits-grid">
+
+        <div class="benefit-card">
+          <svg class="benefit-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <path d="M11 2L13.5 8H20L14.75 12L16.75 18.5L11 14.75L5.25 18.5L7.25 12L2 8H8.5L11 2Z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="benefit-title">Faster Absorption</h3>
+          <p class="benefit-body">100% bioavailability directly in your bloodstream — vs. 20–50% from oral supplements that must survive your digestive system.</p>
+        </div>
+
+        <div class="benefit-card">
+          <svg class="benefit-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.25"/>
+            <rect x="12" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.25"/>
+            <rect x="3" y="12" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.25"/>
+            <path d="M12 15.5H19M15.5 12V19" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+          </svg>
+          <h3 class="benefit-title">Custom Formulations</h3>
+          <p class="benefit-body">Every drip tailored to your bloodwork, goals, and session notes. No one-size-fits-all protocols.</p>
+        </div>
+
+        <div class="benefit-card">
+          <svg class="benefit-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <path d="M11 3L4 6.5V11C4 15.25 7.1 19.14 11 20.5C14.9 19.14 18 15.25 18 11V6.5L11 3Z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="benefit-title">Medical Supervision</h3>
+          <p class="benefit-body">All drips administered by licensed registered nurses under medical director oversight. Sterile protocols, every session.</p>
+        </div>
+
+        <div class="benefit-card">
+          <svg class="benefit-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.25"/>
+            <path d="M11 7V11L14 13.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="benefit-title">Quick Recovery</h3>
+          <p class="benefit-body">Most clients feel energy and hydration effects within 1 to 2 hours. Immunity and recovery benefits build over 24 to 72 hours.</p>
+        </div>
+
+        <div class="benefit-card">
+          <svg class="benefit-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <path d="M11 3C11 3 7.5 7.5 7.5 12C7.5 14.485 9.07 16.5 11 16.5C12.93 16.5 14.5 14.485 14.5 12C14.5 9.5 13 7.5 13 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+          </svg>
+          <h3 class="benefit-title">Hydration That Lasts</h3>
+          <p class="benefit-body">Electrolyte-balanced IV fluids restore your baseline faster and more completely than water or sports drinks.</p>
+        </div>
+
+        <div class="benefit-card">
+          <svg class="benefit-icon" width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <path d="M3 9L11 3L19 9V19H13V14H9V19H3V9Z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="benefit-title">Mobile Service Available</h3>
+          <p class="benefit-body">We come to your home, office, or hotel. Serving Naperville, Aurora, Wheaton, Geneva, Saint Charles, and Oak Brook.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MEMBERSHIP ── -->
+  <section id="membership" aria-label="Membership tiers">
+    <div class="membership-inner">
+      <h2 class="section-heading">Become a Member</h2>
+      <p class="section-subheading">Drip monthly. Save monthly.</p>
+
+      <div class="membership-grid">
+
+        <div class="tier-card">
+          <span class="tier-name">Essential</span>
+          <span class="tier-price">$149</span>
+          <span class="tier-price-period">per month</span>
+          <ul class="tier-features" aria-label="Essential tier features">
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              1 signature drip per month
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              10% off all add-ons
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Member-only booking window
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Cancel anytime
+            </li>
+          </ul>
+          <a href="#book" class="tier-cta">Choose Essential</a>
+        </div>
+
+        <div class="tier-card popular">
+          <span class="tier-badge">Most Popular</span>
+          <span class="tier-name">Premium</span>
+          <span class="tier-price">$279</span>
+          <span class="tier-price-period">per month</span>
+          <ul class="tier-features" aria-label="Premium tier features">
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              2 drips per month — mix and match
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              15% off add-ons
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Priority booking
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              1 free guest drip per quarter
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Quarterly bloodwork add-on
+            </li>
+          </ul>
+          <a href="#book" class="tier-cta">Choose Premium</a>
+        </div>
+
+        <div class="tier-card">
+          <span class="tier-name">Elite</span>
+          <span class="tier-price">$499</span>
+          <span class="tier-price-period">per month</span>
+          <ul class="tier-features" aria-label="Elite tier features">
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              4 drips per month — any tier
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              20% off add-ons
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Concierge mobile service included
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Quarterly bloodwork + consultation
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              VIP lounge access
+            </li>
+            <li class="tier-feature">
+              <svg class="tier-feature-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              2 free guest drips per quarter
+            </li>
+          </ul>
+          <a href="#book" class="tier-cta">Choose Elite</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section id="testimonials" aria-label="Member testimonials">
+    <div class="testimonials-inner">
+      <h2 class="section-heading">What Members Say</h2>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">"I fly in and out of O'Hare weekly. Midwestern IV is the only thing that keeps me running at this pace. The mobile service to my hotel is unreal."</blockquote>
+          <div class="testimonial-author">
+            <p class="testimonial-name">Sara M.</p>
+            <p class="testimonial-title">Investment Banking, Chicago</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">"Best decision I made all year. The Recovery Reset drip after long training weeks has completely changed how I feel on Monday morning."</blockquote>
+          <div class="testimonial-author">
+            <p class="testimonial-name">James K.</p>
+            <p class="testimonial-title">Triathlete, Naperville</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">"Their team genuinely cares. Not the assembly-line vibe you get at bigger chains. I always leave feeling better than when I walked in."</blockquote>
+          <div class="testimonial-author">
+            <p class="testimonial-name">Priya R.</p>
+            <p class="testimonial-title">Founder, Aurora</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section id="faq" aria-label="Frequently asked questions">
+    <div class="faq-inner">
+      <h2 class="section-heading">Frequently Asked</h2>
+      <div class="faq-container" id="faq-container">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Are IV drips safe?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <p class="faq-answer-inner">Yes. All drips are administered by licensed registered nurses under medical director oversight. We follow strict sterile protocols and review your health history before every session.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How long does a drip take?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <p class="faq-answer-inner">Most signature drips run 30 to 45 minutes. NAD+ and Executive Reset drips run 60 minutes. Mobile appointments add approximately 15 minutes for setup.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Will I feel results immediately?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <p class="faq-answer-inner">Most clients feel hydration and energy effects within 1 to 2 hours. Recovery and immunity benefits build over 24 to 72 hours.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I customize a drip?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <p class="faq-answer-inner">Absolutely. Every signature drip can be modified — add NAD+, extra vitamins, anti-nausea, or anti-inflammatory medications based on your needs and consultation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you accept insurance?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <p class="faq-answer-inner">IV therapy is generally not covered by insurance, but we accept HSA and FSA cards for eligible treatments. We provide itemized receipts on request.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Where do you serve?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <p class="faq-answer-inner">Our boutique lounge is in Naperville, IL. Mobile service covers the western suburbs of Chicago — Naperville, Aurora, Wheaton, Geneva, Saint Charles, and Oak Brook.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BOOKING CTA ── -->
+  <section id="book" aria-label="Book a drip">
+    <div class="book-inner">
+      <h2 class="book-heading">Ready to feel different?</h2>
+      <p class="book-sub">Book a drip in under 60 seconds.</p>
+      <div class="book-ctas">
+        <a href="#" class="hero-cta-primary liquid-glass-strong">
+          Book a Drip
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="8.25" stroke="currentColor" stroke-width="1.25"/>
+            <path d="M7 13L13 7M13 7H7.5M13 7V12.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="tel:6305550142" class="hero-cta-primary liquid-glass">
+          Call (630) 555-0142
+        </a>
+      </div>
+      <p class="book-note">Walk-ins welcome · Open 7 days · 8am–8pm</p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <span class="footer-wordmark">midwestern iv</span>
+          <p class="footer-tagline">Elevated wellness. Delivered.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <rect x="2" y="2" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.25"/>
+                <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.25"/>
+                <circle cx="13" cy="5" r="0.75" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M12.5 2C12.5 4.5 14.5 5.5 16.5 5.5V8.5C14.5 8.5 13 7.75 12.5 7V13.5C12.5 15.433 10.933 17 9 17C7.067 17 5.5 15.433 5.5 13.5C5.5 11.567 7.067 10 9 10C9.34 10 9.67 10.045 9.985 10.125V13.25C9.68 13.095 9.35 13 9 13C8.448 13 8 13.448 8 14C8 14.552 8.448 15 9 15C9.552 15 10 14.552 10 14V2H12.5Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M10.5 9.5H13.5L14 7H10.5V5.5C10.5 4.67 11 4 12.5 4H14V2C13.74 1.97 12.77 2 11.5 2C9.29 2 7.5 3.35 7.5 5.75V7H5V9.5H7.5V17H10.5V9.5Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social" aria-label="YouTube">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <rect x="1.5" y="4" width="15" height="10" rx="3" stroke="currentColor" stroke-width="1.25"/>
+                <path d="M7.5 6.5L12 9L7.5 11.5V6.5Z" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Drips</p>
+          <div class="footer-links">
+            <a href="#menu" class="footer-link">Signature Hydrate</a>
+            <a href="#menu" class="footer-link">Energy Surge</a>
+            <a href="#menu" class="footer-link">Immunity Shield</a>
+            <a href="#menu" class="footer-link">Recovery Reset</a>
+            <a href="#menu" class="footer-link">See full menu</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Membership</p>
+          <div class="footer-links">
+            <a href="#membership" class="footer-link">Essential</a>
+            <a href="#membership" class="footer-link">Premium</a>
+            <a href="#membership" class="footer-link">Elite</a>
+            <a href="#membership" class="footer-link">Compare tiers</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Visit</p>
+          <address class="footer-address">
+            123 Main Street<br>
+            Naperville, IL 60540<br><br>
+            Mon–Sun · 8am–8pm<br>
+            (630) 555-0142<br>
+            hello@midwestern-iv.com
+          </address>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2026 Midwestern IV</span>
+        <div class="footer-legal">
+          <a href="#" class="footer-legal-link">Privacy</a>
+          <a href="#" class="footer-legal-link">Terms</a>
+          <a href="#" class="footer-legal-link">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/work/midwestern-iv/script.js"></script>
+</body>
+</html>
