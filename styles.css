@@ -1486,8 +1486,8 @@ ul {
 
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   width: 100%;
   /* Fill the viewport height below the nav. */
   height: calc(100vh - var(--nav-height));
@@ -1514,37 +1514,26 @@ ul {
   transition: z-index 0s linear var(--duration);
 }
 
-/* Subtle per-tile background tints so the wall reads as "16 unique pieces"
+/* Subtle per-tile background tints so the wall reads as "9 unique pieces"
    even before each tile gets its real screenshot/illustration. */
 .work-tile[data-tile="1"]  { background: linear-gradient(135deg, #F4EFE3 0%, #E8D9B5 100%); }
 .work-tile[data-tile="2"]  { background: linear-gradient(135deg, #FDF4F0 0%, #F7D9C8 100%); }
 .work-tile[data-tile="3"]  { background: linear-gradient(135deg, #FDF1F1 0%, #F2C8C8 100%); }
 .work-tile[data-tile="4"]  { background: linear-gradient(135deg, #1F1B1B 0%, #2A2424 100%); }
 .work-tile[data-tile="5"]  { background: linear-gradient(135deg, #F0F4FA 0%, #C7D6F0 100%); }
-.work-tile[data-tile="6"]  { background: linear-gradient(135deg, #F0F2E8 0%, #C9D2B0 100%); }
-.work-tile[data-tile="7"]  { background: linear-gradient(135deg, #E8ECF3 0%, #B4BFD2 100%); }
-.work-tile[data-tile="8"]  { background: linear-gradient(135deg, #FFF1EC 0%, #FFB59C 100%); }
-.work-tile[data-tile="9"]  { background: linear-gradient(135deg, #161618 0%, #2C2C30 100%); }
-.work-tile[data-tile="10"] { background: linear-gradient(135deg, #F2EBE0 0%, #C9A687 100%); }
-.work-tile[data-tile="11"] { background: linear-gradient(135deg, #ECEFE6 0%, #B8C5A8 100%); }
-.work-tile[data-tile="12"] { background: linear-gradient(135deg, #EEF3F7 0%, #B6CCDA 100%); }
-.work-tile[data-tile="13"] { background: linear-gradient(135deg, #F5F2EC 0%, #CBC2AE 100%); }
-.work-tile[data-tile="14"] { background: linear-gradient(135deg, #1A1614 0%, #2E2620 100%); }
-.work-tile[data-tile="15"] { background: linear-gradient(135deg, #F4F0E6 0%, #D1C2A0 100%); }
-.work-tile[data-tile="16"] { background: linear-gradient(135deg, #2A1414 0%, #4A1F1F 100%); }
+.work-tile[data-tile="6"]  { background: linear-gradient(135deg, #F2EBE0 0%, #C9A687 100%); }
+.work-tile[data-tile="7"]  { background: linear-gradient(135deg, #EEF3F7 0%, #B6CCDA 100%); }
+.work-tile[data-tile="8"]  { background: linear-gradient(135deg, #2A1414 0%, #4A1F1F 100%); }
+.work-tile[data-tile="9"]  { background: linear-gradient(135deg, #ECEFE6 0%, #B8C5A8 100%); }
 
 /* Dark tiles get inverted label colors. */
 .work-tile[data-tile="4"]  .work-tile-label,
-.work-tile[data-tile="9"]  .work-tile-label,
-.work-tile[data-tile="14"] .work-tile-label,
-.work-tile[data-tile="16"] .work-tile-label {
+.work-tile[data-tile="8"]  .work-tile-label {
   color: var(--ink-inverse);
 }
 
 .work-tile[data-tile="4"]::before,
-.work-tile[data-tile="9"]::before,
-.work-tile[data-tile="14"]::before,
-.work-tile[data-tile="16"]::before {
+.work-tile[data-tile="8"]::before {
   background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 
@@ -1619,29 +1608,27 @@ ul {
 }
 
 /* ────────────────────────────────────────────────────────────────
-   Responsive — tablet (4 cols → 2 cols, 4 rows → 8 rows)
+   Responsive — tablet (keep 3 cols × 3 rows, tiles just narrower)
    ──────────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .work-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     height: auto;
-    /* On tablet the wall becomes taller than viewport — that's fine,
-       user can scroll into it. Cap so it doesn't become absurd. */
     max-height: none;
     min-height: 0;
-    aspect-ratio: 2 / 8;
+    aspect-ratio: 1 / 1;
   }
 }
 
 /* ────────────────────────────────────────────────────────────────
-   Responsive — phone (2 cols → 1 col, 8 rows → 16 rows)
+   Responsive — phone (3 cols → 1 col, 3 rows → 9 rows)
    ──────────────────────────────────────────────────────────────── */
 @media (max-width: 540px) {
   .work-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(16, 1fr);
-    aspect-ratio: 1 / 16;
+    grid-template-rows: repeat(9, 1fr);
+    aspect-ratio: 1 / 9;
   }
 
   .work-tile {
