@@ -23,12 +23,15 @@
 
 | File | Role |
 |---|---|
-| `index.html` | Nav, 3×3 hero grid (9 portfolio tiles), statement, services cards, CTA, footer |
-| `styles.css` | All CSS — design tokens in `:root` at top |
+| `index.html` | Nav, 3×3 hero grid (9 portfolio tiles), statement, 3 narrative sections, services cards, CTA, footer |
+| `styles.css` | All CSS — design tokens in `:root` at top; service narrative + detail page rules appended |
 | `script.js` | Demo form POST, mobile nav, GSAP scroll animations, Lenis smooth scroll |
 | `chat.js` | Chat widget — floating bottom-right bubble |
 | `vercel.json` | Security headers + CSP — **LOCKED, never touch** |
 | `ai-receptionist/index.html` | Demo form + AI receptionist product copy |
+| `services/custom-websites/index.html` | Custom Websites service detail page |
+| `services/local-seo/index.html` | Local Search Dominance service detail page (covers GBP) |
+| `services/ai-optimization/index.html` | AI Optimization service detail page |
 | `work/index.html` | Portfolio grid — lists all 16 fake sites |
 | `work/{slug}/index.html` × 16 | Individual portfolio demo sites (self-contained) |
 | `privacy-policy/index.html` | Policy page |
@@ -43,6 +46,9 @@ F1 = index.html                          F2 = styles.css
 F3 = script.js                           F4 = chat.js
 F5 = ai-receptionist/index.html          F6 = work/index.html
 F7 = vercel.json
+S1 = services/custom-websites/index.html
+S2 = services/local-seo/index.html
+S3 = services/ai-optimization/index.html
 W1–W16 = work/{slug}/index.html  (see §5 portfolio table below)
 ```
 
@@ -244,3 +250,4 @@ The implementation chat is Claude Code with full repo access. It reads CLAUDE.md
 | P20 | Graces: replaced FadingVideo with native loop, new CloudFront video self-hosted, blur-bottom overlay, blurFadeUp. Bossert: new CloudFront video, mouse parallax, liquid-glass nav, blur-bottom overlay |
 | P21 | W11 rebranded dental→therapy: slug bossert-dental→bossert-therapy, all content rewritten for emotional therapy practice |
 | P22 | SESSION.md deleted; replaced with SUMMARY.md; CLAUDE.md updated |
+| P23 | Website expansion: 3 narrative sections added to homepage (website/SEO/AIO); services grid restructured (4 cards: Custom Websites→/services/custom-websites/, Local Search Dominance→/services/local-seo/, AI Optimization→/services/ai-optimization/, AI Receptionist unchanged); 3 new service detail pages created at /services/; nav broken links fixed; CSS for service-narrative + service-detail-* added to styles.css |
