@@ -23,7 +23,7 @@
 
 | File | Role |
 |---|---|
-| `index.html` | Nav, 3×3 hero grid (9 portfolio tiles), statement, 3 narrative sections, services cards, CTA, footer |
+| `index.html` | Nav, 3×3 hero grid (9 portfolio tiles), 3 narrative sections (website/SEO/AIO), services cards, CTA, footer |
 | `styles.css` | All CSS — design tokens in `:root` at top; service narrative + detail page rules appended |
 | `script.js` | Demo form POST, mobile nav, GSAP scroll animations, Lenis smooth scroll |
 | `chat.js` | Chat widget — floating bottom-right bubble |
@@ -251,3 +251,4 @@ The implementation chat is Claude Code with full repo access. It reads CLAUDE.md
 | P21 | W11 rebranded dental→therapy: slug bossert-dental→bossert-therapy, all content rewritten for emotional therapy practice |
 | P22 | SESSION.md deleted; replaced with SUMMARY.md; CLAUDE.md updated |
 | P23 | Website expansion: 3 narrative sections added to homepage (website/SEO/AIO); services grid restructured (4 cards: Custom Websites→/services/custom-websites/, Local Search Dominance→/services/local-seo/, AI Optimization→/services/ai-optimization/, AI Receptionist unchanged); 3 new service detail pages created at /services/; nav broken links fixed; CSS for service-narrative + service-detail-* added to styles.css |
+| P24 | Homepage narrative sections redesigned: 3 distinct editorial layouts (green left-border/cream, blue top-bar/light-blue 2-col, purple right-bar/light-purple absolute icon); scroll-triggered icon animations; full-section background shift on link hover via CSS :has(); statement section ("Abython · For dentists & med spas") deleted |
