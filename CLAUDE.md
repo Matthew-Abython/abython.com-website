@@ -103,7 +103,7 @@ Single-page landings. Self-contained HTML/CSS. No nav back to Abython. Open in n
 | 8 | `glow-laser-clinic` | Glow Laser Clinic | Laser hair removal | Bright, gradient-forward |
 | 9 | `halcyon-plastic-surgery` | Halcyon Plastic Surgery | Plastic surgeon | Cinematic, dark mode, full-bleed |
 | 10 | `midwestern-iv` | Midwestern IV | IV therapy lounge | Dark cosmic + liquid-glass; multi-section single-page; Instrument Serif italic + Barlow |
-| 11 | `rootwell-holistic-dental` | Rootwell Holistic Dental | Holistic dentist | Organic, sage + cream, texture |
+| 11 | `bossert-therapy` | Bossert Therapy | Individual &amp; Couples Therapy | Dark video hero, mouse parallax, liquid-glass nav, blur-bottom overlay, blurFadeUp; Sora font; green accent |
 | 12 | `stratum-dermatology` | Stratum Dermatology | Dermatologist | Clean, scientific, blue + white |
 | 13 | `kinetics-pilates` | Kinetics Pilates Studio | Pilates | Movement-forward, bold type |
 | 14 | `north-barber-co` | North Barber Co. | Barber | Masculine monochrome, condensed |
