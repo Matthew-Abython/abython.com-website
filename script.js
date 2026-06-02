@@ -210,3 +210,43 @@ function initScrollAnimations() {
     boot();
   }
 })();
+
+// Service narrative icon entrance animations
+(function () {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function initNarrativeIcons() {
+    ['website', 'seo', 'aio'].forEach(function (cls) {
+      const icon = document.querySelector('.service-narrative.' + cls + ' .service-narrative-icon');
+      if (!icon) return;
+
+      if (prefersReducedMotion) {
+        icon.classList.add('is-visible');
+      } else if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.create({
+          trigger: icon,
+          start: 'top 80%',
+          once: true,
+          onEnter: function () { icon.classList.add('is-visible'); }
+        });
+      } else {
+        // Fallback: IntersectionObserver when GSAP/ScrollTrigger not available
+        const observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2 });
+        observer.observe(icon);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNarrativeIcons);
+  } else {
+    initNarrativeIcons();
+  }
+}());

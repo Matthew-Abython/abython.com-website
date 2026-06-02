@@ -114,6 +114,29 @@ html {
   --shadow: 0 8px 24px rgba(10, 10, 10, 0.08);
   --shadow-lg: 0 24px 64px rgba(10, 10, 10, 0.12);
   --shadow-accent: 0 16px 40px var(--accent-glow);
+
+  /* ─── Service Narrative Accents ────────────────────────── */
+  --service-website-accent: #22c55e;
+  --service-website-bg:     #faf9f7;
+  --service-seo-accent:     #1e3a8a;
+  --service-seo-bg:         #f0f4f9;
+  --service-aio-accent:     #a855f7;
+  --service-aio-bg:         #faf5ff;
+}
+
+/* ── Icon entrance animations ────────────────────────────── */
+@keyframes iconFadeScale {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes iconBounce {
+  0%   { opacity: 0; transform: scale(0.9); }
+  60%  { opacity: 1; transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes iconRise {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* === BASE === */
@@ -1746,16 +1769,38 @@ ul {
 /* ============================================================
    SERVICE NARRATIVE SECTIONS (homepage editorial blocks)
    ============================================================ */
+/* ── Service Narrative — Base ───────────────────────────── */
 .service-narrative {
+  position: relative;
   padding: var(--section-py) 0;
-  background: var(--bg);
-  border-top: 1px solid var(--border);
+  transition: background 0.3s ease-in-out;
 }
 
-.service-narrative--alt {
-  background: var(--bg-elevated);
+.service-narrative .container {
+  position: relative;
 }
 
+.service-narrative p:not(.eyebrow) {
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  line-height: 1.85;
+  color: var(--ink-muted);
+  margin-bottom: 1.25rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.service-narrative h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--ink);
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Legacy classes kept for backward compat */
 .service-narrative-heading {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4.5vw, 3.25rem);
@@ -1816,14 +1861,200 @@ ul {
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--accent);
   text-decoration: none;
-  transition: color var(--duration-fast) var(--ease-out),
-              gap var(--duration-fast) var(--ease-out);
+  transition: color 0.3s ease-in-out;
 }
 
-.service-narrative-link:hover {
-  color: var(--accent-hover);
+/* ── Icon base ─────────────────────────────────────────── */
+.service-narrative-icon {
+  width: 80px;
+  height: 80px;
+  opacity: 0;
+  transition: color 0.3s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-narrative-icon { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .service-narrative-icon { width: 60px; height: 60px; }
+}
+
+/* ── WEBSITE (Layout 1: left border, icon centred) ──────── */
+.service-narrative.website {
+  background: var(--service-website-bg);
+  border-left: 4px solid var(--service-website-accent);
+}
+
+.service-narrative.website .eyebrow {
+  color: var(--service-website-accent);
+}
+
+.service-narrative.website .service-narrative-link {
+  color: var(--service-website-accent);
+}
+
+.service-narrative.website .service-narrative-icon {
+  display: block;
+  margin: 0 auto 24px;
+  color: var(--service-website-accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .service-narrative.website .service-narrative-icon.is-visible {
+    animation: iconFadeScale 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+}
+
+.service-narrative.website .service-narrative-separator {
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: var(--service-website-accent);
+  opacity: 0.5;
+  margin: 0 auto 40px;
+}
+
+.service-narrative.website:has(.service-narrative-link:hover) {
+  background: var(--service-website-accent);
+}
+
+.service-narrative.website:has(.service-narrative-link:hover) .eyebrow,
+.service-narrative.website:has(.service-narrative-link:hover) h2,
+.service-narrative.website:has(.service-narrative-link:hover) p,
+.service-narrative.website:has(.service-narrative-link:hover) li,
+.service-narrative.website:has(.service-narrative-link:hover) .service-narrative-link {
+  color: #fff;
+}
+
+.service-narrative.website:has(.service-narrative-link:hover) .service-narrative-icon {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ── SEO (Layout 2: top bar, 2-column) ─────────────────── */
+.service-narrative.seo {
+  background: var(--service-seo-bg);
+  border-top: 6px solid var(--service-seo-accent);
+}
+
+.service-narrative.seo .eyebrow {
+  color: var(--service-seo-accent);
+}
+
+.service-narrative.seo .service-narrative-link {
+  color: var(--service-seo-accent);
+}
+
+.service-narrative.seo .service-narrative-inner {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.service-narrative.seo .service-narrative-icon {
+  color: var(--service-seo-accent);
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .service-narrative.seo .service-narrative-icon.is-visible {
+    animation: iconBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+  }
+}
+
+.service-narrative.seo .service-narrative-separator {
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--service-seo-accent);
+  opacity: 0.6;
+  margin: 0 auto 40px;
+}
+
+.service-narrative.seo:has(.service-narrative-link:hover) {
+  background: var(--service-seo-accent);
+}
+
+.service-narrative.seo:has(.service-narrative-link:hover) .eyebrow,
+.service-narrative.seo:has(.service-narrative-link:hover) h2,
+.service-narrative.seo:has(.service-narrative-link:hover) p,
+.service-narrative.seo:has(.service-narrative-link:hover) li,
+.service-narrative.seo:has(.service-narrative-link:hover) .service-narrative-link {
+  color: #fff;
+}
+
+.service-narrative.seo:has(.service-narrative-link:hover) .service-narrative-icon {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .service-narrative.seo .service-narrative-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ── AIO (Layout 3: right bar, icon absolute top-right) ─── */
+.service-narrative.aio {
+  background: var(--service-aio-bg);
+  border-right: 6px solid var(--service-aio-accent);
+}
+
+.service-narrative.aio .eyebrow {
+  color: var(--service-aio-accent);
+}
+
+.service-narrative.aio .service-narrative-link {
+  color: var(--service-aio-accent);
+}
+
+.service-narrative.aio .service-narrative-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--service-aio-accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .service-narrative.aio .service-narrative-icon.is-visible {
+    animation: iconRise 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
+  }
+}
+
+.service-narrative.aio .service-narrative-separator {
+  display: block;
+  width: 2px;
+  height: 40px;
+  background: var(--service-aio-accent);
+  opacity: 0.6;
+  margin: 0 auto 40px;
+}
+
+.service-narrative.aio:has(.service-narrative-link:hover) {
+  background: var(--service-aio-accent);
+}
+
+.service-narrative.aio:has(.service-narrative-link:hover) .eyebrow,
+.service-narrative.aio:has(.service-narrative-link:hover) h2,
+.service-narrative.aio:has(.service-narrative-link:hover) p,
+.service-narrative.aio:has(.service-narrative-link:hover) li,
+.service-narrative.aio:has(.service-narrative-link:hover) .service-narrative-link {
+  color: #fff;
+}
+
+.service-narrative.aio:has(.service-narrative-link:hover) .service-narrative-icon {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 768px) {
+  .service-narrative.aio .service-narrative-icon {
+    position: static;
+    display: block;
+    margin: 24px auto 0;
+  }
 }
 
 /* ============================================================
