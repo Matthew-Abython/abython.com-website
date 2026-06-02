@@ -331,24 +331,23 @@ button { font-family: inherit; }
 /* === VIDEO BACKGROUND === */
 .video-bg {
   position: absolute;
-  width: 120%;
-  height: 120%;
-  top: -10%;
-  left: -10%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   z-index: 0;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .video-bg { opacity: 1 !important; }
-}
-
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  -webkit-mask-image: linear-gradient(to top, black 0%, transparent 45%);
+  mask-image: linear-gradient(to top, black 0%, transparent 45%);
   z-index: 1;
+  pointer-events: none;
 }
 
 /* === HERO === */
@@ -1026,12 +1025,12 @@ footer {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  @keyframes gp-fadeUp {
-    from { opacity: 0; transform: translateY(28px); }
-    to   { opacity: 1; transform: translateY(0); }
+  @keyframes gp-blurFadeUp {
+    from { opacity: 0; filter: blur(20px); transform: translateY(40px); }
+    to   { opacity: 1; filter: blur(0px); transform: translateY(0); }
   }
-  .hero-tagline  { animation: gp-fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s  both; }
-  .hero-heading  { animation: gp-fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both; }
-  .hero-cta-area { animation: gp-fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.4s  both; }
-  .hero-play-link { animation: gp-fadeUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.8s  both; }
+  .hero-tagline   { animation: gp-blurFadeUp 1s ease-out 0.1s  both; }
+  .hero-heading   { animation: gp-blurFadeUp 1s ease-out 0.3s  both; }
+  .hero-cta-area  { animation: gp-blurFadeUp 1s ease-out 0.5s  both; }
+  .hero-play-link { animation: gp-blurFadeUp 1s ease-out 0.7s  both; }
 }

@@ -3,94 +3,6 @@
 var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* ─────────────────────────────────────────────
-   FadingVideo — rAF-driven crossfade (verbatim from W10)
-───────────────────────────────────────────── */
-var FADE_MS = 500;
-var FADE_OUT_LEAD_SEC = 0.55;
-
-function FadingVideo(videoEl) {
-  this.v = videoEl;
-  this.rafId = null;
-  this.fadingOut = false;
-
-  if (reducedMotion) {
-    this.v.style.opacity = '1';
-    this.v.setAttribute('loop', '');
-    return;
-  }
-
-  this.v.style.opacity = '0';
-  this._bindEvents();
-}
-
-FadingVideo.prototype.fadeTo = function (target, duration) {
-  var self = this;
-  if (self.rafId !== null) {
-    cancelAnimationFrame(self.rafId);
-    self.rafId = null;
-  }
-  var startTime = null;
-  var from = parseFloat(self.v.style.opacity) || 0;
-
-  function step(now) {
-    if (startTime === null) startTime = now;
-    var elapsed = now - startTime;
-    var t = Math.min(elapsed / duration, 1);
-    self.v.style.opacity = String(from + (target - from) * t);
-    if (t < 1) {
-      self.rafId = requestAnimationFrame(step);
-    } else {
-      self.rafId = null;
-      self.v.style.opacity = String(target);
-    }
-  }
-
-  self.rafId = requestAnimationFrame(step);
-};
-
-FadingVideo.prototype._bindEvents = function () {
-  var self = this;
-
-  function fadeIn() {
-    self.fadeTo(1, FADE_MS);
-  }
-
-  // If video data is already available (autoplay fired before listener attached), fade in now
-  if (self.v.readyState >= 3) {
-    fadeIn();
-  } else {
-    self.v.addEventListener('canplay', function handler() {
-      self.v.removeEventListener('canplay', handler);
-      fadeIn();
-    });
-  }
-
-  self.v.addEventListener('timeupdate', function () {
-    var duration = self.v.duration;
-    if (!duration || isNaN(duration)) return;
-    var rem = duration - self.v.currentTime;
-    if (!self.fadingOut && rem <= FADE_OUT_LEAD_SEC && rem > 0) {
-      self.fadingOut = true;
-      self.fadeTo(0, FADE_MS);
-    }
-  });
-
-  self.v.addEventListener('ended', function () {
-    self.v.style.opacity = '0';
-    self.fadingOut = false;
-    setTimeout(function () {
-      self.v.currentTime = 0;
-      var p = self.v.play();
-      if (p && typeof p.then === 'function') {
-        p.then(fadeIn).catch(function () {});
-      } else {
-        fadeIn();
-      }
-    }, 100);
-  });
-};
-
-/* ─────────────────────────────────────────────
    Mobile Sheet
 ───────────────────────────────────────────── */
 var hamburger = document.getElementById('nav-hamburger');
@@ -273,10 +185,6 @@ function initEmailCTA() {
    Init
 ───────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function () {
-
-  document.querySelectorAll('video[data-fading-video]').forEach(function (v) {
-    new FadingVideo(v);
-  });
 
   if (sheet) {
     sheet.setAttribute('aria-hidden', 'true');
