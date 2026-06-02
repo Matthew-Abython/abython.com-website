@@ -6,9 +6,9 @@
 
 ## Current State
 
-- **Last completed:** Prompt 18 — Collapsed grid 4×4→3×3; built W-Bossert (bossert-dental, canvas particle-network bg, Sora font, dark green Sentinel-AI aesthetic, dental content) and W-Graces (graces-private-food-services, CSS animated orb bg, Instrument Serif + Inter, glassmorphism navbar, private chef content); tiles 8+9 upgraded to Pattern A iframe in F1; F6 updated; SESSION/styles updated
+- **Last completed:** Prompt 19 — Rebuilt W16 graces-private-food-services as full multi-section site (9 sections: hero FadingVideo, services, menu, about, process, testimonials, FAQ, book, footer); liquid-glass design system + Instrument Serif italic + Inter; typewriter email-capture CTA (no backend); fixed Bossert Dental canvas particles (radius 2.5–6.5px, line 1.5px, count 90); removed tile 8 from scrim-suppression rule; CLAUDE.md §5 row 16 + §9 W16 exception updated
 - **Branch:** `main` | Last push commit: `41351c5`
-- **Next up:** Prompt 19 — TBD
+- **Next up:** Prompt 20 — TBD
 - **Note:** Portfolio Tile Build Pattern lives at §9 (not §11) in CLAUDE.md. §11 references in any old prompts or notes are stale.
 
 ---
@@ -68,3 +68,4 @@ W1–W16 = work/{slug}/index.html  (see portfolio table in CLAUDE.md §5)
 | P16 | Built W10 (Midwestern IV) — first multi-section tile; dark liquid-glass, dual FadingVideo (rAF crossfade, no CSS transitions), BlurText word-by-word, 10 sections (hero→services→menu→how-it-works→why-iv→membership→testimonials→faq→book→footer); slug renamed verdant-iv-lounge→midwestern-iv; tile 10 upgraded to iframe in F1; F6 + §5 + §9 exception list updated; §9 NOTE: CLAUDE.md uses §9 for Portfolio Tile Build Pattern (old prompts may reference §11) |
 | P17 | Collapsed F1 grid 4×4→3×3; kept 9 tiles (azure, little-grins, modern-derma, texas, andersons, midwestern-iv, stratum, graces, bossert); renumbered 01–09; updated CSS grid, tile gradients, dark-tile selectors, responsive breakpoints |
 | P18 | Built W-Bossert (bossert-dental) — dark charcoal + vivid green, Sora font, canvas particle-network bg, bottom-left hero, dental content; Built W-Graces (graces-private-food-services) — dark warm bg, 3 CSS animated orbs, glassmorphism pill navbar, Instrument Serif italic heading, private chef content; tiles 8+9 upgraded Pattern B→Pattern A iframe in F1; savor-private-chef + rootwell-holistic-dental replaced in F1 + F6; CSP note: Spline 3D and Mux HLS both blocked by connect-src — translated to canvas and CSS orbs respectively |
+| P19 | Rebuilt W16 graces-private-food-services as full multi-section site — 9 sections (hero/services/menu/about/process/testimonials/FAQ/book/footer); FadingVideo on single 14s background.mp4 (fade at 13.45s); liquid-glass design system + Instrument Serif italic + Inter; typewriter email-capture CTA (State A pill → State B form, 60ms/char → 30ms/char post-submit, no backend); 3-part navbar + mobile sheet (5 inlined links); fixed Bossert Dental canvas particles (radius 2.5–6.5px, lineWidth 1.5, COUNT 90 — previously invisible at 0.30× iframe scale); removed tile 8 from scrim-suppression rule in styles.css (white hero text needs scrim for label legibility); CLAUDE.md §5 row 16 + §9 W16 exception updated |

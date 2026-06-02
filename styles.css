@@ -1732,7 +1732,6 @@ ul {
 
 /* Suppress the white gradient scrim on hover — dark animated backgrounds handle legibility */
 .work-tile[data-tile="1"]::before,
-.work-tile[data-tile="8"]::before,
 .work-tile[data-tile="9"]::before {
   display: none;
 }

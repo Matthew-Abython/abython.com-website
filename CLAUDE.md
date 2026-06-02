@@ -108,7 +108,7 @@ Single-page landings. Self-contained HTML/CSS. No nav back to Abython. Open in n
 | 13 | `kinetics-pilates` | Kinetics Pilates Studio | Pilates | Movement-forward, bold type |
 | 14 | `north-barber-co` | North Barber Co. | Barber | Masculine monochrome, condensed |
 | 15 | `ironwood-law` | Ironwood Law | Law firm | Serif-heavy, ivory + navy |
-| 16 | `savor-private-chef` | Savor Private Chef | Private chef | Burgundy, food photography |
+| 16 | `graces-private-food-services` | Graces Private Food Services | Private Chef / Catering | Dark liquid-glass, multi-section single-page, video hero; Instrument Serif italic + Inter; second multi-section tile after W10 |
 
 ---
 
@@ -158,6 +158,7 @@ This section is the source of truth for building portfolio demo tiles 2–16.
 - **W4 — Texas Prosthetics**: full-bleed video (no rounded card), two-pill centered nav (logo circle + links pill), bottom-left hero content, no hamburger/sheet, system font stack (no Google Fonts link), custom animation timing (0.5s duration, 0.1s stagger). §9.3 CSP rules and §9.6 variable-layer protocol still apply.
 - **W5 — Anderson's Boards**: dark theme (body bg #000, white text — first dark tile in portfolio), full-bleed video, 3-part pill navbar (logo pill + center links pill + right button), giant staggered absolute-positioned typography, floating stat blocks, bottom gradient overlay, all-lowercase text, Readex Pro font, custom animation timing (0.5s/0.1s, matches W4). No hamburger/sheet.
 - **W10 — Midwestern IV**: FIRST multi-section tile in portfolio (~10 sections including drip menu, membership tiers, FAQ, footer). Dark theme (second dark tile after W5). Custom liquid-glass design system, two FadingVideo backgrounds with rAF crossfade (no CSS transitions on videos), BlurText word-by-word animation on hero headline. 3-part liquid-glass navbar with mobile sheet (unlike W4/W5 which omit the sheet). Instrument Serif italic + Barlow fonts. Iframe preview shows full long-scroll page squished — per user decision, no height clamp applied. All React/Babel/Framer Motion translated to vanilla per §9.3.
+- **W16 — Graces Private Food Services**: SECOND multi-section tile (~9 sections: hero, services, menu, about, process, testimonials, FAQ, booking, footer). Third dark tile (W5, W10, W16). Reuses W10's liquid-glass design system and FadingVideo class. One background video in hero only (single video, 14s, fade-at-13.45s loop). Custom typewriter email-capture CTA on hero (State A pill → State B form; post-submit typewriter at 30ms/char; no backend, no fetch). 3-part liquid-glass navbar with mobile sheet; sheet has 5 inlined links (Menu/Services/About/Inquire/Book) with no separate CTA wrap. Instrument Serif italic + Inter fonts. Iframe preview shows full long-scroll page squished — no height clamp. All React/Motion/hls.js translated to vanilla per §9.3.
 
 Do not retrofit exceptions into §9.5, and do not copy from them when building new tiles.
 

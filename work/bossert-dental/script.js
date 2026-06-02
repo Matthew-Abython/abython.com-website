@@ -9,7 +9,7 @@
   var GREEN_HSLA = 'hsla(119, 99%, 46%, ';
   var WHITE_RGBA = 'rgba(244, 244, 244, ';
   var LINK_DIST  = 110;
-  var COUNT      = 72;
+  var COUNT      = 90;
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -24,7 +24,7 @@
       y:     Math.random() * H,
       vx:    (Math.random() - 0.5) * 0.26,
       vy:    (Math.random() - 0.5) * 0.26,
-      r:     Math.random() * 1.6 + 0.5,
+      r:     Math.random() * 4 + 2.5,
       green: Math.random() < 0.16
     };
   }
@@ -68,7 +68,7 @@
           ctx.strokeStyle = (a.green || b.green)
             ? GREEN_HSLA + alpha + ')'
             : WHITE_RGBA + alpha + ')';
-          ctx.lineWidth = 0.65;
+          ctx.lineWidth = 1.5;
           ctx.stroke();
         }
       }

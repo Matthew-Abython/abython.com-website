@@ -3,65 +3,543 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grace's Private Food Services — Artisanal Dining Experiences</title>
-  <meta name="description" content="Grace's Private Food Services crafts bespoke private dining experiences. Chef Grace brings world-class cuisine to your home, retreat, or occasion — intimately and unforgettably.">
+  <title>Graces Private Food Services — Private Chef &amp; Catering in Naperville, IL</title>
+  <meta name="description" content="Graces Private Food Services offers private chef dinners, weekly meal prep, and custom catering in Naperville and the Chicago western suburbs.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/work/graces-private-food-services/styles.css">
 </head>
 <body>
 
-  <!-- ANIMATED BACKGROUND -->
-  <div class="gp-bg" aria-hidden="true">
-    <div class="gp-orb gp-orb-1"></div>
-    <div class="gp-orb gp-orb-2"></div>
-    <div class="gp-orb gp-orb-3"></div>
-  </div>
+  <a class="skip-link" href="#hero">Skip to content</a>
 
-  <!-- NAVBAR -->
-  <nav class="gp-nav">
-    <div class="gp-nav-inner">
-      <div class="gp-nav-left">
-        <a href="#" class="gp-logo">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M9 2C9 2 5.5 4.5 5.5 8C5.5 9.933 7.067 11.5 9 11.5V16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M12 2V6.5C12 7.328 11.328 8 10.5 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <path d="M12 2V8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-          </svg>
-          Grace's
-        </a>
-        <div class="gp-nav-links">
-          <a href="#menu">Menu</a>
-          <a href="#events">Events</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </div>
-      <a href="#contact" class="gp-reserve">Reserve</a>
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+
+    <div class="nav-logo-pill liquid-glass" aria-label="Graces Private Food Services">
+      <svg class="nav-logo-icon" width="18" height="20" viewBox="0 0 18 20" fill="none" aria-hidden="true">
+        <path d="M5 1C5 1 5 8 5 10C5 12.209 6.791 14 9 14" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/>
+        <path d="M5 14V19M13 10V19" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/>
+        <path d="M11 1V7C11 7 11 9.5 13.5 9.5C16 9.5 16 7 16 7V1" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/>
+      </svg>
+      <span class="nav-logo-text">graces</span>
     </div>
+
+    <div class="nav-center-pill liquid-glass" role="list">
+      <a href="#menu" role="listitem">Menu</a>
+      <a href="#services" role="listitem">Services</a>
+      <a href="#about" role="listitem">About</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="#book" class="nav-inquire">Inquire</a>
+      <a href="#book" class="nav-book-pill liquid-glass-strong">
+        Book
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+          <path d="M2.5 9.5L9.5 2.5M9.5 2.5H3.5M9.5 2.5V8.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <button
+        class="nav-hamburger liquid-glass"
+        id="nav-hamburger"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-sheet"
+      >
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M3 5H17M3 10H17M3 15H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
   </nav>
 
-  <!-- HERO -->
-  <section class="gp-hero" aria-label="Hero">
-    <div class="gp-hero-inner">
-      <p class="gp-tagline">ARTISANAL DINING EXPERIENCES</p>
-      <h1 class="gp-heading">
-        A new way to<br class="gp-br">
-        <em>taste and celebrate</em>
+  <!-- ── MOBILE SHEET ── -->
+  <div class="sheet-backdrop" id="sheet-backdrop" aria-hidden="true"></div>
+  <div
+    class="mobile-sheet"
+    id="mobile-sheet"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Navigation menu"
+    tabindex="-1"
+  >
+    <div class="sheet-header">
+      <span class="sheet-logo">graces</span>
+      <button class="sheet-close" id="sheet-close" aria-label="Close navigation menu">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M2 2L16 16M16 2L2 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <nav class="sheet-links" aria-label="Mobile navigation">
+      <a class="sheet-link" href="#menu">Menu</a>
+      <a class="sheet-link" href="#services">Services</a>
+      <a class="sheet-link" href="#about">About</a>
+      <a class="sheet-link" href="#book">Inquire</a>
+      <a class="sheet-link" href="#book">Book</a>
+    </nav>
+  </div>
+
+  <!-- ── HERO ── -->
+  <section class="full-section" id="hero" aria-label="Hero">
+
+    <video
+      class="video-bg"
+      data-fading-video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      style="opacity:0"
+      aria-hidden="true"
+    >
+      <source src="/work/graces-private-food-services/background.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+
+      <p class="hero-tagline">Private Chef &middot; Weekly Meals &middot; Intimate Dinners</p>
+
+      <h1 class="hero-heading">
+        Cooked with care.<br>Served at your table.
       </h1>
-      <p class="gp-desc">
-        Private dining crafted for your most meaningful moments.
-        Chef Grace brings the restaurant experience to you —
-        intimately, intentionally, unforgettably.
-      </p>
-      <div class="gp-ctas">
-        <button class="gp-btn-primary" id="gp-book-btn" type="button">Book a Private Dinner</button>
-        <a href="#menu" class="gp-btn-ghost">View Our Menu &rarr;</a>
+
+      <div class="hero-cta-area">
+
+        <button id="gp-reserve-btn" class="hero-reserve-btn liquid-glass-strong">
+          Reserve your table
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <circle cx="9" cy="9" r="7.25" stroke="currentColor" stroke-width="1.25"/>
+            <path d="M6 12L12 6M12 6H7M12 6V11" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+
+        <form id="gp-email-form" class="email-form-pill liquid-glass-strong" novalidate>
+          <input
+            id="gp-email-input"
+            type="email"
+            class="email-input"
+            placeholder=""
+            aria-label="Email address"
+            autocomplete="email"
+          >
+          <button type="submit" id="gp-submit-btn" class="email-submit-btn" aria-label="Submit email">
+            <svg id="gp-arrow-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M5.5 10.5L10.5 5.5M10.5 5.5H6M10.5 5.5V10" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg id="gp-check-svg" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" style="display:none">
+              <circle cx="8" cy="8" r="6.25" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M5 8L7 10.5L11 5.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+
       </div>
-      <p class="gp-trust">Private dining &middot; Chicago, IL &middot; Serving 2019&ndash;present</p>
+
+      <a href="#testimonials" class="hero-play-link">
+        See a sample evening
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+
     </div>
   </section>
+
+  <!-- ── SERVICES ── -->
+  <section id="services" aria-label="Our services">
+    <div class="services-inner">
+      <p class="section-kicker">// Our Services</p>
+      <h2 class="section-heading-lg">Meals<br>That Matter</h2>
+
+      <div class="services-grid">
+
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path d="M8 3C8 3 8 12 8 14C8 16.209 9.791 18 12 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M8 18V25M18 13V25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M14 3V9C14 9 14 12 17 12C20 12 20 9 20 9V3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-tags">
+            <span class="service-tag">Weekly</span>
+            <span class="service-tag">Seasonal</span>
+            <span class="service-tag">Personalized</span>
+          </div>
+          <h3 class="service-card-title">Weekly Meal Prep</h3>
+          <p class="service-card-body">We plan, shop, prep, and plate five to seven days of meals in your kitchen while you're out — fresh, labeled, and ready to heat. Every menu designed around your dietary needs and preferences.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <ellipse cx="14" cy="20" rx="9" ry="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M5 20V22C5 23.657 9.029 25 14 25C18.971 25 23 23.657 23 22V20" stroke="currentColor" stroke-width="1.5"/>
+              <rect x="9" y="6" width="10" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M11 10H17M11 13H15" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-tags">
+            <span class="service-tag">Intimate</span>
+            <span class="service-tag">Up to 12</span>
+            <span class="service-tag">Wine Pairing</span>
+          </div>
+          <h3 class="service-card-title">Private Dinners</h3>
+          <p class="service-card-body">A sit-down chef experience in your home. From amuse-bouche to dessert, each course composed and presented by Grace. Perfect for birthdays, anniversaries, client dinners, and quiet celebrations.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path d="M14 4L16.5 10.5H23.5L17.75 14.5L20 21L14 17.25L8 21L10.25 14.5L4.5 10.5H11.5L14 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="service-tags">
+            <span class="service-tag">Events</span>
+            <span class="service-tag">Custom Menu</span>
+            <span class="service-tag">Full Service</span>
+          </div>
+          <h3 class="service-card-title">Custom Catering</h3>
+          <p class="service-card-body">Cocktail parties, holiday gatherings, corporate lunches. We build the menu around your event, source locally where possible, and handle every detail from setup to teardown.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MENU ── -->
+  <section id="menu" aria-label="Sample menu">
+    <div class="menu-inner">
+      <h2 class="section-heading">A Sample Table</h2>
+      <p class="section-subheading">Eight dishes from recent tables.</p>
+
+      <div class="dish-grid">
+
+        <div class="dish-card">
+          <h3 class="dish-name">Truffle Butter Risotto</h3>
+          <p class="dish-desc">Arborio, porcini reduction, aged parmesan, chive</p>
+          <div class="dish-meta"><span class="dish-note">Vegetarian · Year-round</span></div>
+        </div>
+
+        <div class="dish-card">
+          <h3 class="dish-name">Herb-Crusted Rack of Lamb</h3>
+          <p class="dish-desc">French-trimmed, dijon crust, cherry demi-glace, roasted fingerlings</p>
+          <div class="dish-meta"><span class="dish-note">Spring–Summer · Entrée</span></div>
+        </div>
+
+        <div class="dish-card">
+          <h3 class="dish-name">Burrata &amp; Heirloom Tomato</h3>
+          <p class="dish-desc">Stracciatella, basil oil, smoked sea salt, sourdough crisp</p>
+          <div class="dish-meta"><span class="dish-note">Summer · Starter</span></div>
+        </div>
+
+        <div class="dish-card">
+          <h3 class="dish-name">Pan-Seared Duck Breast</h3>
+          <p class="dish-desc">Five-spice cure, orange gastrique, lentil du Puy</p>
+          <div class="dish-meta"><span class="dish-note">Fall–Winter · Entrée</span></div>
+        </div>
+
+        <div class="dish-card">
+          <h3 class="dish-name">Black Truffle Pasta</h3>
+          <p class="dish-desc">Fresh pappardelle, cream, 24-month parmigiano, P&eacute;rigord truffle</p>
+          <div class="dish-meta"><span class="dish-note">Seasonal · Vegetarian</span></div>
+        </div>
+
+        <div class="dish-card">
+          <h3 class="dish-name">Seared Halibut</h3>
+          <p class="dish-desc">Brown butter, capers, preserved lemon, broccolini</p>
+          <div class="dish-meta"><span class="dish-note">Spring · Pescatarian</span></div>
+        </div>
+
+        <div class="dish-card">
+          <h3 class="dish-name">Tahini Dark Chocolate Tart</h3>
+          <p class="dish-desc">Valrhona chocolate, sesame caramel, fleur de sel</p>
+          <div class="dish-meta"><span class="dish-note">Year-round · Dessert</span></div>
+        </div>
+
+        <div class="dish-card">
+          <h3 class="dish-name">Seasonal Vegetable Tasting</h3>
+          <p class="dish-desc">Four preparations: raw, roasted, pickled, compressed</p>
+          <div class="dish-meta"><span class="dish-note">Changes weekly · Vegan</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about" aria-label="About the chef">
+    <div class="about-inner">
+      <div class="about-grid">
+
+        <div class="about-image-wrap" aria-hidden="true">
+          <div class="about-image-placeholder"></div>
+        </div>
+
+        <div class="about-text">
+          <p class="about-eyebrow">About the Chef</p>
+          <h2 class="about-heading">Grace has cooked in three Michelin kitchens.</h2>
+          <p class="about-body">After training under two Michelin-starred chefs in Lyon and staging in Copenhagen, Grace returned to Illinois to do something quieter — and more personal. She founded Graces Private Food Services in 2021 to bring serious cooking to dinner tables, not restaurant counters.</p>
+          <blockquote class="about-quote">
+            <p>"Every client is one client. Your table gets my full attention — not a team running twelve covers at once."</p>
+            <cite>— Grace, Chef &amp; Founder</cite>
+          </blockquote>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROCESS ── -->
+  <section id="process" aria-label="How it works">
+    <div class="process-inner">
+      <h2 class="section-heading">How It Works</h2>
+      <p class="section-subheading">From first call to last bite — we handle everything.</p>
+
+      <div class="process-grid">
+
+        <div class="process-step">
+          <span class="process-number" aria-hidden="true">01</span>
+          <h3 class="process-title">Consult</h3>
+          <p class="process-body">We start with a 20-minute call — your household size, preferences, restrictions, and goals. No form, just a conversation.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="process-number" aria-hidden="true">02</span>
+          <h3 class="process-title">Menu Design</h3>
+          <p class="process-body">Grace designs a seasonal menu tailored to you, sourcing locally where possible and adjusting based on your feedback before a single ingredient is purchased.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="process-number" aria-hidden="true">03</span>
+          <h3 class="process-title">Shopping &amp; Prep</h3>
+          <p class="process-body">We shop, prep, cook, and plate — either in your kitchen or ours. Everything is labeled, dated, and stored properly before we leave.</p>
+        </div>
+
+        <div class="process-step">
+          <span class="process-number" aria-hidden="true">04</span>
+          <h3 class="process-title">Enjoy</h3>
+          <p class="process-body">Heat, plate, and eat. We provide simple reheating instructions for every dish and are always reachable if you have questions.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section id="testimonials" aria-label="Client stories">
+    <div class="testimonials-inner">
+      <h2 class="section-heading">What Clients Say</h2>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">"Grace changed how we eat at home. Sunday nights used to be takeout. Now there's a three-course meal in the fridge and we look forward to every single dinner."</blockquote>
+          <div class="testimonial-author">
+            <p class="testimonial-name">Melissa H.</p>
+            <p class="testimonial-title">Hinsdale, IL</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">"We hired Grace for my husband's 50th birthday — six courses in our kitchen. Our guests are still talking about it three months later."</blockquote>
+          <div class="testimonial-author">
+            <p class="testimonial-name">Sandra K.</p>
+            <p class="testimonial-title">Naperville, IL</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <blockquote class="testimonial-quote">"I travel four days a week. Having Grace prep means my kids eat real food when I'm gone. I can't put a price on that peace of mind."</blockquote>
+          <div class="testimonial-author">
+            <p class="testimonial-name">David R.</p>
+            <p class="testimonial-title">Downers Grove, IL</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section id="faq" aria-label="Frequently asked questions">
+    <div class="faq-inner">
+      <h2 class="section-heading">Frequently Asked</h2>
+      <div class="faq-container" id="faq-container">
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How far in advance should I book?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <p class="faq-answer-inner">Weekly meal prep clients typically book 2 weeks out for a first consultation. Private dinners and events should be booked at least 3–4 weeks in advance. Contact us and we'll confirm current availability.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you cook in my kitchen or yours?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <p class="faq-answer-inner">Both options are available. Most weekly prep clients prefer we work in their kitchen — it avoids transport and keeps food at its freshest. Private dinners are always in your home.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can you accommodate dietary restrictions?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <p class="faq-answer-inner">Yes. Gluten-free, dairy-free, nut-free, vegetarian, vegan, low-FODMAP — Grace has worked with all of them. Share your needs during the consultation and your menu will be designed around them.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What does weekly meal prep cost?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <p class="faq-answer-inner">Weekly prep starts at $450 for households of 2–3, depending on the number of meals, dietary complexity, and grocery costs. A full quote is provided after the consultation call.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do you handle grocery shopping?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <p class="faq-answer-inner">Yes. Grace handles all sourcing and shopping. Groceries are billed at cost with no markup. You'll receive an itemized receipt with every delivery or prep session.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I gift a private dinner?
+            <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="faq-answer" role="region">
+            <p class="faq-answer-inner">Absolutely. Gift bookings are available for birthdays, anniversaries, and special occasions. Contact us and we'll handle coordination with the recipient on your behalf.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BOOK ── -->
+  <section id="book" aria-label="Reserve your table">
+    <div class="book-inner">
+      <h2 class="book-heading">Reserve your table.</h2>
+      <p class="book-sub">Private chef services in Naperville, Hinsdale, Downers Grove, and surrounding communities.</p>
+      <div class="book-ctas">
+        <a href="mailto:hello@graces-private.example" class="hero-reserve-btn liquid-glass-strong">
+          hello@graces-private.example
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M3 5L9 10L15 5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+            <rect x="2" y="4" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.25"/>
+          </svg>
+        </a>
+        <a href="tel:+16305550193" class="book-cta-secondary">(630) 555-0193</a>
+      </div>
+      <p class="book-note">All bookings begin with a complimentary 20-minute consultation.</p>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <div class="footer-brand">
+          <span class="footer-wordmark">graces</span>
+          <p class="footer-tagline">Private food services.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <rect x="2" y="2" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.25"/>
+                <circle cx="9" cy="9" r="3.5" stroke="currentColor" stroke-width="1.25"/>
+                <circle cx="13" cy="5" r="0.75" fill="currentColor"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <path d="M12.5 2C12.5 4.5 14.5 5.5 16.5 5.5V8.5C14.5 8.5 13 7.75 12.5 7V13.5C12.5 15.433 10.933 17 9 17C7.067 17 5.5 15.433 5.5 13.5C5.5 11.567 7.067 10 9 10C9.34 10 9.67 10.045 9.985 10.125V13.25C9.68 13.095 9.35 13 9 13C8.448 13 8 13.448 8 14C8 14.552 8.448 15 9 15C9.552 15 10 14.552 10 14V2H12.5Z" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social" aria-label="Pinterest">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                <circle cx="9" cy="8" r="6" stroke="currentColor" stroke-width="1.25"/>
+                <path d="M7 9.5C7.5 11 8.25 12 9 12C9.75 12 10.5 11 11 9.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                <path d="M9 12V16" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+                <circle cx="9" cy="8" r="2.25" stroke="currentColor" stroke-width="1.25"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Services</p>
+          <div class="footer-links">
+            <a href="#services" class="footer-link">Weekly Meal Prep</a>
+            <a href="#services" class="footer-link">Private Dinners</a>
+            <a href="#services" class="footer-link">Custom Catering</a>
+            <a href="#services" class="footer-link">Gift a Dinner</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-col-title">About</p>
+          <div class="footer-links">
+            <a href="#about" class="footer-link">The Chef</a>
+            <a href="#process" class="footer-link">Process</a>
+            <a href="#" class="footer-link">Press</a>
+            <a href="#faq" class="footer-link">FAQ</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Connect</p>
+          <address class="footer-address">
+            <a href="mailto:hello@graces-private.example" class="footer-link">hello@graces-private.example</a>
+            <a href="tel:+16305550193" class="footer-link">(630) 555-0193</a>
+            <span>Naperville, IL</span>
+          </address>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 Graces Private Food Services</span>
+        <div class="footer-legal">
+          <a href="#" class="footer-legal-link">Privacy</a>
+          <a href="#" class="footer-legal-link">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="/work/graces-private-food-services/script.js"></script>
 </body>
