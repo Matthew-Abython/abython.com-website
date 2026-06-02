@@ -1,7 +1,7 @@
 # CLAUDE.md — Abython.com Rebrand Context
 
 > **READ THIS FIRST** at the start of every session before making any changes.
-> Current file state and prompt history are in `SESSION.md` — read that too.
+> Current site state, tile inventory, and change history are in `SUMMARY.md` — read that too.
 
 ---
 
@@ -81,7 +81,7 @@ Key tokens: `--bg` `--bg-elevated` `--bg-inverse` `--ink` `--ink-muted` `--ink-s
 
 ## 4. File Structure
 
-See `SESSION.md` for the current file map and line counts. Stack is pure HTML/CSS/JS — no framework, no build step, no npm.
+See `SUMMARY.md` for the current file map, tile inventory, and line counts. Stack is pure HTML/CSS/JS — no framework, no build step, no npm.
 
 **Key layout pattern:** Every page that needs locked integrations loads `styles.css` from root, and scripts inline at bottom of `<body>`. Chat widget (`chat.js`) is on the main site only.
 
@@ -127,7 +127,9 @@ Per-section animations go in named functions called after DOMContentLoaded. Alwa
 
 ## 7. Git Workflow
 
-**Before every push:** Update `SESSION.md` (current state, file map if changed, active issues, prompt history row). Stage `SESSION.md` in the same commit as code changes.
+**Before every push:** Update `SUMMARY.md` (current state, tile inventory if changed, active issues, change history row). Stage `SUMMARY.md` in the same commit as code changes.
+
+**After every push to GitHub:** `SUMMARY.md` must reflect the pushed state. It is the handoff document for planning sessions — it must never lag behind `main`.
 
 Commit style: conventional commits — `feat:`, `style:`, `fix:`, `chore:`
 Repo: `Matthew-Abython/abython.com-website` | Branch: `main`
@@ -140,10 +142,10 @@ Push only at end of major milestones, never mid-prompt unless explicitly instruc
 - **Read files from disk** before asking about structure. Never ask what a file contains — read it.
 - **Targeted reads only.** When editing a specific section, read the relevant line range, not the whole file.
 - **No trailing summaries.** Do not re-summarize changes at end of a response. The diff shows the work.
-- **No mid-session SESSION.md updates.** Only update SESSION.md when explicitly committing and pushing.
+- **No mid-session SUMMARY.md updates.** Only update SUMMARY.md when committing and pushing — never as an intermediate step.
 - **Single-pass edits.** Make all changes to a file in one Edit call, not multiple sequential reads/edits.
 - **No re-reads after edits.** Edit/Write confirm success — do not re-read to verify.
-- **Small session = skip §3–6.** If this session is a single-file style edit with no new pages or locked-constraint changes, you may read only §1, §2, and `SESSION.md`. Skip §3–7.
+- **Small session = skip §3–6.** If this session is a single-file style edit with no new pages or locked-constraint changes, you may read only §1, §2, and `SUMMARY.md`. Skip §3–7.
 
 ---
 
