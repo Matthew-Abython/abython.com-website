@@ -51,11 +51,19 @@ FadingVideo.prototype.fadeTo = function (target, duration) {
 FadingVideo.prototype._bindEvents = function () {
   var self = this;
 
-  self.v.addEventListener('loadeddata', function () {
-    self.v.style.opacity = '0';
-    self.v.play().catch(function () {});
+  function fadeIn() {
     self.fadeTo(1, FADE_MS);
-  });
+  }
+
+  // If video data is already available (autoplay fired before listener attached), fade in now
+  if (self.v.readyState >= 3) {
+    fadeIn();
+  } else {
+    self.v.addEventListener('canplay', function handler() {
+      self.v.removeEventListener('canplay', handler);
+      fadeIn();
+    });
+  }
 
   self.v.addEventListener('timeupdate', function () {
     var duration = self.v.duration;
@@ -69,11 +77,15 @@ FadingVideo.prototype._bindEvents = function () {
 
   self.v.addEventListener('ended', function () {
     self.v.style.opacity = '0';
+    self.fadingOut = false;
     setTimeout(function () {
       self.v.currentTime = 0;
-      self.v.play().catch(function () {});
-      self.fadingOut = false;
-      self.fadeTo(1, FADE_MS);
+      var p = self.v.play();
+      if (p && typeof p.then === 'function') {
+        p.then(fadeIn).catch(function () {});
+      } else {
+        fadeIn();
+      }
     }, 100);
   });
 };
