@@ -23,9 +23,9 @@
 
 | File | Role |
 |---|---|
-| `index.html` | Nav, 3×3 hero grid (9 portfolio tiles), 3 narrative sections (website/SEO/AIO), services cards, CTA, footer |
-| `styles.css` | All CSS — design tokens in `:root` at top; service narrative + detail page rules appended |
-| `script.js` | Demo form POST, mobile nav, GSAP scroll animations, Lenis smooth scroll |
+| `index.html` | Nav, 3×3 hero grid (9 portfolio tiles), Sections A–D (craft/services/advantage/CTA), footer |
+| `styles.css` | All CSS — design tokens in `:root` at top; luxury minimal design system (Cormorant + DM Sans + DM Mono) |
+| `script.js` | Demo form POST, mobile nav, IntersectionObserver reveals, Lenis smooth scroll, page-load animation, parallax |
 | `chat.js` | Chat widget — floating bottom-right bubble |
 | `vercel.json` | Security headers + CSP — **LOCKED, never touch** |
 | `ai-receptionist/index.html` | Demo form + AI receptionist product copy |
@@ -118,11 +118,11 @@ All tokens live in `styles.css` `:root`. Never rename or change values without e
 --card-shadow-hover: 0 8px 28px rgba(10,10,10,0.10)
 ```
 
-**Card utility classes (P25):** `.card-container` (light pages) · `.card-container-dark` (dark portfolio pages) · `.narrative-card` modifier (service-specific bg + left border per section)
+**Luxury minimal design system (P26):** `--bg:#F7F5F1` · `--bg-elevated:#EFECE6` · `--bg-inverse:#0F1117` · `--accent:#1A3566` (deep trust blue) · `--accent-2:#B8972A` (antique gold) · `--section-py:160px`
 
-**Animation data attributes (P25):** `data-animate="card"` → GSAP stagger reveal (0.08s per card, top 82%); `data-animate="heading"` → single fade-up (top 85%)
+**Reveal system (P26):** `.reveal-ready` → `opacity:0 + translateY(32px)` · `.reveal-ready.is-visible` → visible. IntersectionObserver (threshold 0.15) in script.js adds `.is-visible`. `[data-animate="card"]` and `[data-animate="heading"]` use same pattern.
 
-**Fonts (main site):** Fraunces (display/headings) + Inter Tight (body/UI) — both Google Fonts.
+**Fonts (main site):** Cormorant Garamond (display/headings) + DM Sans (body/UI) + DM Mono (labels) — all Google Fonts.
 
 ---
 
@@ -248,3 +248,4 @@ The implementation chat is Claude Code with full repo access. It reads CLAUDE.md
 | P25 | Design system rollout: error tokens + card tokens added to styles.css :root; .card-container + .card-container-dark utility classes added; mobile nav max-height slide + hamburger X animation; aria-expanded fixed; GSAP Pattern A/B for [data-animate]; index.html 5 sections wrapped (website/SEO/AIO narratives, managed, CTA); privacy-policy nav rebuilt to standard structure + GSAP/Lenis added; work/index.html nav links fixed (GBP→/services/local-seo/, SEO+AIO→/services/ai-optimization/); W10+W16 GSAP injected + scroll animations on all section cards; W11 Bossert full mobile nav added (hamburger + slide sheet + focus trap); W1 scale hover added; W3 asymmetric padding fixed; W5 scale hover added; service pages (S1/S2/S3) + ai-receptionist all .service-detail-section blocks wrapped in .card-container; FORMATTING-AUDIT.md created |
 | P25.5a | CSS Foundation completion: hamburger animation, hardcoded colors → tokens, chat widget fade, card hovers, dark tokens for W10/W16 |
 | P25.5b | HTML wrapping pass: F1 cards, privacy-policy 9 sections, F6 work grid, W10/W16 trust/book/FAQ sections wrapped in card-container-dark |
+| P26 | Full luxury minimal redesign: Cormorant Garamond + DM Sans + DM Mono typography; parchment palette (#F7F5F1) + deep trust blue (#1A3566) + antique gold (#B8972A); IntersectionObserver replaces GSAP ScrollTrigger for reveals; 4 new post-hero sections on F1 (craft/services/advantage/begin); 3-col footer; svc-hero + svc-row horizontal rule layout on all service pages; updated F5 hero + form styling; F6 new header; legal pages nav + footer updated |

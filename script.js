@@ -47,96 +47,70 @@ if (navToggle && navLinks) {
     });
 }
 
-// Scroll-triggered entrance animations — replaces the old IntersectionObserver.
-// Uses GSAP ScrollTrigger. Respects prefers-reduced-motion.
-function initScrollAnimations() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    // For users who prefer reduced motion: show all elements immediately, no animation.
-    document.querySelectorAll('.animate-ready, [data-animate]').forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-    });
-    return;
+// IntersectionObserver scroll reveals — replaces GSAP ScrollTrigger
+function initReveal() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  // Stagger siblings within the same parent section
+  function getStaggerDelay(el) {
+    const section = el.closest('section, .svc-body, .work-listing');
+    if (!section) return 0;
+    const siblings = Array.from(section.querySelectorAll('.reveal-ready, [data-animate="card"], [data-animate="heading"]'));
+    const idx = siblings.indexOf(el);
+    return Math.max(0, idx) * 80; // 80ms per item
   }
 
-  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
-    // Libraries failed to load — fall back to making elements visible.
-    document.querySelectorAll('.animate-ready, [data-animate]').forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'none';
-    });
-    return;
-  }
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Animate each .animate-ready element with a slight stagger based on siblings.
-  document.querySelectorAll('.animate-ready').forEach(el => {
-    gsap.fromTo(el,
-      { opacity: 0, y: 24 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 88%',
-          toggleActions: 'play none none none',
-        },
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const delay = getStaggerDelay(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add('is-visible');
+        }, delay);
+        observer.unobserve(entry.target);
       }
-    );
-  });
-
-  // Card stagger reveal — Pattern A from design system audit
-  const cardGroups = {};
-  document.querySelectorAll('[data-animate="card"]').forEach(el => {
-    const section = el.closest('section') || el.parentElement;
-    const key = section ? (section.id || section.className) : 'global';
-    if (!cardGroups[key]) cardGroups[key] = [];
-    cardGroups[key].push(el);
-  });
-
-  Object.values(cardGroups).forEach(cards => {
-    cards.forEach((card, i) => {
-      gsap.fromTo(card,
-        { opacity: 0, y: 32 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.65,
-          delay: i * 0.08,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 82%',
-            toggleActions: 'play none none none',
-          },
-        }
-      );
     });
-  });
+  }, { threshold: 0.15 });
 
-  // Section heading reveal — Pattern B
-  document.querySelectorAll('[data-animate="heading"]').forEach(heading => {
-    gsap.fromTo(heading,
-      { opacity: 0, y: 20 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.6,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: heading,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
-      }
-    );
+  document.querySelectorAll('.reveal-ready, [data-animate="card"], [data-animate="heading"]').forEach(el => {
+    observer.observe(el);
   });
 }
 
-// Demo Request Form
+// Page load sequence — nav slides down on first paint
+function initPageLoad() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const nav = document.getElementById('primary-nav');
+  if (!nav) return;
+  nav.style.opacity = '0';
+  nav.style.transform = 'translateY(-20px)';
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      nav.style.transition = 'opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s';
+      nav.style.opacity = '1';
+      nav.style.transform = 'translateY(0)';
+    });
+  });
+}
+
+// Subtle parallax on Section A (dot texture background shifts at 0.3× scroll)
+function initParallax() {
+  const target = document.querySelector('.section-craft');
+  if (!target) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        target.style.backgroundPositionY = (window.scrollY * 0.3) + 'px';
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+}
+
+// Demo Request Form — LOCKED: do not modify POST logic or auth header
 (function () {
     var WEBHOOK_URL = 'https://abython.app.n8n.cloud/webhook/e4df1cc2-8d07-4e72-a86a-df1a13b10f2c';
     var form = document.getElementById('demo-form');
@@ -184,7 +158,7 @@ function initScrollAnimations() {
 
         var btn = document.getElementById('demo-submit');
         btn.disabled = true;
-        btn.textContent = 'Sending\u2026';
+        btn.textContent = 'Sending…';
 
         fetch(WEBHOOK_URL, {
             method: 'POST',
@@ -215,11 +189,8 @@ function initScrollAnimations() {
 })();
 
 // ─── Lenis smooth scroll + GSAP integration ───────────────────────────
-// Initialized after DOM is ready. Lenis is exposed on window.lenis so the
-// anchor-link handler above can use it.
 (function initSmoothScroll() {
   function boot() {
-    // If reduced motion is preferred, skip Lenis entirely — native scroll is fine.
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     if (!reduceMotion && typeof Lenis !== 'undefined') {
@@ -231,7 +202,6 @@ function initScrollAnimations() {
 
       window.lenis = lenis;
 
-      // Sync Lenis with GSAP's ticker for jank-free scroll-triggered animations.
       if (typeof gsap !== 'undefined') {
         if (typeof ScrollTrigger !== 'undefined') {
           lenis.on('scroll', ScrollTrigger.update);
@@ -241,7 +211,6 @@ function initScrollAnimations() {
         });
         gsap.ticker.lagSmoothing(0);
       } else {
-        // GSAP not loaded — fall back to Lenis's own RAF loop.
         function raf(time) {
           lenis.raf(time);
           requestAnimationFrame(raf);
@@ -250,10 +219,10 @@ function initScrollAnimations() {
       }
     }
 
-    // Kick off scroll animations (works with or without Lenis).
-    if (typeof initScrollAnimations === 'function') {
-      initScrollAnimations();
-    }
+    // Init reveal system, page load animation, parallax
+    initReveal();
+    initPageLoad();
+    initParallax();
   }
 
   if (document.readyState === 'loading') {
@@ -262,43 +231,3 @@ function initScrollAnimations() {
     boot();
   }
 })();
-
-// Service narrative icon entrance animations
-(function () {
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function initNarrativeIcons() {
-    ['website', 'seo', 'aio'].forEach(function (cls) {
-      const icon = document.querySelector('.service-narrative.' + cls + ' .service-narrative-icon');
-      if (!icon) return;
-
-      if (prefersReducedMotion) {
-        icon.classList.add('is-visible');
-      } else if (typeof ScrollTrigger !== 'undefined') {
-        ScrollTrigger.create({
-          trigger: icon,
-          start: 'top 80%',
-          once: true,
-          onEnter: function () { icon.classList.add('is-visible'); }
-        });
-      } else {
-        // Fallback: IntersectionObserver when GSAP/ScrollTrigger not available
-        const observer = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('is-visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.2 });
-        observer.observe(icon);
-      }
-    });
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initNarrativeIcons);
-  } else {
-    initNarrativeIcons();
-  }
-}());

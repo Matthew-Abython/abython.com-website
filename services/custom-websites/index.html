@@ -8,13 +8,11 @@
   <link rel="stylesheet" href="/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Inter+Tight:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
 </head>
 <body class="service-detail-page">
 
-  <!-- ════════════════════════════════════════════════════════════════
-       NAVIGATION
-       ════════════════════════════════════════════════════════════════ -->
+  <!-- NAVIGATION -->
   <nav class="nav" id="primary-nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo">Abython</a>
@@ -26,182 +24,140 @@
       </button>
 
       <div class="nav-links" id="nav-links">
-        <a href="/">Home</a>
-        <a href="/#work">Work</a>
+        <a href="/work/">Work</a>
         <a href="/#services">Services</a>
-        <a href="/ai-receptionist">AI Receptionist</a>
-        <a href="/#contact">Contact</a>
+        <a href="/ai-receptionist/">AI Receptionist</a>
+        <a href="/services/local-seo/">Local SEO</a>
+        <a href="/services/ai-optimization/">AIO</a>
+        <a href="https://calendly.com/owner-abython/new-meeting" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
       </div>
     </div>
   </nav>
 
   <main>
-    <!-- ════════════════════════════════════════════════════════════════
-         HERO
-         ════════════════════════════════════════════════════════════════ -->
-    <section class="service-detail-hero" aria-label="Custom Websites hero">
-      <div class="container container--narrow">
-        <nav class="service-detail-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a>
-          <span>›</span>
-          <a href="/#services">Services</a>
-          <span>›</span>
-          Custom Websites
-        </nav>
-        <p class="eyebrow animate-ready">Custom Websites</p>
-        <h1 class="animate-ready">High-Converting Website Design</h1>
-        <p class="service-detail-hero-body animate-ready">
-          Professional. Fast. Trustworthy.<br>
-          When a customer lands on your site, you have 30 seconds.<br>
-          Here's exactly what makes the difference.
+
+    <!-- HERO -->
+    <section class="svc-hero" aria-label="Custom Websites hero">
+      <div class="container">
+        <p class="section-label reveal-ready">SERVICE / 01</p>
+        <h1 class="svc-hero-headline reveal-ready">Custom Websites</h1>
+        <p class="svc-hero-lead reveal-ready">
+          A website is a practice's most powerful first impression. We design and build conversion-focused sites for dental practices and med spas — pages that turn visitors into booked appointments.
         </p>
+        <a href="https://calendly.com/owner-abython/new-meeting" target="_blank" rel="noopener" class="nav-cta svc-hero-cta reveal-ready">Start Your Website Project</a>
       </div>
     </section>
 
-    <!-- ════════════════════════════════════════════════════════════════
-         CONTENT SECTIONS
-         ════════════════════════════════════════════════════════════════ -->
-    <section class="service-detail-sections" aria-label="How we build your website">
-      <div class="container container--narrow">
+    <!-- CONTENT SECTIONS -->
+    <div class="svc-body">
+      <div class="container">
 
-        <!-- Section A: Discovery & Strategy -->
-        <div class="service-detail-section animate-ready">
-          <div class="card-container" data-animate="card">
-          <div class="service-detail-icon websites" aria-hidden="true">
-            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <circle cx="34" cy="34" r="20" fill="none" stroke="var(--icon-color)" stroke-width="5"/>
-              <line x1="48" y1="48" x2="68" y2="68" stroke="var(--icon-color)" stroke-width="5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h2>We Start With You</h2>
-          <p>We don't build websites from templates.<br>We start by understanding your business, your customers, and what you want to achieve.</p>
-          <p>What we ask:</p>
-          <ul class="service-detail-list">
-            <li>Who is your ideal customer?</li>
-            <li>What problems do they have when they call you?</li>
-            <li>How do you want them to book (phone, online, or both)?</li>
-            <li>What makes you different from competitors?</li>
-          </ul>
-          <p>The more we know, the better the result.<br>This phase takes 1–2 weeks and shapes everything that comes next.</p>
+        <div class="svc-row reveal-ready">
+          <div class="svc-row-label">The Practice Deep-Dive</div>
+          <div class="svc-row-content">
+            <p>We don't build from templates. Every engagement begins with a thorough discovery of your practice — your patients, your care philosophy, and the specific actions you want visitors to take.</p>
+            <p>What we uncover:</p>
+            <ul class="svc-list">
+              <li>Who your ideal patient is and what brings them to you</li>
+              <li>How patients prefer to book — phone, portal, or both</li>
+              <li>What differentiates your care from the practice two miles away</li>
+              <li>Which trust signals your prospective patients are actually looking for</li>
+            </ul>
+            <p>This phase shapes every design decision that follows. It takes one to two weeks and it shows in the result.</p>
           </div>
         </div>
 
-        <!-- Section B: Design & Build -->
-        <div class="service-detail-section animate-ready">
-          <div class="card-container" data-animate="card">
-          <div class="service-detail-icon websites" aria-hidden="true">
-            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="8" y="20" width="64" height="44" rx="6" fill="none" stroke="var(--icon-color)" stroke-width="5"/>
-              <circle cx="24" cy="42" r="6" fill="var(--icon-color)"/>
-              <circle cx="40" cy="42" r="6" fill="var(--icon-color)" opacity="0.6"/>
-              <circle cx="56" cy="42" r="6" fill="var(--icon-color)" opacity="0.35"/>
-            </svg>
-          </div>
-          <h2>Designed for Conversion, Not Just Looks</h2>
-          <p>A beautiful website that doesn't convert is just an expensive brochure.<br>We design for action.</p>
-          <p>What we build in:</p>
-          <ul class="service-detail-list">
-            <li>Clear value proposition (what you do, who it's for, why now)</li>
-            <li>Trust signals (reviews, certifications, real photos of your team)</li>
-            <li>Multiple CTAs (call buttons, booking, quote forms) in natural places</li>
-            <li>Fast load speed, mobile-first — 60%+ of traffic is mobile</li>
-          </ul>
-          <p>Service-area keywords are built into pages so Google understands where you work.<br>Each section is tested for clarity and usability. Nothing is there by accident.</p>
+        <div class="svc-row reveal-ready">
+          <div class="svc-row-label">Built to Convert</div>
+          <div class="svc-row-content">
+            <p>A beautiful website that doesn't convert is an expensive brochure. Every element — headline, layout, call to action — is engineered to move a visitor toward booking.</p>
+            <p>What we build in:</p>
+            <ul class="svc-list">
+              <li>A clear value proposition visible in the first three seconds</li>
+              <li>Trust architecture: credentials, real photography, patient outcomes</li>
+              <li>Booking CTAs placed at the moments of highest intent</li>
+              <li>Mobile-first performance — over 60% of your traffic arrives on a phone</li>
+            </ul>
+            <p>Service-area keywords are woven into the structure so Google understands exactly where you practice. Nothing is decorative — every section earns its place.</p>
           </div>
         </div>
 
-        <!-- Section C: Content & Photos/Videos -->
-        <div class="service-detail-section animate-ready">
-          <div class="card-container" data-animate="card">
-          <div class="service-detail-icon websites" aria-hidden="true">
-            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect x="8" y="18" width="64" height="44" rx="6" fill="none" stroke="var(--icon-color)" stroke-width="5"/>
-              <circle cx="40" cy="40" r="12" fill="none" stroke="var(--icon-color)" stroke-width="4"/>
-              <circle cx="40" cy="40" r="4" fill="var(--icon-color)"/>
-              <circle cx="62" cy="22" r="4" fill="var(--icon-color)"/>
-            </svg>
-          </div>
-          <h2>Your Story, Told Right</h2>
-          <p>We write copy that speaks to your customer's pain points.<br>We also help you tell your story visually.</p>
-          <p>Options:</p>
-          <ul class="service-detail-list">
-            <li>We write the copy; you provide photos/videos</li>
-            <li>We create custom photos and videos ourselves (add-on service)</li>
-            <li>We use a mix of both</li>
-          </ul>
-          <p>Either way, your site showcases real work—not stock photos.<br>Customers trust what's real.</p>
+        <div class="svc-row reveal-ready">
+          <div class="svc-row-label">Your Story, Precisely</div>
+          <div class="svc-row-content">
+            <p>Patients choose practices they trust. We write copy that speaks to their specific concerns and helps them see — before they ever call — that you are the right choice.</p>
+            <p>How we approach content:</p>
+            <ul class="svc-list">
+              <li>We write the copy; you provide photography and video</li>
+              <li>Professional photography can be arranged as an add-on service</li>
+              <li>Real imagery only — stock photos undermine trust in healthcare</li>
+            </ul>
+            <p>The result is a site that reflects the quality of your care, not just the competence of your web developer.</p>
           </div>
         </div>
 
-        <!-- Section D: Launch & Ongoing -->
-        <div class="service-detail-section animate-ready">
-          <div class="card-container" data-animate="card">
-          <div class="service-detail-icon websites" aria-hidden="true">
-            <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M40 68 L40 36" stroke="var(--icon-color)" stroke-width="5" stroke-linecap="round"/>
-              <path d="M28 48 L40 36 L52 48" stroke="var(--icon-color)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              <path d="M22 60 Q14 48 20 34 Q28 16 40 14 Q52 16 60 34 Q66 48 58 60" fill="none" stroke="var(--icon-color)" stroke-width="4" stroke-linecap="round"/>
-              <line x1="26" y1="68" x2="54" y2="68" stroke="var(--icon-color)" stroke-width="5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h2>Live, Then Monitored</h2>
-          <p>We deploy on a testing URL first so you can review.<br>Once approved, we go live.</p>
-          <p>Then we:</p>
-          <ul class="service-detail-list">
-            <li>Set up Google Analytics to track what's working</li>
-            <li>Monitor page speed and performance</li>
-            <li>Support updates as your business changes</li>
-            <li>Provide monthly maintenance</li>
-          </ul>
+        <div class="svc-row reveal-ready">
+          <div class="svc-row-label">Live, Then Managed</div>
+          <div class="svc-row-content">
+            <p>We launch to a staging environment first — you review, request changes, and approve before anything goes live. After launch, your site stays actively maintained.</p>
+            <p>What ongoing management includes:</p>
+            <ul class="svc-list">
+              <li>Google Analytics setup to track what's converting</li>
+              <li>Continuous performance and speed monitoring</li>
+              <li>Content updates as your practice evolves</li>
+              <li>Monthly maintenance so nothing degrades silently</li>
+            </ul>
           </div>
         </div>
 
       </div>
-    </section>
+    </div>
 
-    <!-- ════════════════════════════════════════════════════════════════
-         BOTTOM CTA
-         ════════════════════════════════════════════════════════════════ -->
-    <section class="service-detail-cta" aria-label="Start your project">
-      <div class="container container--narrow">
-        <p class="eyebrow animate-ready">Ready to get started?</p>
-        <h2 class="section-title animate-ready">Ready to replace your old website?<br>Let's talk.</h2>
-        <a href="https://calendly.com/owner-abython/new-meeting" class="cta-button-primary animate-ready" target="_blank" rel="noopener noreferrer">
-          Start Your Website Project
-        </a>
+    <!-- BOTTOM CTA -->
+    <section class="svc-cta" aria-label="Start your project">
+      <div class="container">
+        <p class="section-label reveal-ready">READY TO BEGIN</p>
+        <h2 class="reveal-ready">Your patients are making decisions based on your website right now.</h2>
+        <a href="https://calendly.com/owner-abython/new-meeting" class="nav-cta reveal-ready" target="_blank" rel="noopener noreferrer">Start Your Website Project</a>
       </div>
     </section>
 
-    <!-- ════════════════════════════════════════════════════════════════
-         CROSS-SERVICE LINKS
-         ════════════════════════════════════════════════════════════════ -->
+    <!-- CROSS-SERVICE LINKS -->
     <div class="service-detail-cross">
       <div class="container">
         <div class="service-detail-cross-inner">
           <span class="service-detail-cross-label">Explore our other services:</span>
           <a href="/services/local-seo/">Local Search Dominance</a>
           <a href="/services/ai-optimization/">AI Optimization</a>
-          <a href="/ai-receptionist">AI Receptionist</a>
+          <a href="/ai-receptionist/">AI Receptionist</a>
         </div>
       </div>
     </div>
 
   </main>
 
-  <!-- ════════════════════════════════════════════════════════════════
-       FOOTER
-       ════════════════════════════════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-inner">
-        <span class="footer-logo">Abython</span>
-        <nav class="footer-links" aria-label="Footer">
+      <div class="footer-grid">
+        <div class="footer-col footer-col--brand">
+          <span class="footer-logo">Abython</span>
+          <p class="footer-tagline">Digital presence for modern dental and med spa practices.</p>
+        </div>
+        <div class="footer-col footer-col--links">
+          <a href="/services/custom-websites/">Services</a>
+          <a href="/work/">Work</a>
+          <a href="/ai-receptionist/">AI Receptionist</a>
           <a href="/privacy-policy/">Privacy Policy</a>
-          <a href="/terms-and-conditions/">Terms &amp; Conditions</a>
-          <a href="mailto:owner@abython.com">Contact</a>
-        </nav>
+          <a href="/terms-and-conditions/">Terms</a>
+        </div>
+        <div class="footer-col footer-col--cta">
+          <hr class="footer-col-rule">
+          <p class="footer-cta-label">Start a project</p>
+          <a href="https://calendly.com/owner-abython/new-meeting" target="_blank" rel="noopener" class="footer-cta-link">Schedule a Strategy Call →</a>
+        </div>
       </div>
-      <p class="footer-copy">&copy; 2026 Abython — Websites that book appointments.</p>
+      <p class="footer-micro">© 2025 Abython Consulting · Chicago, IL</p>
     </div>
   </footer>
 
