@@ -3,7 +3,7 @@ var url='https://abython.app.n8n.cloud/webhook/squarespace-chat';
 var sid=null,msgc=0,isOpen=false;
 function toggle(){
   isOpen=!isOpen;
-  document.getElementById('chat-box').style.display=isOpen?'flex':'none';
+  document.getElementById('chat-box').classList.toggle('is-open',isOpen);
   document.getElementById('chat-btn').textContent=isOpen?'✕':'💬';
   if(isOpen&&msgc===0){
     addMsg('bot',"Hello! I'm Abython's AI assistant. How can I help you today?");

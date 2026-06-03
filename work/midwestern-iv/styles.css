@@ -20,6 +20,10 @@ html {
   --color-text:   #ffffff;
   --section-light-bg:   #f0f0ee;
   --section-light-text: #111111;
+  --card-dark-bg:           rgba(255,255,255,0.05);
+  --card-dark-border:       rgba(255,255,255,0.12);
+  --card-dark-shadow:       0 8px 32px rgba(0,0,0,0.3);
+  --card-dark-shadow-hover: 0 12px 48px rgba(0,0,0,0.4);
 }
 
 body {

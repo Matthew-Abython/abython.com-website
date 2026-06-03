@@ -299,7 +299,7 @@ ul {
     left: 0;
     right: 0;
     height: var(--nav-height);
-    background: rgba(19, 17, 28, 0.85);
+    background: rgba(244, 241, 235, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
@@ -365,20 +365,22 @@ ul {
 .nav-toggle {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
     cursor: pointer;
     padding: 4px;
     background: none;
     border: none;
+    width: 24px;
+    height: 24px;
 }
 
 .nav-toggle span {
     display: block;
-    width: 24px;
+    width: 100%;
     height: 2px;
     background: var(--ink);
     border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
+    transition: all 200ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .nav-toggle.is-open span:nth-child(1) {
@@ -1079,6 +1081,16 @@ ul {
     max-width: 760px;
     margin: 0 auto;
     padding: 0 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.policy-content .card-container h2 {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
 }
 
 .policy-content p,
@@ -1203,12 +1215,12 @@ ul {
 }
 
 .form-group input.input-error {
-    border-color: rgba(220, 38, 38, 0.6);
+    border-color: var(--error-border);
 }
 
 .field-error {
     font-size: 0.8rem;
-    color: #dc2626;
+    color: var(--error);
     min-height: 1em;
 }
 
@@ -1950,11 +1962,11 @@ ul {
 .service-narrative.website:has(.service-narrative-link:hover) p,
 .service-narrative.website:has(.service-narrative-link:hover) li,
 .service-narrative.website:has(.service-narrative-link:hover) .service-narrative-link {
-  color: #fff;
+  color: var(--ink-inverse);
 }
 
 .service-narrative.website:has(.service-narrative-link:hover) .service-narrative-icon {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(244, 241, 235, 0.9);
 }
 
 /* ── SEO (Layout 2: top bar, 2-column) ─────────────────── */
@@ -2008,11 +2020,11 @@ ul {
 .service-narrative.seo:has(.service-narrative-link:hover) p,
 .service-narrative.seo:has(.service-narrative-link:hover) li,
 .service-narrative.seo:has(.service-narrative-link:hover) .service-narrative-link {
-  color: #fff;
+  color: var(--ink-inverse);
 }
 
 .service-narrative.seo:has(.service-narrative-link:hover) .service-narrative-icon {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(244, 241, 235, 0.9);
 }
 
 @media (max-width: 768px) {
@@ -2067,11 +2079,11 @@ ul {
 .service-narrative.aio:has(.service-narrative-link:hover) p,
 .service-narrative.aio:has(.service-narrative-link:hover) li,
 .service-narrative.aio:has(.service-narrative-link:hover) .service-narrative-link {
-  color: #fff;
+  color: var(--ink-inverse);
 }
 
 .service-narrative.aio:has(.service-narrative-link:hover) .service-narrative-icon {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(244, 241, 235, 0.9);
 }
 
 @media (max-width: 768px) {
@@ -2307,27 +2319,38 @@ ul {
   /* Initial state for GSAP animation — made visible immediately if JS fails */
 }
 
+.card-container:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
 .card-container-dark {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   padding: 2rem 2.5rem;
-  transition: box-shadow var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+  transition: box-shadow var(--duration) var(--ease-out), transform var(--duration) var(--ease-out), background var(--duration) var(--ease-out), border-color var(--duration) var(--ease-out);
+}
+
+.card-container-dark:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
 }
 
 /* Narrative section card modifiers */
 .service-narrative.website .narrative-card {
   background: var(--service-website-bg);
-  border-left: 3px solid var(--service-website-accent);
+  border-left: 4px solid var(--service-website-accent);
 }
 .service-narrative.seo .narrative-card {
   background: var(--service-seo-bg);
-  border-left: 3px solid var(--service-seo-accent);
+  border-left: 4px solid var(--service-seo-accent);
 }
 .service-narrative.aio .narrative-card {
   background: var(--service-aio-bg);
-  border-left: 3px solid var(--service-aio-accent);
+  border-left: 4px solid var(--service-aio-accent);
 }
 
 /* [data-animate] initial hidden state — overridden to visible by GSAP or fallback */
