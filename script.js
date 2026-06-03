@@ -33,11 +33,16 @@ const navLinks = document.getElementById('nav-links');
 if (navToggle && navLinks) {
     navToggle.addEventListener('click', function () {
         navLinks.classList.toggle('open');
+        const isOpen = navLinks.classList.contains('open');
+        navToggle.classList.toggle('is-open', isOpen);
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
     // Close nav when clicking outside
     document.addEventListener('click', function (e) {
         if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
             navLinks.classList.remove('open');
+            navToggle.classList.remove('is-open');
+            navToggle.setAttribute('aria-expanded', 'false');
         }
     });
 }
@@ -47,7 +52,7 @@ if (navToggle && navLinks) {
 function initScrollAnimations() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     // For users who prefer reduced motion: show all elements immediately, no animation.
-    document.querySelectorAll('.animate-ready').forEach(el => {
+    document.querySelectorAll('.animate-ready, [data-animate]').forEach(el => {
       el.style.opacity = '1';
       el.style.transform = 'none';
     });
@@ -56,7 +61,7 @@ function initScrollAnimations() {
 
   if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
     // Libraries failed to load — fall back to making elements visible.
-    document.querySelectorAll('.animate-ready').forEach(el => {
+    document.querySelectorAll('.animate-ready, [data-animate]').forEach(el => {
       el.style.opacity = '1';
       el.style.transform = 'none';
     });
@@ -77,6 +82,53 @@ function initScrollAnimations() {
         scrollTrigger: {
           trigger: el,
           start: 'top 88%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  });
+
+  // Card stagger reveal — Pattern A from design system audit
+  const cardGroups = {};
+  document.querySelectorAll('[data-animate="card"]').forEach(el => {
+    const section = el.closest('section') || el.parentElement;
+    const key = section ? (section.id || section.className) : 'global';
+    if (!cardGroups[key]) cardGroups[key] = [];
+    cardGroups[key].push(el);
+  });
+
+  Object.values(cardGroups).forEach(cards => {
+    cards.forEach((card, i) => {
+      gsap.fromTo(card,
+        { opacity: 0, y: 32 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.65,
+          delay: i * 0.08,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 82%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
+  });
+
+  // Section heading reveal — Pattern B
+  document.querySelectorAll('[data-animate="heading"]').forEach(heading => {
+    gsap.fromTo(heading,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: heading,
+          start: 'top 85%',
           toggleActions: 'play none none none',
         },
       }

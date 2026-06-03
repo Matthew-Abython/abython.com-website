@@ -254,3 +254,92 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
 });
+
+/* ─────────────────────────────────────────────
+   Scroll-reveal animations — section cards
+   Pattern A from design audit §6.4
+───────────────────────────────────────────── */
+(function initSectionAnimations() {
+  if (reducedMotion) return;
+
+  function runAnimations() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    var sectionSelectors = [
+      '#services .service-card',
+      '#menu .drip-card',
+      '#how-it-works .how-step',
+      '#why-iv .benefit-card',
+      '#membership .tier-card',
+      '#testimonials .testimonial-card',
+    ];
+
+    sectionSelectors.forEach(function(sel) {
+      var els = document.querySelectorAll(sel);
+      if (!els.length) return;
+      els.forEach(function(el, i) {
+        gsap.fromTo(el,
+          { opacity: 0, y: 32 },
+          {
+            opacity: 1, y: 0,
+            duration: 0.65,
+            delay: i * 0.08,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 82%',
+              toggleActions: 'play none none none',
+            }
+          }
+        );
+      });
+    });
+
+    var sectionHeadings = document.querySelectorAll(
+      '#services h2, #menu h2, #how-it-works h2, #why-iv h2, #membership h2, #testimonials h2, #book h2'
+    );
+    sectionHeadings.forEach(function(heading) {
+      gsap.fromTo(heading,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: heading,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          }
+        }
+      );
+    });
+
+    var bookSection = document.querySelector('#book');
+    if (bookSection) {
+      gsap.fromTo(bookSection,
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: bookSection,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          }
+        }
+      );
+    }
+  }
+
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    runAnimations();
+  } else {
+    window.addEventListener('load', function() {
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        runAnimations();
+      }
+    });
+  }
+}());

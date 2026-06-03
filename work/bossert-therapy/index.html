@@ -23,9 +23,38 @@
         <a href="#resources" class="bd-nav-link">Resources</a>
         <a href="#contact"   class="bd-nav-link">Contact</a>
       </div>
-      <a href="#contact" class="bd-nav-cta liquid-glass">Book Session</a>
+      <a href="#contact" class="bd-nav-cta liquid-glass bd-desktop-cta">Book Session</a>
+      <button class="bd-hamburger" id="bd-hamburger" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile sheet -->
+  <div class="bd-sheet-backdrop" id="bd-sheet-backdrop" aria-hidden="true"></div>
+  <div class="bd-sheet" id="bd-sheet" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Navigation">
+    <div class="bd-sheet-header">
+      <span class="bd-sheet-logo">BOSSERT</span>
+      <button class="bd-sheet-close" id="bd-sheet-close" aria-label="Close navigation">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    <div class="bd-sheet-divider"></div>
+    <nav class="bd-sheet-nav">
+      <a href="#services"  class="bd-sheet-link">Services</a>
+      <a href="#about"     class="bd-sheet-link">About</a>
+      <a href="#approach"  class="bd-sheet-link">Approach</a>
+      <a href="#resources" class="bd-sheet-link">Resources</a>
+      <a href="#contact"   class="bd-sheet-link">Contact</a>
+    </nav>
+    <div class="bd-sheet-ctas">
+      <a href="#contact" class="bd-btn-primary bd-sheet-cta-primary">Book a Session</a>
+    </div>
+  </div>
 
   <!-- HERO -->
   <section class="bd-hero" aria-label="Hero">

@@ -122,6 +122,17 @@ html {
   --service-seo-bg:         #f0f4f9;
   --service-aio-accent:     #a855f7;
   --service-aio-bg:         #faf5ff;
+
+  /* ─── Error states ─────────────────────────────── */
+  --error:           #dc2626;
+  --error-bg:        #fef2f2;
+  --error-border:    rgba(220, 38, 38, 0.2);
+
+  /* ─── Card containers ──────────────────────────── */
+  --card-bg:         #FFFFFF;
+  --card-border:     rgba(10, 10, 10, 0.08);
+  --card-shadow:     0 2px 8px rgba(10, 10, 10, 0.06);
+  --card-shadow-hover: 0 8px 28px rgba(10, 10, 10, 0.10);
 }
 
 /* ── Icon entrance animations ────────────────────────────── */
@@ -368,6 +379,17 @@ ul {
     background: var(--ink);
     border-radius: 2px;
     transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* ============================================================
@@ -1239,7 +1261,10 @@ ul {
     }
 
     .nav-links {
-        display: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        display: flex;
         position: absolute;
         top: var(--nav-height);
         left: 0;
@@ -1253,7 +1278,7 @@ ul {
     }
 
     .nav-links.open {
-        display: flex;
+        max-height: 480px;
     }
 
     .nav-links a {
@@ -2262,5 +2287,73 @@ ul {
 
   .service-detail-sections {
     padding: var(--section-py-sm) 0;
+  }
+}
+
+/* ============================================================
+   CARD CONTAINERS — design system §7.4
+   ============================================================ */
+
+.card-container {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  padding: 2rem 2.5rem;
+  transition: box-shadow var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+}
+
+.card-container[data-animate="card"] {
+  /* Initial state for GSAP animation — made visible immediately if JS fails */
+}
+
+.card-container-dark {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 2rem 2.5rem;
+  transition: box-shadow var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+}
+
+/* Narrative section card modifiers */
+.service-narrative.website .narrative-card {
+  background: var(--service-website-bg);
+  border-left: 3px solid var(--service-website-accent);
+}
+.service-narrative.seo .narrative-card {
+  background: var(--service-seo-bg);
+  border-left: 3px solid var(--service-seo-accent);
+}
+.service-narrative.aio .narrative-card {
+  background: var(--service-aio-bg);
+  border-left: 3px solid var(--service-aio-accent);
+}
+
+/* [data-animate] initial hidden state — overridden to visible by GSAP or fallback */
+[data-animate="card"],
+[data-animate="heading"] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate="card"],
+  [data-animate="heading"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .card-container,
+  .card-container-dark {
+    transition: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    padding: 1.5rem 1.25rem;
+  }
+  .card-container-dark {
+    padding: 1.5rem 1.25rem;
   }
 }

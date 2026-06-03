@@ -193,3 +193,105 @@ document.addEventListener('DOMContentLoaded', function () {
   initEmailCTA();
 
 });
+
+/* ─────────────────────────────────────────────
+   Scroll-reveal animations — section cards
+───────────────────────────────────────────── */
+(function initSectionAnimations() {
+  if (reducedMotion) return;
+
+  function runAnimations() {
+    if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+    gsap.registerPlugin(ScrollTrigger);
+
+    var sectionSelectors = [
+      '#services .service-card',
+      '#menu .dish-card',
+      '#process .process-step',
+      '#testimonials .testimonial-card',
+    ];
+
+    sectionSelectors.forEach(function(sel) {
+      var els = document.querySelectorAll(sel);
+      if (!els.length) return;
+      els.forEach(function(el, i) {
+        gsap.fromTo(el,
+          { opacity: 0, y: 32 },
+          {
+            opacity: 1, y: 0,
+            duration: 0.65,
+            delay: i * 0.08,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 82%',
+              toggleActions: 'play none none none',
+            }
+          }
+        );
+      });
+    });
+
+    var aboutSection = document.querySelector('#about');
+    if (aboutSection) {
+      gsap.fromTo(aboutSection,
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: aboutSection,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          }
+        }
+      );
+    }
+
+    var bookSection = document.querySelector('#book');
+    if (bookSection) {
+      gsap.fromTo(bookSection,
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.7,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: bookSection,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          }
+        }
+      );
+    }
+
+    document.querySelectorAll(
+      '#services h2, #menu h2, #process h2, #testimonials h2, #about h2, #book h2'
+    ).forEach(function(heading) {
+      gsap.fromTo(heading,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.6,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: heading,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          }
+        }
+      );
+    });
+  }
+
+  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    runAnimations();
+  } else {
+    window.addEventListener('load', function() {
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        runAnimations();
+      }
+    });
+  }
+}());
