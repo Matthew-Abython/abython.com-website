@@ -110,6 +110,34 @@ function initParallax() {
   }, { passive: true });
 }
 
+// Services dropdown — desktop panel + mobile accordion
+function initServicesDropdown() {
+  const trigger = document.getElementById('services-trigger');
+  const panel   = document.getElementById('services-panel');
+  const wrapper = document.getElementById('services-dropdown');
+  if (!trigger || !panel) return;
+
+  trigger.addEventListener('click', function () {
+    const isOpen = panel.classList.contains('is-open');
+    panel.classList.toggle('is-open', !isOpen);
+    trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', function (e) {
+    if (wrapper && !wrapper.contains(e.target)) {
+      panel.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && panel.classList.contains('is-open')) {
+      panel.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
 // Demo Request Form — LOCKED: do not modify POST logic or auth header
 (function () {
     var WEBHOOK_URL = 'https://abython.app.n8n.cloud/webhook/e4df1cc2-8d07-4e72-a86a-df1a13b10f2c';
@@ -219,10 +247,11 @@ function initParallax() {
       }
     }
 
-    // Init reveal system, page load animation, parallax
+    // Init reveal system, page load animation, parallax, dropdown
     initReveal();
     initPageLoad();
     initParallax();
+    initServicesDropdown();
   }
 
   if (document.readyState === 'loading') {

@@ -411,6 +411,105 @@ ul {
 }
 
 /* ============================================================
+   NAV DROPDOWN (Services)
+   ============================================================ */
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+  position: relative;
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.nav-dropdown-trigger::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--ink-muted);
+  transition: width 0.3s ease;
+}
+
+.nav-dropdown-trigger:hover,
+.nav-dropdown-trigger[aria-expanded="true"] {
+  color: var(--ink);
+}
+
+.nav-dropdown-trigger:hover::after {
+  width: calc(100% - 16px);
+}
+
+.nav-dropdown-chevron {
+  transition: transform 0.2s var(--ease-out);
+  flex-shrink: 0;
+}
+
+.nav-dropdown-trigger[aria-expanded="true"] .nav-dropdown-chevron {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-panel {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: -12px;
+  min-width: 220px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--card-shadow);
+  padding: 6px;
+  z-index: 200;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0ms 0.18s;
+}
+
+.nav-dropdown-panel.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0ms;
+}
+
+.nav-dropdown-panel a {
+  display: block;
+  padding: 0.6rem 0.75rem;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--ink-muted);
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.nav-dropdown-panel a:hover {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.nav-dropdown-panel a::after {
+  display: none !important;
+}
+
+/* ============================================================
    PORTFOLIO GRID HERO
    ════════════════════════════════════════════════════════════
    !! FROZEN — DO NOT MODIFY !!
@@ -1543,121 +1642,6 @@ ul {
 }
 
 /* ============================================================
-   PORTFOLIO LISTING PAGE (F6 — work/index.html)
-   ============================================================ */
-.work-listing-page {
-  padding-top: var(--nav-height);
-  background: var(--bg);
-  min-height: 100vh;
-}
-
-.work-page-header {
-  padding: calc(var(--section-py-sm) * 1.1) 0 var(--section-py-sm);
-  background: var(--bg);
-  border-bottom: 1px solid var(--border);
-}
-
-.work-page-headline {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-  margin-bottom: 0;
-  max-width: 560px;
-}
-
-.work-listing {
-  padding: var(--section-py) 0;
-  background: var(--bg);
-}
-
-.work-listing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem 2rem;
-}
-
-.wl-card {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  transition: transform 0.25s ease;
-}
-
-.wl-card:hover {
-  transform: translateY(-4px);
-}
-
-.wl-swatch {
-  width: 100%;
-  height: 120px;
-  border-radius: var(--radius);
-  margin-bottom: 1.25rem;
-  overflow: hidden;
-}
-
-.wl-body {
-  padding: 0 0.25rem;
-}
-
-.wl-industry {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink-muted);
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-.wl-name {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 400;
-  color: var(--ink);
-  margin-bottom: 0.75rem;
-  line-height: 1.2;
-}
-
-.wl-cta {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--accent);
-  transition: gap 0.2s ease;
-}
-
-.wl-card:hover .wl-cta {
-  gap: 0.65rem;
-}
-
-.wl-arrow {
-  flex-shrink: 0;
-  transition: transform 0.2s ease;
-}
-
-.wl-card:hover .wl-arrow {
-  transform: translateX(3px);
-}
-
-@media (max-width: 960px) {
-  .work-listing-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 560px) {
-  .work-listing-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ============================================================
    POLICY PAGES
    ============================================================ */
 .policy-hero {
@@ -1857,7 +1841,56 @@ ul {
   }
 
   .nav-links.open {
-    max-height: 520px;
+    max-height: 600px;
+  }
+
+  /* Services dropdown — mobile accordion */
+  .nav-dropdown {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-dropdown-trigger {
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .nav-dropdown-trigger::after {
+    display: none;
+  }
+
+  .nav-dropdown-panel {
+    position: static;
+    min-width: 0;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background: var(--bg-elevated);
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .nav-dropdown-panel.is-open {
+    max-height: 200px;
+    transition: max-height 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .nav .nav-links .nav-dropdown-panel a {
+    padding: 0.75rem 1.5rem 0.75rem 2.25rem;
+    border-radius: 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    white-space: normal;
   }
 
   .nav .nav-links a:not(.nav-cta) {
@@ -1925,9 +1958,5 @@ ul {
   .svc-row {
     grid-template-columns: 1fr;
     gap: 0.75rem;
-  }
-
-  .work-listing-grid {
-    grid-template-columns: 1fr;
   }
 }

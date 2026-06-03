@@ -23,11 +23,20 @@
       </button>
 
       <div class="nav-links" id="nav-links">
-        <a href="/work/">Work</a>
-        <a href="#services">Services</a>
+        <div class="nav-dropdown" id="services-dropdown">
+          <button class="nav-dropdown-trigger" id="services-trigger" aria-expanded="false" aria-haspopup="true">
+            Services
+            <svg class="nav-dropdown-chevron" viewBox="0 0 12 12" fill="none" aria-hidden="true" width="12" height="12">
+              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-panel" id="services-panel">
+            <a href="/services/custom-websites/">Custom Websites</a>
+            <a href="/services/local-seo/">Local Search Dominance</a>
+            <a href="/services/ai-optimization/">AI Optimization</a>
+          </div>
+        </div>
         <a href="/ai-receptionist/">AI Receptionist</a>
-        <a href="/services/local-seo/">Local SEO</a>
-        <a href="/services/ai-optimization/">AIO</a>
         <a href="https://calendly.com/owner-abython/new-meeting" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
       </div>
     </div>
@@ -194,11 +203,11 @@
         <div class="section-craft-left">
           <span class="section-craft-num reveal-ready">01</span>
           <span class="section-craft-tag">CRAFT</span>
-          <h2 class="section-craft-headline reveal-ready">Websites that make your practice impossible to ignore.</h2>
+          <h2 class="section-craft-headline reveal-ready">Websites that make your business impossible to ignore.</h2>
         </div>
         <div class="section-craft-right reveal-ready">
-          <p>Every dental practice and med spa we work with came to us for the same reason: their website wasn't doing justice to the quality of their care. Visitors arrived, looked around, and left — not because the service wasn't there, but because the site didn't make them feel it.</p>
-          <p>We build websites that don't just look good. They're structured to convert — with language, hierarchy, and design tuned for the patient who's already half-decided and needs one final reason to call.</p>
+          <p>Every local service business we work with came to us for the same reason: their website wasn't doing justice to the quality of their work. Visitors arrived, looked around, and left — not because the service wasn't there, but because the site didn't make them feel it.</p>
+          <p>We build websites that don't just look good. They're structured to convert — with language, hierarchy, and design tuned for the customer who's already half-decided and needs one final reason to call.</p>
           <hr class="section-craft-rule">
         </div>
       </div>
@@ -214,7 +223,7 @@
       <nav class="service-list" aria-label="Services">
         <a href="/services/custom-websites/" class="service-row">
           <span class="service-row-name">Custom Websites</span>
-          <span class="service-row-desc">Purpose-built for dental and med spa practices. Structured to convert.</span>
+          <span class="service-row-desc">Purpose-built for local service businesses. Structured to convert.</span>
           <span class="service-row-arrow" aria-hidden="true">→</span>
         </a>
         <a href="/services/local-seo/" class="service-row">
@@ -224,7 +233,7 @@
         </a>
         <a href="/services/ai-optimization/" class="service-row">
           <span class="service-row-name">AI Optimization</span>
-          <span class="service-row-desc">Be the practice AI cites when patients ask for recommendations.</span>
+          <span class="service-row-desc">Be the business AI cites when customers ask for recommendations.</span>
           <span class="service-row-arrow" aria-hidden="true">→</span>
         </a>
         <a href="/ai-receptionist/" class="service-row">
@@ -245,7 +254,7 @@
         <div class="section-advantage-text">
           <p class="section-label">03 / ADVANTAGE</p>
           <h2 class="section-advantage-headline reveal-ready">Found first. Chosen first.</h2>
-          <p class="reveal-ready">75% of patients searching for a local practice visit within 24 hours. 28% become appointments. The practices showing up at the top of local search aren't there by accident — they've built a consistent, deliberate presence across every signal Google uses to rank local results. We build that system for you.</p>
+          <p class="reveal-ready">75% of customers searching for a local business visit within 24 hours. 28% convert. The businesses showing up at the top of local search aren't there by accident — they've built a consistent, deliberate presence across every signal Google uses to rank local results. We build that system for you.</p>
         </div>
         <div class="section-advantage-visual" aria-hidden="true">
           <span class="section-advantage-word">SEARCH</span>
@@ -258,8 +267,8 @@
           <span class="section-advantage-word section-advantage-word--gold">AI</span>
         </div>
         <div class="section-advantage-text">
-          <h2 class="section-advantage-headline reveal-ready">The AI already has an opinion about your practice. Make sure it's the right one.</h2>
-          <p class="reveal-ready">When a patient asks ChatGPT to recommend a cosmetic dentist in their city, the answer doesn't come from a paid placement. It comes from accumulated trust signals — citations, structured content, entity authority. We make sure you're the practice AI systems cite first, not second.</p>
+          <h2 class="section-advantage-headline reveal-ready">The AI already has an opinion about your business. Make sure it's the right one.</h2>
+          <p class="reveal-ready">When a customer asks ChatGPT for a recommendation in their area, the answer doesn't come from a paid placement. It comes from accumulated trust signals — citations, structured content, entity authority. We make sure you're the business AI systems cite first, not second.</p>
         </div>
       </div>
     </div>
@@ -271,11 +280,10 @@
   <section class="section-begin" id="contact" aria-label="Book a strategy call">
     <div class="container">
       <p class="section-begin-label reveal-ready">READY WHEN YOU ARE</p>
-      <h2 class="section-begin-headline reveal-ready">Your patients are searching right now.</h2>
+      <h2 class="section-begin-headline reveal-ready">Your customers are searching right now.</h2>
       <p class="section-begin-sub reveal-ready">Let's build something they can't ignore.</p>
       <div class="section-begin-actions reveal-ready">
         <a href="https://calendly.com/owner-abython/new-meeting" target="_blank" rel="noopener" class="btn-gold">Schedule a Strategy Call</a>
-        <a href="/work/" class="btn-text-link">Explore Our Work</a>
       </div>
     </div>
   </section>
@@ -288,11 +296,10 @@
       <div class="footer-grid">
         <div class="footer-col footer-col--brand">
           <span class="footer-logo">Abython</span>
-          <p class="footer-tagline">Digital presence for modern dental and med spa practices.</p>
+          <p class="footer-tagline">Digital presence for local service businesses.</p>
         </div>
         <div class="footer-col footer-col--links">
           <a href="/services/custom-websites/">Services</a>
-          <a href="/work/">Work</a>
           <a href="/ai-receptionist/">AI Receptionist</a>
           <a href="/privacy-policy/">Privacy Policy</a>
           <a href="/terms-and-conditions/">Terms</a>

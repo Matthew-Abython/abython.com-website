@@ -22,11 +22,20 @@
           <span></span>
         </button>
         <div class="nav-links" id="nav-links">
-          <a href="/work/">Work</a>
-          <a href="/#services">Services</a>
+          <div class="nav-dropdown" id="services-dropdown">
+            <button class="nav-dropdown-trigger" id="services-trigger" aria-expanded="false" aria-haspopup="true">
+              Services
+              <svg class="nav-dropdown-chevron" viewBox="0 0 12 12" fill="none" aria-hidden="true" width="12" height="12">
+                <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <div class="nav-dropdown-panel" id="services-panel">
+              <a href="/services/custom-websites/">Custom Websites</a>
+              <a href="/services/local-seo/">Local Search Dominance</a>
+              <a href="/services/ai-optimization/">AI Optimization</a>
+            </div>
+          </div>
           <a href="/ai-receptionist/">AI Receptionist</a>
-          <a href="/services/local-seo/">Local SEO</a>
-          <a href="/services/ai-optimization/">AIO</a>
           <a href="https://calendly.com/owner-abython/new-meeting" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
         </div>
       </div>
@@ -119,11 +128,10 @@
             <div class="footer-grid">
                 <div class="footer-col footer-col--brand">
                     <span class="footer-logo">Abython</span>
-                    <p class="footer-tagline">Digital presence for modern dental and med spa practices.</p>
+                    <p class="footer-tagline">Digital presence for local service businesses.</p>
                 </div>
                 <div class="footer-col footer-col--links">
                     <a href="/services/custom-websites/">Services</a>
-                    <a href="/work/">Work</a>
                     <a href="/ai-receptionist/">AI Receptionist</a>
                     <a href="/privacy-policy/">Privacy Policy</a>
                     <a href="/terms-and-conditions/">Terms</a>

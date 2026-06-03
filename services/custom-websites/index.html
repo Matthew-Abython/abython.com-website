@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How We Build High-Converting Websites | Abython</title>
-  <meta name="description" content="Custom websites for dental practices and med spas — designed to convert visitors into booked appointments. Discover our process.">
+  <meta name="description" content="Custom websites for local service businesses — designed to convert visitors into booked clients. Discover our process.">
   <link rel="stylesheet" href="/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,11 +24,20 @@
       </button>
 
       <div class="nav-links" id="nav-links">
-        <a href="/work/">Work</a>
-        <a href="/#services">Services</a>
+        <div class="nav-dropdown" id="services-dropdown">
+          <button class="nav-dropdown-trigger" id="services-trigger" aria-expanded="false" aria-haspopup="true">
+            Services
+            <svg class="nav-dropdown-chevron" viewBox="0 0 12 12" fill="none" aria-hidden="true" width="12" height="12">
+              <path d="M2 4L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-panel" id="services-panel">
+            <a href="/services/custom-websites/">Custom Websites</a>
+            <a href="/services/local-seo/">Local Search Dominance</a>
+            <a href="/services/ai-optimization/">AI Optimization</a>
+          </div>
+        </div>
         <a href="/ai-receptionist/">AI Receptionist</a>
-        <a href="/services/local-seo/">Local SEO</a>
-        <a href="/services/ai-optimization/">AIO</a>
         <a href="https://calendly.com/owner-abython/new-meeting" target="_blank" rel="noopener" class="nav-cta">Book a Call</a>
       </div>
     </div>
@@ -42,7 +51,7 @@
         <p class="section-label reveal-ready">SERVICE / 01</p>
         <h1 class="svc-hero-headline reveal-ready">Custom Websites</h1>
         <p class="svc-hero-lead reveal-ready">
-          A website is a practice's most powerful first impression. We design and build conversion-focused sites for dental practices and med spas — pages that turn visitors into booked appointments.
+          A website is a business's most powerful first impression. We design and build conversion-focused sites for local service businesses — pages that turn visitors into booked clients.
         </p>
         <a href="https://calendly.com/owner-abython/new-meeting" target="_blank" rel="noopener" class="nav-cta svc-hero-cta reveal-ready">Start Your Website Project</a>
       </div>
@@ -53,15 +62,15 @@
       <div class="container">
 
         <div class="svc-row reveal-ready">
-          <div class="svc-row-label">The Practice Deep-Dive</div>
+          <div class="svc-row-label">The Business Deep-Dive</div>
           <div class="svc-row-content">
-            <p>We don't build from templates. Every engagement begins with a thorough discovery of your practice — your patients, your care philosophy, and the specific actions you want visitors to take.</p>
+            <p>We don't build from templates. Every engagement begins with a thorough discovery of your business — your customers, your service philosophy, and the specific actions you want visitors to take.</p>
             <p>What we uncover:</p>
             <ul class="svc-list">
-              <li>Who your ideal patient is and what brings them to you</li>
-              <li>How patients prefer to book — phone, portal, or both</li>
-              <li>What differentiates your care from the practice two miles away</li>
-              <li>Which trust signals your prospective patients are actually looking for</li>
+              <li>Who your ideal customer is and what brings them to you</li>
+              <li>How customers prefer to book — phone, portal, or both</li>
+              <li>What differentiates your service from the business two miles away</li>
+              <li>Which trust signals your prospective clients are actually looking for</li>
             </ul>
             <p>This phase shapes every design decision that follows. It takes one to two weeks and it shows in the result.</p>
           </div>
@@ -74,25 +83,25 @@
             <p>What we build in:</p>
             <ul class="svc-list">
               <li>A clear value proposition visible in the first three seconds</li>
-              <li>Trust architecture: credentials, real photography, patient outcomes</li>
+              <li>Trust architecture: credentials, real photography, real outcomes</li>
               <li>Booking CTAs placed at the moments of highest intent</li>
               <li>Mobile-first performance — over 60% of your traffic arrives on a phone</li>
             </ul>
-            <p>Service-area keywords are woven into the structure so Google understands exactly where you practice. Nothing is decorative — every section earns its place.</p>
+            <p>Service-area keywords are woven into the structure so Google understands exactly where you operate. Nothing is decorative — every section earns its place.</p>
           </div>
         </div>
 
         <div class="svc-row reveal-ready">
           <div class="svc-row-label">Your Story, Precisely</div>
           <div class="svc-row-content">
-            <p>Patients choose practices they trust. We write copy that speaks to their specific concerns and helps them see — before they ever call — that you are the right choice.</p>
+            <p>Clients choose businesses they trust. We write copy that speaks to their specific concerns and helps them see — before they ever call — that you are the right choice.</p>
             <p>How we approach content:</p>
             <ul class="svc-list">
               <li>We write the copy; you provide photography and video</li>
               <li>Professional photography can be arranged as an add-on service</li>
-              <li>Real imagery only — stock photos undermine trust in healthcare</li>
+              <li>Real imagery only — stock photos undermine trust</li>
             </ul>
-            <p>The result is a site that reflects the quality of your care, not just the competence of your web developer.</p>
+            <p>The result is a site that reflects the quality of your work, not just the competence of your web developer.</p>
           </div>
         </div>
 
@@ -104,7 +113,7 @@
             <ul class="svc-list">
               <li>Google Analytics setup to track what's converting</li>
               <li>Continuous performance and speed monitoring</li>
-              <li>Content updates as your practice evolves</li>
+              <li>Content updates as your business evolves</li>
               <li>Monthly maintenance so nothing degrades silently</li>
             </ul>
           </div>
@@ -117,7 +126,7 @@
     <section class="svc-cta" aria-label="Start your project">
       <div class="container">
         <p class="section-label reveal-ready">READY TO BEGIN</p>
-        <h2 class="reveal-ready">Your patients are making decisions based on your website right now.</h2>
+        <h2 class="reveal-ready">Your customers are making decisions based on your website right now.</h2>
         <a href="https://calendly.com/owner-abython/new-meeting" class="nav-cta reveal-ready" target="_blank" rel="noopener noreferrer">Start Your Website Project</a>
       </div>
     </section>
@@ -142,11 +151,10 @@
       <div class="footer-grid">
         <div class="footer-col footer-col--brand">
           <span class="footer-logo">Abython</span>
-          <p class="footer-tagline">Digital presence for modern dental and med spa practices.</p>
+          <p class="footer-tagline">Digital presence for local service businesses.</p>
         </div>
         <div class="footer-col footer-col--links">
           <a href="/services/custom-websites/">Services</a>
-          <a href="/work/">Work</a>
           <a href="/ai-receptionist/">AI Receptionist</a>
           <a href="/privacy-policy/">Privacy Policy</a>
           <a href="/terms-and-conditions/">Terms</a>

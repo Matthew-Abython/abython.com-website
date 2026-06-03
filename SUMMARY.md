@@ -15,7 +15,7 @@
 | **Hosting** | Vercel · live at https://abython.com |
 | **Stack** | Pure HTML / CSS / JS — no framework, no build step, no npm |
 
-**What Abython sells:** Digital agency services for dentists and med spas — website design, SEO, AIO (AI Optimization), Google Business Profile management, and AI phone receptionist (VAPI-driven). The marketing site is bold and editorial; the portfolio demos are calm and luxurious. That contrast is the pitch.
+**What Abython sells:** Digital agency services for local service businesses — website design, SEO, AIO (AI Optimization), Google Business Profile management, and AI phone receptionist (VAPI-driven). The marketing site is bold and editorial; the portfolio demos are calm and luxurious. That contrast is the pitch.
 
 ---
 
@@ -32,7 +32,6 @@
 | `services/custom-websites/index.html` | Custom Websites service detail page |
 | `services/local-seo/index.html` | Local Search Dominance service detail page (covers GBP) |
 | `services/ai-optimization/index.html` | AI Optimization service detail page |
-| `work/index.html` | Portfolio grid — lists all 16 fake sites |
 | `work/{slug}/index.html` × 16 | Individual portfolio demo sites (self-contained) |
 | `privacy-policy/index.html` | Policy page |
 | `terms-and-conditions/index.html` | Terms page |
@@ -44,7 +43,7 @@
 ```
 F1 = index.html                          F2 = styles.css
 F3 = script.js                           F4 = chat.js
-F5 = ai-receptionist/index.html          F6 = work/index.html
+F5 = ai-receptionist/index.html
 F7 = vercel.json
 S1 = services/custom-websites/index.html
 S2 = services/local-seo/index.html
@@ -249,3 +248,4 @@ The implementation chat is Claude Code with full repo access. It reads CLAUDE.md
 | P25.5a | CSS Foundation completion: hamburger animation, hardcoded colors → tokens, chat widget fade, card hovers, dark tokens for W10/W16 |
 | P25.5b | HTML wrapping pass: F1 cards, privacy-policy 9 sections, F6 work grid, W10/W16 trust/book/FAQ sections wrapped in card-container-dark |
 | P26 | Full luxury minimal redesign: Cormorant Garamond + DM Sans + DM Mono typography; parchment palette (#F7F5F1) + deep trust blue (#1A3566) + antique gold (#B8972A); IntersectionObserver replaces GSAP ScrollTrigger for reveals; 4 new post-hero sections on F1 (craft/services/advantage/begin); 3-col footer; svc-hero + svc-row horizontal rule layout on all service pages; updated F5 hero + form styling; F6 new header; legal pages nav + footer updated |
+| P27 | Deleted work/index.html (F6 portfolio listing) + removed all /work/ nav/footer references site-wide; Services dropdown added to nav on all pages (desktop panel + mobile accordion, vanilla JS, Escape closes, chevron rotates); industry-agnostic copy audit across F1/F5/S1/S2/S3/privacy-policy/terms — all dental/med-spa/patient references replaced; S2 SEO Audit CTAs → search.google.com; work-listing CSS removed from styles.css |

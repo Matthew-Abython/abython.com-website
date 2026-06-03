@@ -14,7 +14,7 @@
 **Live URL:** https://abython.com
 **Stack:** Pure HTML / CSS / JS. No framework. No build step. No npm.
 
-**What Abython does:** Digital agency for **dentists and med spas**:
+**What Abython does:** Digital agency for **local service businesses**:
 1. Custom website design + build
 2. SEO (traditional search engine optimization)
 3. AIO (AI Optimization — cited by ChatGPT, Perplexity, Google AI Overviews) — *most clients have never heard this term; explaining it is part of the pitch*
@@ -327,23 +327,11 @@ Report the decision and reasoning in the final report.
 Before writing any new files for a tile build, check and report:
 1. Does `/work/<slug>/` already exist? If yes, list its contents and pause for instructions before overwriting.
 2. Which tile in F1's hero grid currently occupies this slot? Confirm tile number, current `href`, and current label so the right tile is replaced.
-3. Does F6 (`work/index.html`) currently have a row for this slot or this slug? Report what's there.
-4. Are there any other references to the old slug elsewhere in the repo (grep)? List them.
+3. Are there any other references to the old slug elsewhere in the repo (grep)? List them.
 
 Pause and report findings before continuing to file creation.
 
-### 9.10 — F6 portfolio grid
-
-Every new tile gets a corresponding row in F6 (`work/index.html`):
-- Display name (full business name)
-- Industry
-- View CTA linking to `/work/<slug>/`, `target="_blank"`, `rel="noopener"`
-
-If a placeholder row exists for this slot, update it. Otherwise insert in
-the correct slot position. Match the existing row format already used by
-other entries in F6.
-
-### 9.11 — Locked zones (never modify during tile builds)
+### 9.10 — Locked zones (never modify during tile builds)
 
 - F7 `vercel.json` and its CSP/header config
 - F3 `script.js` form POST logic and auth header
@@ -352,10 +340,10 @@ other entries in F6.
 - Calendly URL anywhere it appears: `https://calendly.com/owner-abython/new-meeting`
 - `/tile-iframe-scaler.js` multi-tile pattern — do not revert to single-tile
 
-### 9.12 — Mandatory final report
+### 9.11 — Mandatory final report
 
 At the end of every tile build, report:
-1. Part 0 findings (existing folder state, current tile NN, F6 row status, other references to old slug if any)
+1. Part 0 findings (existing folder state, current tile NN, other references to old slug if any)
 2. Background video: tone (dark/light) + brief contents description
 3. Hover scrim decision and reasoning
 4. Any font substitutions made and why (e.g. paid font → Google Fonts equivalent)
