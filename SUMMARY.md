@@ -126,32 +126,15 @@ All tokens live in `styles.css` `:root`. Never rename or change values without e
 
 ---
 
-## 7. Technical Constraints — Non-Negotiable
+## 7. Technical Constraints
 
-### 7a. CSP (vercel.json — LOCKED)
-```
-default-src 'self'
-script-src  'self' https://unpkg.com https://cdnjs.cloudflare.com
-style-src   'self' 'unsafe-inline' https://fonts.googleapis.com
-font-src    'self' https://fonts.gstatic.com data:
-img-src     'self' data: blob: https:
-connect-src 'self' https://abython.app.n8n.cloud
-media-src   → falls back to default-src 'self' (external video blocked)
-```
+Full details in `CLAUDE.md §2` (locked API contracts) and `CLAUDE.md §9.3` (CSP rules). Quick reference:
 
-**Consequence:** External video URLs (Mux, CloudFront, etc.) cannot be used directly. They must be downloaded and self-hosted under `/work/{slug}/` before referencing.
-
-### 7b. Locked API endpoints (in script.js — do not modify)
-- Demo form POST → `https://abython.app.n8n.cloud/webhook/e4df1cc2-...`
-- Auth header: `Bearer abython_xK9#mP2$vQ7nL4wR`
-- Calendly: `https://calendly.com/owner-abython/new-meeting`
-
-### 7c. Portfolio tile rules
-- Vanilla HTML/CSS/JS only — no React, Tailwind, Framer Motion, build step
-- All JS in `/work/{slug}/script.js` — no inline `<script>` blocks, no `onclick=`
-- All asset paths absolute from site root: `/work/{slug}/background.mp4`
-- External resources: Google Fonts `<link>` only
-- No navigation back to abython.com from demo sites
+- **Demo form POST:** `https://abython.app.n8n.cloud/webhook/e4df1cc2-8d07-4e72-a86a-df1a13b10f2c` — auth `Bearer abython_xK9#mP2$vQ7nL4wR`
+- **Chat POST:** `https://abython.app.n8n.cloud/webhook/squarespace-chat` — legacy name, do not rename
+- **Calendly:** `https://calendly.com/owner-abython/new-meeting` — all Book CTAs
+- **vercel.json:** LOCKED — never touch; CSP blocks inline scripts, non-CDN scripts, and external video URLs
+- **Portfolio tiles:** vanilla JS only, all paths absolute from site root, Google Fonts only, external video must be self-hosted
 
 ---
 
@@ -237,8 +220,6 @@ The implementation chat is Claude Code with full repo access. It reads CLAUDE.md
 
 1. Auth token exposed client-side in `script.js` — known, post-launch fix (move to Vercel serverless)
 2. Weak email validation in demo form — acceptable for now, revisit in QA pass
-3. Privacy policy `<section>` blocks still lack individual card treatment — only `.stop-highlight` (SMS opt-out) is boxed; other `<h2>` sections float
-4. W10 hero trust row ("Trusted by athletes…") and both W10/W16 `#book` CTA sections lack `.card-container-dark` wrapper (FORMATTING-AUDIT §1.4 items not yet wrapped)
 
 ---
 

@@ -55,27 +55,13 @@ Live in production. Restyling surrounding HTML/CSS is fine. Modifying the logic/
 
 ## 3. Design System (Locked)
 
-**Palette:** CSS custom properties in `styles.css` `:root` block — do not invent new token names, do not change values without explicit instruction.
-Key tokens: `--bg` `--bg-elevated` `--bg-inverse` `--ink` `--ink-muted` `--ink-subtle` `--ink-inverse` `--accent` `--accent-hover` `--accent-glow` `--border` `--border-strong`
+**Palette:** CSS custom properties in `styles.css` `:root` — do not invent new token names, do not change values without explicit instruction. Full token list: `SUMMARY.md §6`.
 
-**Typography:**
-- Display/Headings: `'Fraunces', Georgia, serif` — variable, weight 400–900, optical size on
-- Body/UI: `'Inter Tight', system-ui, sans-serif`
-- Mono (if needed): `'JetBrains Mono', monospace`
-- Both load from Google Fonts
+**Typography:** Fraunces (display/headings) · Inter Tight (body/UI) · both Google Fonts.
 
-**Spacing & Radii:**
-`--radius-sm: 8px` | `--radius: 16px` | `--radius-lg: 24px` | `--radius-btn: 9999px`
-`--nav-height: 72px` | `--content-width: 1280px` | `--section-py: 120px`
+**Motion:** Lenis (`unpkg.com/lenis@1.3.x`) synced with GSAP 3.12+ ScrollTrigger (`cdnjs.cloudflare.com`). Easing: `power3.out` entrances. **Always gate on `prefers-reduced-motion`.**
 
-**Motion:**
-- Smooth scroll: Lenis (`unpkg.com/lenis@1.3.x`) synced with GSAP ticker
-- Animations: GSAP 3.12+ with ScrollTrigger (`cdnjs.cloudflare.com`)
-- Easing: `power3.out` entrances, `power2.inOut` transitions
-- **Always** check `prefers-reduced-motion` and skip animations if true
-
-**Visual personality — marketing site:** Oversized Fraunces headlines (8rem+ desktop), generous whitespace, high contrast, confident declarative copy, strong vertical rhythm.
-**Portfolio sites:** Opposite — calm, premium, luxurious. The contrast is the pitch.
+**Visual personality:** Marketing site = oversized headlines, high contrast, declarative. Portfolio demos = calm, premium, luxurious. That contrast is the pitch.
 
 ---
 
@@ -89,26 +75,7 @@ See `SUMMARY.md` for the current file map, tile inventory, and line counts. Stac
 
 ## 5. Portfolio: 16 Fake Sites
 
-Single-page landings. Self-contained HTML/CSS. No nav back to Abython. Open in new tab from the grid.
-
-| # | Slug | Business | Industry | Style |
-|---|---|---|---|---|
-| 1 | `azure-cosmetic-dentistry` | Azure Cosmetic Dentistry | Cosmetic dentist | Gold + cream, luxury serif, cinematic |
-| 2 | `little-grins-pediatric` | Little Grins Pediatric Dentistry | Pediatric dentist | Playful premium, soft pastels |
-| 3 | `modern-derma-spa` | Modern Derma and Spa | Medical Spa | Glassmorphism, rounded card, navy + cream |
-| 4 | `texas-prosthetics` | Texas Prosthetics | Prosthetics | Full-bleed video, two-pill nav, bottom-left hero, system font |
-| 5 | `andersons-boards` | Anderson's Boards | Snowboard Shop | Dark full-bleed, 3-part pill nav, staggered giant type, floating stats |
-| 6 | `hearthfield-family-dental` | Hearthfield Family Dental | Family dentist | Warm, sage green + cream |
-| 7 | `meridian-implants` | Meridian Implant Center | Implants | Clinical-luxury, navy + silver |
-| 8 | `glow-laser-clinic` | Glow Laser Clinic | Laser hair removal | Bright, gradient-forward |
-| 9 | `halcyon-plastic-surgery` | Halcyon Plastic Surgery | Plastic surgeon | Cinematic, dark mode, full-bleed |
-| 10 | `midwestern-iv` | Midwestern IV | IV therapy lounge | Dark cosmic + liquid-glass; multi-section single-page; Instrument Serif italic + Barlow |
-| 11 | `bossert-therapy` | Bossert Therapy | Individual &amp; Couples Therapy | Dark video hero, mouse parallax, liquid-glass nav, blur-bottom overlay, blurFadeUp; Sora font; green accent |
-| 12 | `stratum-dermatology` | Stratum Dermatology | Dermatologist | Clean, scientific, blue + white |
-| 13 | `kinetics-pilates` | Kinetics Pilates Studio | Pilates | Movement-forward, bold type |
-| 14 | `north-barber-co` | North Barber Co. | Barber | Masculine monochrome, condensed |
-| 15 | `ironwood-law` | Ironwood Law | Law firm | Serif-heavy, ivory + navy |
-| 16 | `graces-private-food-services` | Graces Private Food Services | Private Chef / Catering | Dark liquid-glass, multi-section single-page, video hero; Instrument Serif italic + Inter; second multi-section tile after W10 |
+Portfolio slug list and current grid state: see `SUMMARY.md §4–5`. Build pattern and exceptions: see §9 below.
 
 ---
 
