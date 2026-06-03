@@ -110,7 +110,17 @@ All tokens live in `styles.css` `:root`. Never rename or change values without e
 --ink-inverse  --accent  --accent-hover  --accent-glow  --border  --border-strong
 --radius-sm: 8px  --radius: 16px  --radius-lg: 24px  --radius-btn: 9999px
 --nav-height: 72px  --content-width: 1280px  --section-py: 120px
+
+/* Added P25 */
+--error: #dc2626  --error-bg: #fef2f2  --error-border: rgba(220,38,38,0.2)
+--card-bg: #FFFFFF  --card-border: rgba(10,10,10,0.08)
+--card-shadow: 0 2px 8px rgba(10,10,10,0.06)
+--card-shadow-hover: 0 8px 28px rgba(10,10,10,0.10)
 ```
+
+**Card utility classes (P25):** `.card-container` (light pages) · `.card-container-dark` (dark portfolio pages) · `.narrative-card` modifier (service-specific bg + left border per section)
+
+**Animation data attributes (P25):** `data-animate="card"` → GSAP stagger reveal (0.08s per card, top 82%); `data-animate="heading"` → single fade-up (top 85%)
 
 **Fonts (main site):** Fraunces (display/headings) + Inter Tight (body/UI) — both Google Fonts.
 
@@ -227,6 +237,8 @@ The implementation chat is Claude Code with full repo access. It reads CLAUDE.md
 
 1. Auth token exposed client-side in `script.js` — known, post-launch fix (move to Vercel serverless)
 2. Weak email validation in demo form — acceptable for now, revisit in QA pass
+3. Privacy policy `<section>` blocks still lack individual card treatment — only `.stop-highlight` (SMS opt-out) is boxed; other `<h2>` sections float
+4. W10 hero trust row ("Trusted by athletes…") and both W10/W16 `#book` CTA sections lack `.card-container-dark` wrapper (FORMATTING-AUDIT §1.4 items not yet wrapped)
 
 ---
 
@@ -252,3 +264,6 @@ The implementation chat is Claude Code with full repo access. It reads CLAUDE.md
 | P22 | SESSION.md deleted; replaced with SUMMARY.md; CLAUDE.md updated |
 | P23 | Website expansion: 3 narrative sections added to homepage (website/SEO/AIO); services grid restructured (4 cards: Custom Websites→/services/custom-websites/, Local Search Dominance→/services/local-seo/, AI Optimization→/services/ai-optimization/, AI Receptionist unchanged); 3 new service detail pages created at /services/; nav broken links fixed; CSS for service-narrative + service-detail-* added to styles.css |
 | P24 | Homepage narrative sections redesigned: 3 distinct editorial layouts (green left-border/cream, blue top-bar/light-blue 2-col, purple right-bar/light-purple absolute icon); scroll-triggered icon animations; full-section background shift on link hover via CSS :has(); statement section ("Abython · For dentists & med spas") deleted |
+| P25 | Design system rollout: error tokens + card tokens added to styles.css :root; .card-container + .card-container-dark utility classes added; mobile nav max-height slide + hamburger X animation; aria-expanded fixed; GSAP Pattern A/B for [data-animate]; index.html 5 sections wrapped (website/SEO/AIO narratives, managed, CTA); privacy-policy nav rebuilt to standard structure + GSAP/Lenis added; work/index.html nav links fixed (GBP→/services/local-seo/, SEO+AIO→/services/ai-optimization/); W10+W16 GSAP injected + scroll animations on all section cards; W11 Bossert full mobile nav added (hamburger + slide sheet + focus trap); W1 scale hover added; W3 asymmetric padding fixed; W5 scale hover added; service pages (S1/S2/S3) + ai-receptionist all .service-detail-section blocks wrapped in .card-container; FORMATTING-AUDIT.md created |
+| P25.5a | CSS Foundation completion: hamburger animation, hardcoded colors → tokens, chat widget fade, card hovers, dark tokens for W10/W16 |
+| P25.5b | HTML wrapping pass: F1 cards, privacy-policy 9 sections, F6 work grid, W10/W16 trust/book/FAQ sections wrapped in card-container-dark |
