@@ -46,7 +46,7 @@ Each tile is an iframe preview of a portfolio demo site at `/work/{slug}/`.
 |---|---|---|---|
 | 01 | `azure-cosmetic-dentistry` | Azure Cosmetic Dentistry | Custom one-off design; scrim suppressed |
 | 02 | `little-grins-pediatric` | Little Grins Pediatric Dentistry | Soft pastels, playful |
-| 03 | `modern-derma-spa` | Modern Derma and Spa | Glassmorphism card, loop video |
+| 03 | `west-side-derma-spa` | West Side Derma + Spa | Editorial spa landing, hero video, fade-up reveals |
 | 04 | `texas-prosthetics` | Texas Prosthetics | Full-bleed video, two-pill nav, system font |
 | 05 | `andersons-boards` | Anderson's Boards | Dark #000, giant type, Readex Pro |
 | 06 | `midwestern-iv` | Midwestern IV | Dark, ~10 sections, liquid-glass |
@@ -66,7 +66,7 @@ Built tiles: W1, W2, W3, W4, W5, W10, W11, W12, W16. Remaining are placeholders.
 |---|---|---|
 | W1 | `azure-cosmetic-dentistry` | Azure Cosmetic Dentistry |
 | W2 | `little-grins-pediatric` | Little Grins Pediatric Dentistry |
-| W3 | `modern-derma-spa` | Modern Derma and Spa |
+| W3 | `west-side-derma-spa` | West Side Derma + Spa |
 | W4 | `texas-prosthetics` | Texas Prosthetics |
 | W5 | `andersons-boards` | Anderson's Boards |
 | W6 | `hearthfield-family-dental` | Hearthfield Family Dental |

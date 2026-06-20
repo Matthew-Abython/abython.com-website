@@ -68,7 +68,7 @@
 | Tile | Exception |
 |---|---|
 | W1 Azure | One-off custom design; built before this pattern |
-| W3 Modern Derma | Glassmorphism card layout; no hamburger/sheet on mobile |
+| W3 West Side Derma + Spa | Single-page anchor-nav layout; no hamburger/sheet on mobile |
 | W4 Texas Prosthetics | Two-pill nav; bottom-left hero; system font; no mobile sheet |
 | W5 Anderson's Boards | Dark #000, 3-part pill nav, giant staggered type; no mobile sheet |
 | W10 Midwestern IV | Multi-section (~10 sections); liquid-glass; FadingVideo rAF crossfade; Instrument Serif + Barlow |

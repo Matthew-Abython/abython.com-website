@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>West Side Derma + Spa</title>
+<meta name="description" content="West Side Derma + Spa — a modern medical spa in West Chicago, IL blending clinical precision with quiet luxury.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --bg-sand: #F1EBE2;
+    --ink: #2B2622;
+    --ink-muted: #6B6258;
+    --gold: #C7A867;
+    --gold-deep: #A6864B;
+    --line: rgba(43,38,34,.12);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Jost', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 { font-family: 'Fraunces', serif; margin: 0; font-weight: 500; }
+  p { margin: 0; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  .eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: .78rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    font-weight: 500;
+  }
+
+  .gold-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: .85rem 1.8rem;
+    border-radius: 999px;
+    background: linear-gradient(180deg, var(--gold), var(--gold-deep));
+    color: #2B2622;
+    font-size: .92rem;
+    font-weight: 500;
+    letter-spacing: .02em;
+    border: none;
+    cursor: pointer;
+    transition: transform .25s ease, box-shadow .25s ease;
+    white-space: nowrap;
+  }
+  .gold-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(166,134,75,.35); }
+  .ghost-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: .55rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(250,247,242,.55);
+    color: #FAF7F2;
+    font-size: .82rem;
+    letter-spacing: .02em;
+  }
+
+  /* Reveal animation */
+  .reveal-ready {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .7s ease, transform .7s ease;
+  }
+  .reveal-ready.is-visible { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-ready { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+
+  /* ===== HERO ===== */
+  .wsds-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .wsds-hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .wsds-hero-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+      linear-gradient(180deg, rgba(250,247,242,.55) 0%, rgba(250,247,242,.08) 38%, rgba(43,38,34,.30) 78%, rgba(43,38,34,.55) 100%);
+  }
+
+  .wsds-topbar {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 1.5rem;
+    gap: 1rem;
+  }
+  .wsds-wordmark {
+    font-family: 'Fraunces', serif;
+    font-size: 1rem;
+    letter-spacing: .12em;
+    color: #FAF7F2;
+    text-shadow: 0 1px 8px rgba(0,0,0,.25);
+  }
+  .wsds-nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .wsds-nav-links a {
+    font-size: .88rem;
+    color: #FAF7F2;
+    letter-spacing: .02em;
+    text-shadow: 0 1px 8px rgba(0,0,0,.25);
+    opacity: .92;
+  }
+  .wsds-nav-links a:hover { opacity: 1; }
+  .wsds-topbar-actions { display: flex; align-items: center; gap: 1rem; }
+
+  .wsds-hero-content {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2rem 1.5rem 6rem;
+  }
+  .wsds-hero-content .eyebrow { color: #F1EBE2; }
+  .wsds-hero-heading {
+    font-size: clamp(2.4rem, 6vw, 4.6rem);
+    line-height: 1.06;
+    color: #FAF7F2;
+    margin: 1rem 0 1.4rem;
+    max-width: 14ch;
+    text-shadow: 0 4px 30px rgba(0,0,0,.25);
+  }
+  .wsds-hero-sub {
+    font-size: clamp(1rem, 1.4vw, 1.2rem);
+    line-height: 1.55;
+    color: #F1EBE2;
+    max-width: 38ch;
+    margin-bottom: 2.2rem;
+  }
+
+  /* ===== SECTION SHELL ===== */
+  section, footer.wsds-footer {
+    padding: 7rem 1.5rem;
+  }
+  .wsds-inner { max-width: 1100px; margin: 0 auto; }
+  .wsds-sand { background: var(--bg-sand); }
+  .wsds-white { background: var(--bg); }
+
+  .wsds-headline {
+    font-size: clamp(1.8rem, 3.6vw, 2.6rem);
+    line-height: 1.2;
+    margin: .8rem 0 1.4rem;
+    max-width: 20ch;
+  }
+  .wsds-body-copy {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--ink-muted);
+    max-width: 56ch;
+  }
+
+  /* ===== PHILOSOPHY ===== */
+  .wsds-stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3.5rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--line);
+  }
+  .wsds-stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    color: var(--gold-deep);
+  }
+  .wsds-stat-label {
+    font-size: .92rem;
+    color: var(--ink-muted);
+    margin-top: .4rem;
+  }
+
+  /* ===== TREATMENTS ===== */
+  .wsds-treatments-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .wsds-treatment-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+  .wsds-treatment-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(43,38,34,.12);
+  }
+  .wsds-treatment-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  .wsds-treatment-card-body { padding: 1.8rem; }
+  .wsds-treatment-card-body h3 { font-size: 1.3rem; margin-bottom: .6rem; }
+  .wsds-treatment-card-body p { font-size: .96rem; color: var(--ink-muted); line-height: 1.6; margin-bottom: 1rem; }
+  .wsds-sub-items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+  .wsds-sub-items li {
+    font-size: .78rem;
+    letter-spacing: .03em;
+    color: var(--gold-deep);
+    border: 1px solid rgba(166,134,75,.35);
+    border-radius: 999px;
+    padding: .3rem .75rem;
+  }
+
+  /* ===== EXPERIENCE GALLERY ===== */
+  .wsds-experience-gallery {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1.4rem;
+    margin-top: 3.5rem;
+  }
+  .wsds-experience-gallery img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; }
+  .wsds-exp-1 { grid-row: 1 / 3; aspect-ratio: 3 / 4; }
+  .wsds-exp-2 { aspect-ratio: 4 / 3; }
+  .wsds-exp-3 { aspect-ratio: 4 / 3; }
+
+  /* ===== REVIEWS ===== */
+  .wsds-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .wsds-review-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 2rem;
+    margin: 0;
+  }
+  .wsds-stars { color: var(--gold); font-size: 1rem; letter-spacing: .15em; margin-bottom: 1.2rem; }
+  .wsds-review-quote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.6rem;
+  }
+  .wsds-review-author { display: flex; align-items: center; gap: .8rem; }
+  .wsds-avatar {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, var(--gold), var(--gold-deep));
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: .95rem;
+  }
+  .wsds-review-name { font-size: .92rem; font-weight: 500; }
+  .wsds-review-treatment { font-size: .8rem; color: var(--ink-muted); }
+
+  /* ===== FOOTER / CONTACT ===== */
+  .wsds-footer {
+    background: var(--ink);
+    color: #F1EBE2;
+  }
+  .wsds-footer .eyebrow { color: var(--gold); }
+  .wsds-footer h2 { color: #FAF7F2; font-size: clamp(1.8rem, 3vw, 2.4rem); margin: .8rem 0 1.6rem; }
+  .wsds-footer-details { display: flex; flex-direction: column; gap: .5rem; margin-bottom: 2rem; }
+  .wsds-footer-details p { color: rgba(241,235,226,.78); font-size: .98rem; }
+  .wsds-footer-copy {
+    margin-top: 4rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid rgba(241,235,226,.15);
+    font-size: .8rem;
+    color: rgba(241,235,226,.55);
+  }
+
+  @media (max-width: 860px) {
+    .wsds-nav-links { display: none; }
+    .wsds-stats-row, .wsds-treatments-grid, .wsds-reviews-grid { grid-template-columns: 1fr; }
+    .wsds-experience-gallery { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .wsds-exp-1 { grid-row: auto; aspect-ratio: 4 / 3; }
+    section, footer.wsds-footer { padding: 4.5rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+  <main class="wsds">
+
+    <!-- 1. HERO -->
+    <section class="wsds-hero" id="hero">
+      <video class="wsds-hero-video" muted autoplay loop playsinline preload="metadata" poster="/work/west-side-derma-spa/assets/hero-poster.jpg" aria-hidden="true">
+        <source src="/work/west-side-derma-spa/assets/hero.mp4" type="video/mp4">
+      </video>
+      <div class="wsds-hero-scrim"></div>
+
+      <div class="wsds-topbar">
+        <span class="wsds-wordmark">WEST SIDE DERMA + SPA</span>
+        <ul class="wsds-nav-links">
+          <li><a href="#treatments">Treatments</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="wsds-topbar-actions">
+          <a href="#contact" class="gold-btn" style="padding:.6rem 1.3rem; font-size:.82rem;">Book a Consultation</a>
+        </div>
+      </div>
+
+      <div class="wsds-hero-content">
+        <p class="eyebrow reveal-ready">WEST CHICAGO · AESTHETIC MEDICINE</p>
+        <h1 class="wsds-hero-heading reveal-ready">Beautiful skin, expertly considered.</h1>
+        <p class="wsds-hero-sub reveal-ready">A modern medical spa where clinical precision meets quiet luxury — personalized treatments designed around you.</p>
+        <a href="#contact" class="gold-btn reveal-ready">Book a Consultation</a>
+      </div>
+    </section>
+
+    <!-- 2. PHILOSOPHY -->
+    <section class="wsds-white" id="philosophy">
+      <div class="wsds-inner">
+        <p class="eyebrow reveal-ready">OUR PHILOSOPHY</p>
+        <h2 class="wsds-headline reveal-ready">Results you can see. Care you can feel.</h2>
+        <p class="wsds-body-copy reveal-ready">At West Side Derma + Spa, every treatment begins with a conversation. We blend advanced medical aesthetics with a calm, unhurried experience — so you leave looking like yourself, refreshed.</p>
+
+        <div class="wsds-stats-row">
+          <div class="reveal-ready">
+            <div class="wsds-stat-num">12+</div>
+            <div class="wsds-stat-label">Years of practice</div>
+          </div>
+          <div class="reveal-ready">
+            <div class="wsds-stat-num">30+</div>
+            <div class="wsds-stat-label">Advanced treatments</div>
+          </div>
+          <div class="reveal-ready">
+            <div class="wsds-stat-num">5★</div>
+            <div class="wsds-stat-label">Average client rating</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SIGNATURE TREATMENTS -->
+    <section class="wsds-sand" id="treatments">
+      <div class="wsds-inner">
+        <p class="eyebrow reveal-ready">SIGNATURE TREATMENTS</p>
+        <h2 class="wsds-headline reveal-ready">Tailored to you.</h2>
+
+        <div class="wsds-treatments-grid">
+          <article class="wsds-treatment-card reveal-ready">
+            <img src="/work/west-side-derma-spa/assets/treatment-injectables.jpg" alt="Injectable treatment at West Side Derma + Spa" loading="lazy">
+            <div class="wsds-treatment-card-body">
+              <h3>Botox® &amp; Dermal Fillers</h3>
+              <p>Smooth fine lines and restore subtle volume with precise, natural-looking injectables tailored to your features.</p>
+              <ul class="wsds-sub-items">
+                <li>Neuromodulators</li>
+                <li>Lip &amp; cheek filler</li>
+                <li>Jawline contour</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="wsds-treatment-card reveal-ready">
+            <img src="/work/west-side-derma-spa/assets/treatment-facials.jpg" alt="Facial treatment at West Side Derma + Spa" loading="lazy">
+            <div class="wsds-treatment-card-body">
+              <h3>Facials &amp; Skin Therapy</h3>
+              <p>Medical-grade treatments to renew tone, texture, and radiance.</p>
+              <ul class="wsds-sub-items">
+                <li>HydraFacial</li>
+                <li>Chemical peels</li>
+                <li>Microneedling</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="wsds-treatment-card reveal-ready">
+            <img src="/work/west-side-derma-spa/assets/treatment-laser.jpg" alt="Laser treatment suite at West Side Derma + Spa" loading="lazy">
+            <div class="wsds-treatment-card-body">
+              <h3>Laser &amp; Energy Devices</h3>
+              <p>Advanced laser and energy-based treatments for hair removal, resurfacing, and pigment correction.</p>
+              <ul class="wsds-sub-items">
+                <li>Laser hair removal</li>
+                <li>Skin resurfacing</li>
+                <li>IPL photofacial</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="wsds-treatment-card reveal-ready">
+            <img src="/work/west-side-derma-spa/assets/treatment-body.jpg" alt="Body and wellness treatment at West Side Derma + Spa" loading="lazy">
+            <div class="wsds-treatment-card-body">
+              <h3>Body &amp; Wellness</h3>
+              <p>Non-invasive body contouring and IV wellness therapy to help you feel your best, inside and out.</p>
+              <ul class="wsds-sub-items">
+                <li>Body contouring</li>
+                <li>IV drip therapy</li>
+                <li>Wellness boosters</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. THE EXPERIENCE -->
+    <section class="wsds-white" id="experience">
+      <div class="wsds-inner">
+        <p class="eyebrow reveal-ready">THE EXPERIENCE</p>
+        <h2 class="wsds-headline reveal-ready">Designed to feel like an escape.</h2>
+        <p class="wsds-body-copy reveal-ready">From the moment you arrive, our West Chicago studio is built around calm — soft light, private treatment suites, and a team that never rushes.</p>
+
+        <div class="wsds-experience-gallery">
+          <img class="wsds-exp-1 reveal-ready" src="/work/west-side-derma-spa/assets/experience-1.jpg" alt="West Side Derma + Spa interior hallway" loading="lazy">
+          <img class="wsds-exp-2 reveal-ready" src="/work/west-side-derma-spa/assets/experience-2.jpg" alt="West Side Derma + Spa treatment suite detail" loading="lazy">
+          <img class="wsds-exp-3 reveal-ready" src="/work/west-side-derma-spa/assets/experience-3.jpg" alt="West Side Derma + Spa lounge detail" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. REVIEWS -->
+    <section class="wsds-sand" id="reviews">
+      <div class="wsds-inner">
+        <p class="eyebrow reveal-ready">KIND WORDS</p>
+        <h2 class="wsds-headline reveal-ready">What our clients say.</h2>
+
+        <div class="wsds-reviews-grid">
+          <blockquote class="wsds-review-card reveal-ready">
+            <div class="wsds-stars" aria-hidden="true">★★★★★</div>
+            <p class="wsds-review-quote">"I've never felt more taken care of. My results look completely natural and the space is gorgeous."</p>
+            <div class="wsds-review-author">
+              <div class="wsds-avatar" aria-hidden="true">L</div>
+              <div>
+                <div class="wsds-review-name">Lauren M.</div>
+                <div class="wsds-review-treatment">HydraFacial</div>
+              </div>
+            </div>
+          </blockquote>
+
+          <blockquote class="wsds-review-card reveal-ready">
+            <div class="wsds-stars" aria-hidden="true">★★★★★</div>
+            <p class="wsds-review-quote">"The team explained every step and the results exceeded what I hoped for. Worth every minute."</p>
+            <div class="wsds-review-author">
+              <div class="wsds-avatar" aria-hidden="true">P</div>
+              <div>
+                <div class="wsds-review-name">Priya S.</div>
+                <div class="wsds-review-treatment">Injectables</div>
+              </div>
+            </div>
+          </blockquote>
+
+          <blockquote class="wsds-review-card reveal-ready">
+            <div class="wsds-stars" aria-hidden="true">★★★★★</div>
+            <p class="wsds-review-quote">"A truly elevated experience from start to finish. This is my place now."</p>
+            <div class="wsds-review-author">
+              <div class="wsds-avatar" aria-hidden="true">D</div>
+              <div>
+                <div class="wsds-review-name">Daniel R.</div>
+                <div class="wsds-review-treatment">Laser Resurfacing</div>
+              </div>
+            </div>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CONTACT / FOOTER -->
+    <footer class="wsds-footer" id="contact">
+      <div class="wsds-inner reveal-ready">
+        <p class="eyebrow">VISIT US</p>
+        <h2>West Side Derma + Spa</h2>
+        <div class="wsds-footer-details">
+          <p>118 W. Main Street, Suite 200 · West Chicago, IL 60185</p>
+          <p>Tue–Sat · 9am–6pm</p>
+          <p>(630) 555-0142</p>
+        </div>
+        <a href="#contact" class="gold-btn">Book a Consultation</a>
+        <p class="wsds-footer-copy">© 2026 West Side Derma + Spa · West Chicago, IL</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="/work/west-side-derma-spa/app.js"></script>
+</body>
+</html>
