@@ -50,7 +50,7 @@ Each tile is an iframe preview of a portfolio demo site at `/work/{slug}/`.
 | 04 | `texas-prosthetics` | Texas Prosthetics | Full-bleed video, two-pill nav, system font |
 | 05 | `andersons-boards` | Anderson's Boards | Dark #000, giant type, Readex Pro |
 | 06 | `midwestern-iv` | Midwestern IV | Dark, ~10 sections, liquid-glass |
-| 07 | `stratum-dermatology` | Stratum Dermatology | 3-row full-screen layout |
+| 07 | `uptown-dental` | Uptown Dental | Navy/pearl/sapphire; anchor-nav; 6 sections; Playfair Display + DM Sans |
 | 08 | `graces-private-food-services` | Graces Private Food Services | Dark, ~9 sections, blur-bottom overlay |
 | 09 | `bossert-therapy` | Bossert Therapy | Dark video, mouse parallax; scrim suppressed |
 
@@ -75,7 +75,7 @@ Built tiles: W1, W2, W3, W4, W5, W10, W11, W12, W16. Remaining are placeholders.
 | W9 | `halcyon-plastic-surgery` | Halcyon Plastic Surgery |
 | W10 | `midwestern-iv` | Midwestern IV |
 | W11 | `bossert-therapy` | Bossert Therapy |
-| W12 | `stratum-dermatology` | Stratum Dermatology |
+| W12 | `uptown-dental` | Uptown Dental |
 | W13 | `kinetics-pilates` | Kinetics Pilates Studio |
 | W14 | `north-barber-co` | North Barber Co. |
 | W15 | `ironwood-law` | Ironwood Law |
@@ -151,3 +151,4 @@ All three pages share the same layout pattern (P28 redesign):
 | P27 | Deleted work/index.html; Services nav dropdown added to all pages; industry-agnostic copy audit; S2 SEO audit → search.google.com |
 | P28 | Full redesign of S1/S2/S3: alternating sections, stat rows, 3D feature cards, S3 timeline, inline sp-* CSS |
 | P29 | AI Receptionist moved from top-level nav into Services dropdown on all 7 pages |
+| P30 | Replaced W12 Stratum Dermatology (tile 07) with Uptown Dental — full 6-section dental practice site; navy/pearl/sapphire palette; Playfair Display + DM Sans; 9 assets processed and moved to /work/uptown-dental/assets/ |

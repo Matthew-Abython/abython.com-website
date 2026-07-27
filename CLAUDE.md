@@ -72,7 +72,7 @@
 | W4 Texas Prosthetics | Two-pill nav; bottom-left hero; system font; no mobile sheet |
 | W5 Anderson's Boards | Dark #000, 3-part pill nav, giant staggered type; no mobile sheet |
 | W10 Midwestern IV | Multi-section (~10 sections); liquid-glass; FadingVideo rAF crossfade; Instrument Serif + Barlow |
-| W12 Stratum Dermatology | 3-row full-screen layout; clip-reveal heading |
+| W12 Uptown Dental | Single-page anchor-nav layout; no hamburger/sheet on mobile; Playfair Display + DM Sans; navy/pearl/sapphire palette; 6 sections |
 | W16 Graces | Multi-section (~9 sections); single hero video (native loop); typewriter CTA; Instrument Serif + Inter |
 
 ### 6.1 — File structure per tile
